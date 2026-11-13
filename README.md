@@ -38,6 +38,8 @@ To rebuild the core blueprint website and PDF dependency graph (requires `leanbl
 ./blueprint/export_dep_graph.sh
 ```
 
-## License
+## License & Citation
 
-GNU Affero General Public License v3.0 (AGPLv3) with non-commercial use notice (see [`LICENSE.md`](LICENSE.md); vendored `DifferentialGeometry/` remains under [`DifferentialGeometry/LICENSE`](DifferentialGeometry/LICENSE)).
+Licensed under the GNU Affero General Public License v3.0 (AGPLv3) for non-commercial use — see [LICENSE.md](https://github.com/psuarezserrato/gromov-genus0-compactness/blob/main/LICENSE.md) for details:
+This project is licensed under non-commercial use. If you wish to use this software in a commercial product, service, or enterprise environment, please contact the developer to purchase a commercial license or negotiate royalty terms.
+Authored by Pablo Suárez-Serrato (November 2026).
