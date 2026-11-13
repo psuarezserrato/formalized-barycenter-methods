@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spectral Linear Algebra and Volume Entropy</title>
+<link rel="next" href="sect0002.html" title="Hyperboloid Busemann Calculus and the Smooth Natural Map" />
+<link rel="prev" href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4" />
+<link rel="up" href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4" />
+<link rel="stylesheet" href="styles/theme-blue.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active current">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Spectral Linear Algebra and Volume Entropy</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Hyperboloid Busemann Calculus and the Smooth Natural Map</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">Global Volume-Entropy Inequalities and Master Theorems</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000002">1 Spectral Linear Algebra and Volume Entropy</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_spectral_trace_det">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.1</span>
+    <span class="theorem_thmtitle">Spectral trace and determinant formulas</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#thm_spectral_trace_det">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000006"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.prod_le_arith_mean_pow" class="lean_decl">BCG.LinearAlgebra.prod_le_arith_mean_pow</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.trace_eq_sum_eigenvalues" class="lean_decl">BCG.LinearAlgebra.trace_eq_sum_eigenvalues</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_one_sub_eq_prod_eigenvalues" class="lean_decl">BCG.LinearAlgebra.det_one_sub_eq_prod_eigenvalues</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eigenvalues_nonneg_of_inner_nonneg" class="lean_decl">BCG.LinearAlgebra.eigenvalues_nonneg_of_inner_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eigenvalues_pos_of_inner_pos" class="lean_decl">BCG.LinearAlgebra.eigenvalues_pos_of_inner_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_nonneg_of_inner_nonneg" class="lean_decl">BCG.LinearAlgebra.det_nonneg_of_inner_nonneg</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(T : E \to _l[\mathbb {R}] E\) be a symmetric linear endomorphism on an \(n\)-dimensional real inner product space \(E\). Then </p>
+<div class="displaymath" id="a0000000007">
+  \[ \operatorname {Tr}(T) = \sum _{i=1}^n \lambda _i(T), \qquad \det (I - T) = \prod _{i=1}^n (1 - \lambda _i(T)), \]
+</div>
+<p> and if \(T\) is positive-semidefinite (\(\langle v, T v\rangle \ge 0\) for all \(v \in E\)), then \(\lambda _i(T) \ge 0\) and \(\det (T) \ge 0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000006">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Spectral diagonalization in an orthonormal eigenbasis together with weighted AM–GM on \(\mathrm{Fin}\, n\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_trace_det_amgm">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.2</span>
+    <span class="theorem_thmtitle">Sharp AM–GM trace-determinant inequality</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#thm_trace_det_amgm">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000008"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#thm_spectral_trace_det">Theorem 1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_le_trace_div_dim_pow" class="lean_decl">BCG.LinearAlgebra.det_le_trace_div_dim_pow</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_le_one_div_dim_pow_of_trace_le_one" class="lean_decl">BCG.LinearAlgebra.det_le_one_div_dim_pow_of_trace_le_one</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.mul_sqrt_det_le_of_trace_le_one" class="lean_decl">BCG.LinearAlgebra.mul_sqrt_det_le_of_trace_le_one</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For any symmetric positive-semidefinite endomorphism \(T : E \to _l[\mathbb {R}] E\) on an \(n\)-dimensional real inner product space (\(n \ge 1\)), </p>
+<div class="displaymath" id="a0000000009">
+  \[ \det (T) \le \left(\frac{\operatorname {Tr}(T)}{n}\right)^n. \]
+</div>
+<p> When \(\operatorname {Tr}(H_1) \le 1\) and \(\operatorname {Tr}(H_2) \le 1\), any \(c \ge 0\) satisfies \(c^n \sqrt{\det H_1}\sqrt{\det H_2} \le (c/n)^n\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000008">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Applies product-power AM–GM to the non-negative eigenvalues \(\lambda _i(T)\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_gram_det">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.3</span>
+    <span class="theorem_thmtitle">Adjoint-Gram determinant bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#thm_gram_det">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000010"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#thm_trace_det_amgm">Theorem 1.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_adjoint" class="lean_decl">BCG.LinearAlgebra.det_adjoint</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_adjoint_mul_self" class="lean_decl">BCG.LinearAlgebra.det_adjoint_mul_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.trace_eq_sum_orthonormalBasis" class="lean_decl">BCG.LinearAlgebra.trace_eq_sum_orthonormalBasis</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.trace_adjoint_mul_self_eq_sum_norm_sq" class="lean_decl">BCG.LinearAlgebra.trace_adjoint_mul_self_eq_sum_norm_sq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.abs_det_le_pow_of_norm_le" class="lean_decl">BCG.LinearAlgebra.abs_det_le_pow_of_norm_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.exists_ne_zero_inner_eq_zero_of_det_eq_zero" class="lean_decl">BCG.LinearAlgebra.exists_ne_zero_inner_eq_zero_of_det_eq_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.exists_inv_sqrt_of_det_pos" class="lean_decl">BCG.LinearAlgebra.exists_inv_sqrt_of_det_pos</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For any linear operator \(A : E \to _l[\mathbb {R}] E\) with \(\| A v\|  \le c \| v\| \), the Gram operator \(A^* A\) satisfies \(\det (A^* A) = (\det A)^2\), \(\operatorname {Tr}(A^* A) = \sum _i \| A e_i\| ^2 \le n c^2\), and \(|\det A| \le c^n\). Moreover, any symmetric positive-definite \(H\) (\(\det H {\gt} 0\)) admits a symmetric inverse square root \(D = H^{-1/2}\) satisfying \(D^2 H = \operatorname {id}_E\) and \(\det D = (\sqrt{\det H})^{-1}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000010">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Spectral calculus on the orthonormal eigenbasis of \(A^* A\) and \(H\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_bilinear_cs_det">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.4</span>
+    <span class="theorem_thmtitle">Souto’s bilinear Cauchy–Schwarz determinant bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#thm_bilinear_cs_det">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000011"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#thm_gram_det">Theorem 1.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.abs_det_le_of_abs_inner_le" class="lean_decl">BCG.LinearAlgebra.abs_det_le_of_abs_inner_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.abs_det_le_div_dim_pow_of_abs_inner_le" class="lean_decl">BCG.LinearAlgebra.abs_det_le_div_dim_pow_of_abs_inner_le</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Let \(L, H_1, H_2 : E \to _l[\mathbb {R}] E\) on an \(n\)-dimensional real inner product space (\(n \ge 1\)) with \(H_1, H_2\) symmetric positive-semidefinite and \(c \ge 0\). If \(|\langle L u, w\rangle | \le c \sqrt{\langle u, H_1 u\rangle }\sqrt{\langle w, H_2 w\rangle }\) for all \(u, w \in E\), then </p>
+<div class="displaymath" id="a0000000012">
+  \[ |\det L| \le c^n \sqrt{\det H_1}\sqrt{\det H_2}. \]
+</div>
+<p> If furthermore \(\operatorname {Tr}(H_1) \le 1\) and \(\operatorname {Tr}(H_2) \le 1\), then \(|\det L| \le (c/n)^n\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000011">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Normalizes \(L\) on the right and left by \(H_1^{-1/2}\) and \(H_2^{-1/2}\) when \(\det H_i {\gt} 0\), reducing to \(\| A\|  \le c\), and handles the degenerate case \(\det H_i = 0\) via kernel vectors.</p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def_critical_exponent">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.5</span>
+    <span class="definition_thmtitle">Exponential distance weights and critical exponent</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def_critical_exponent">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight" class="lean_decl">BCG.Entropy.exponentialWeight</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.criticalExponent" class="lean_decl">BCG.Entropy.criticalExponent</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialMeasure" class="lean_decl">BCG.Entropy.exponentialMeasure</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For a metric-measure space \((X, d, \mu )\), scale \(s \in \mathbb {R}\), and basepoint \(x \in X\), the exponential weight is \(w_s(x, z) = e^{-s d(x, z)}\), the critical exponent (volume entropy) is </p>
+<div class="displaymath" id="a0000000013">
+  \[ h(X, \mu , x_0) = \inf \left\{ s \in \mathbb {R}\; \middle |\;  \int _X e^{-s d(x_0, z)}\, d\mu (z) {\lt} \infty \right\} , \]
+</div>
+<p> and the exponentially weighted measure is \(\mu _x^s = e^{-s d(x, \cdot )}\mu \). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_critical_exponent_invariance">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.6</span>
+    <span class="theorem_thmtitle">Basepoint invariance of volume entropy</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#thm_critical_exponent_invariance">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000014"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def_critical_exponent">Definition 1.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.continuous_exponentialWeight" class="lean_decl">BCG.Entropy.continuous_exponentialWeight</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_pos" class="lean_decl">BCG.Entropy.exponentialWeight_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_nonneg" class="lean_decl">BCG.Entropy.exponentialWeight_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_self" class="lean_decl">BCG.Entropy.exponentialWeight_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_mul_le" class="lean_decl">BCG.Entropy.exponentialWeight_mul_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_le_mul_exp_dist" class="lean_decl">BCG.Entropy.exponentialWeight_le_mul_exp_dist</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.integrable_exponentialWeight_of_integrable" class="lean_decl">BCG.Entropy.integrable_exponentialWeight_of_integrable</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.integrable_exponentialWeight_iff" class="lean_decl">BCG.Entropy.integrable_exponentialWeight_iff</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.criticalExponent_eq" class="lean_decl">BCG.Entropy.criticalExponent_eq</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For any \(s \ge 0\) and \(x, y, z \in X\), the triangle inequality gives \(e^{-s d(x,z)} \le e^{s d(x,y)} e^{-s d(y,z)}\). Consequently, \(z \mapsto e^{-s d(x,z)}\) is \(\mu \)-integrable if and only if \(z \mapsto e^{-s d(y,z)}\) is \(\mu \)-integrable, and \(h(X, \mu , x) = h(X, \mu , y)\) is independent of the basepoint. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000014">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Mutual domination of the integrands by the constant factor \(e^{s d(x,y)}\).</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0002.html" title="Hyperboloid Busemann Calculus and the Smooth Natural Map"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

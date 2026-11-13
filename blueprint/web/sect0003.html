@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair</title>
+<link rel="next" href="sect0004.html" title="Global Volume-Entropy Inequalities and Master Theorems" />
+<link rel="prev" href="sect0002.html" title="Hyperboloid Busemann Calculus and the Smooth Natural Map" />
+<link rel="up" href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4" />
+<link rel="stylesheet" href="styles/theme-blue.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Spectral Linear Algebra and Volume Entropy</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Hyperboloid Busemann Calculus and the Smooth Natural Map</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">Global Volume-Entropy Inequalities and Master Theorems</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000004">3 General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def_rank_one_invariants">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.1</span>
+    <span class="definition_thmtitle">Rank-one symmetric space invariants and \(\mathbb {K}\)-line projections</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#def_rank_one_invariants">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#def_busemann_operators">Definition 2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType" class="lean_decl">BCG.RankOne.DivisionAlgebraType</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.fiberDim" class="lean_decl">BCG.RankOne.DivisionAlgebraType.fiberDim</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.manifoldDim" class="lean_decl">BCG.RankOne.DivisionAlgebraType.manifoldDim</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneEntropy" class="lean_decl">BCG.RankOne.rankOneEntropy</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection" class="lean_decl">BCG.RankOne.IsKLineProjection</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneJacobiOperator" class="lean_decl">BCG.RankOne.rankOneJacobiOperator</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneSingleHessian" class="lean_decl">BCG.RankOne.rankOneSingleHessian</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneLineCovariance" class="lean_decl">BCG.RankOne.rankOneLineCovariance</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator" class="lean_decl">BCG.RankOne.rankOneHessianOperator</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    For a rank-one symmetric space \(\widetilde{M} = \mathbb {K}\mathbf{H}^m\) (\(\mathbb {K}\in \{ \mathbb {R}, \mathbb {C}, \mathbb {H}, \mathbb {O}\} \), \(d = \dim _\mathbb {R}\mathbb {K}\in \{ 1, 2, 4, 8\} \), real dimension \(n = d m\), curvature \(K \in [-4, -1]\)), the volume entropy is \(h(\mathbb {K}\mathbf{H}^m) = n + d - 2\). For a unit Busemann gradient \(u \in E\) and orthogonal projection \(\pi _u\) onto the \(d\)-dimensional \(\mathbb {K}\)-line \(\mathbb {K}u\), the single-direction Busemann Hessian is \(W(u, \pi _u) = I - (u \otimes u^*) - (\pi _u - u \otimes u^*) = I - 2(u \otimes u^*) + \pi _u\), and the integrated Hessian operator is </p>
+<div class="displaymath" id="a0000000025">
+  \[ W_y = I - 2H + \widehat{H} = (I - H) + (\widehat{H} - H), \qquad \widehat{H} = \sum _{a \in s} w_a \pi _{u_a}. \]
+</div>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_rank_one_hessian_reduction">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.2</span>
+    <span class="theorem_thmtitle">Riccati square identity and implicit differentiation reduction</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#thm_rank_one_hessian_reduction">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#def_rank_one_invariants">Definition 3.1</a></li>
+          
+          <li><a href="sect0001.html#thm_bilinear_cs_det">Theorem 1.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.fiberDim_pos" class="lean_decl">BCG.RankOne.DivisionAlgebraType.fiberDim_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.one_le_fiberDim" class="lean_decl">BCG.RankOne.DivisionAlgebraType.one_le_fiberDim</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_real" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_real</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_complex" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_complex</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_quaternionic" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_quaternionic</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_octonionic_two" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_octonionic_two</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_eq_norm_sq" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_eq_norm_sq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_nonneg" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.comp_selfOuter" class="lean_decl">BCG.RankOne.IsKLineProjection.comp_selfOuter</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.selfOuter_comp" class="lean_decl">BCG.RankOne.IsKLineProjection.selfOuter_comp</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_sub_selfOuter_eq_norm_sq" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_sub_selfOuter_eq_norm_sq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.sub_selfOuter_nonneg" class="lean_decl">BCG.RankOne.IsKLineProjection.sub_selfOuter_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_id_sub_eq_norm_sq" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_id_sub_eq_norm_sq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.id_sub_nonneg" class="lean_decl">BCG.RankOne.IsKLineProjection.id_sub_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneSingleHessian_eq_two_smul_sub_add_id_sub" class="lean_decl">BCG.RankOne.rankOneSingleHessian_eq_two_smul_sub_add_id_sub</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.sq_rankOneSingleHessian_eq_jacobi" class="lean_decl">BCG.RankOne.sq_rankOneSingleHessian_eq_jacobi</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.isSymmetric_rankOneSingleHessian" class="lean_decl">BCG.RankOne.isSymmetric_rankOneSingleHessian</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.inner_rankOneSingleHessian_nonneg" class="lean_decl">BCG.RankOne.inner_rankOneSingleHessian_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.trace_rankOneSingleHessian" class="lean_decl">BCG.RankOne.trace_rankOneSingleHessian</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator_eq_add_sub" class="lean_decl">BCG.RankOne.rankOneHessianOperator_eq_add_sub</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator_self" class="lean_decl">BCG.RankOne.rankOneHessianOperator_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.sum_rankOneSingleHessian_eq_rankOneHessianOperator" class="lean_decl">BCG.RankOne.sum_rankOneSingleHessian_eq_rankOneHessianOperator</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.isSymmetric_rankOneLineCovariance" class="lean_decl">BCG.RankOne.isSymmetric_rankOneLineCovariance</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.trace_rankOneLineCovariance" class="lean_decl">BCG.RankOne.trace_rankOneLineCovariance</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.sub_busemannCovariance_nonneg" class="lean_decl">BCG.RankOne.sub_busemannCovariance_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_cross_le_inv_sqrt_dim_pow_mul_sqrt_det" class="lean_decl">BCG.RankOne.abs_det_cross_le_inv_sqrt_dim_pow_mul_sqrt_det</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_of_hessian_comp_eq_smul" class="lean_decl">BCG.RankOne.abs_det_of_hessian_comp_eq_smul</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_le_div_entropy_pow_of_rankOne_det_ineq" class="lean_decl">BCG.RankOne.abs_det_le_div_entropy_pow_of_rankOne_det_ineq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_le_div_entropy_pow_mul_defect" class="lean_decl">BCG.RankOne.abs_det_le_div_entropy_pow_mul_defect</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.isotropic_of_abs_det_eq_div_entropy_pow" class="lean_decl">BCG.RankOne.isotropic_of_abs_det_eq_div_entropy_pow</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Every \(\mathbb {K}\)-line Busemann Hessian satisfies the Riccati equation \(W(u, \pi _u)^2 = -R(\cdot , u)u = 4(\pi _u - u \otimes u^*) + (I - \pi _u)\) and \(\operatorname {Tr}(W(u, \pi _u)) = n + d - 2\). Moreover, \(\widehat{H} - H \ge 0\) with \(\operatorname {Tr}(\widehat{H}) = d\), and whenever \(W_y \circ D_F = s H_y\), </p>
+<div class="displaymath" id="a0000000027">
+  \[ |\det D_F| \le \left(\frac{s}{\sqrt{n}}\right)^n \frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})}. \]
+</div>
+<p> Consequently, the rank-one determinant inequality \(\frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})} \le \left(\frac{\sqrt{n}}{h_0}\right)^n\) implies \(|\det D_F| \le (s/h_0)^n\), and the quantitative eigenvalue-defect version implies isotropy \(H = \frac{1}{n}\operatorname {id}_E\) upon equality. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000026">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Orthogonal decomposition into \(\mathbb {R}u \oplus (\mathbb {K}u \ominus \mathbb {R}u) \oplus (\mathbb {K}u)^\perp \) with eigenvalues \((0, 2, 1)\), combined with Hölder/Cauchy–Schwarz on \(H_y\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_bcg_lemma_b2">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.3</span>
+    <span class="theorem_thmtitle">Minkowski–Ky Fan log-concavity of the determinant (BCG Lemma B.2)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#thm_bcg_lemma_b2">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#thm_gram_det">Theorem 1.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.finset_prod_le_prod_of_nonneg" class="lean_decl">BCG.RankOne.finset_prod_le_prod_of_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.eq_id_of_isSymmetric_of_inner_eq_norm_sq" class="lean_decl">BCG.RankOne.eq_id_of_isSymmetric_of_inner_eq_norm_sq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.comp_conj_eq_id_of_quad_eq_norm_sq" class="lean_decl">BCG.RankOne.comp_conj_eq_id_of_quad_eq_norm_sq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_rpow_le_det_smul_id_add_smul" class="lean_decl">BCG.RankOne.det_rpow_le_det_smul_id_add_smul</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_weighted_add_ge_rpow_mul_rpow" class="lean_decl">BCG.RankOne.det_weighted_add_ge_rpow_mul_rpow</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_add_smul_ge_of_det_ge" class="lean_decl">BCG.RankOne.det_add_smul_ge_of_det_ge</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_sum_smul_ge_of_forall_det_ge" class="lean_decl">BCG.RankOne.det_sum_smul_ge_of_forall_det_ge</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For any symmetric positive-semidefinite operators \(A, B : E \to _l[\mathbb {R}] E\) on an \(n\)-dimensional real inner product space and weights \(p, q \ge 0\) with \(p + q = 1\), </p>
+<div class="displaymath" id="a0000000029">
+  \[ \det (p \bullet A + q \bullet B) \ge (\det A)^p (\det B)^q. \]
+</div>
+<p> By induction, if \(A_0, \dots , A_{m-1}\) are symmetric positive-semidefinite with \(\det A_r \ge d_0 \ge 0\), then \(\det \left(\frac{1}{m}\sum _{r=0}^{m-1} A_r\right) \ge d_0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000028">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Simultaneous diagonalization via \(A^{-1/2}\) (\(D A D = \operatorname {id}_E\)), reducing to \(\prod _{i=1}^n (p + q \mu _i) \ge \prod _{i=1}^n \mu _i^q\) for the eigenvalues \(\mu _i \ge 0\) of \(D B D\).</p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def_orthogonal_k_structure">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.4</span>
+    <span class="definition_thmtitle">Global orthogonal \(\mathbb {K}\)-structure for associative division algebras</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#def_orthogonal_k_structure">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#def_rank_one_invariants">Definition 3.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.kLineProj" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.kLineProj</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    For the associative division algebras \(\mathbb {K}\in \{ \mathbb {R}, \mathbb {C}, \mathbb {H}\} \) (\(d \in \{ 1, 2, 4\} \)), an orthogonal \(\mathbb {K}\)-structure on \(E \cong T_x \mathbb {K}\mathbf{H}^m\) is a family \(J_0 = \operatorname {id}_E, J_1, \dots , J_{d-1} \in \mathrm{O}(E)\) with \(\langle J_r u, J_s u\rangle = 0\) for \(r \ne s\), inducing the \(\mathbb {K}\)-line projection \(\pi _u = \sum _{r=0}^{d-1} (J_r u) \otimes (J_r u)^*\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_associative_rank_one">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.5</span>
+    <span class="theorem_thmtitle">Associative rank-one determinant inequality and BCG Jacobian bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#thm_associative_rank_one">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#def_orthogonal_k_structure">Definition 3.4</a></li>
+          
+          <li><a href="sect0003.html#thm_bcg_lemma_b2">Theorem 3.3</a></li>
+          
+          <li><a href="sect0003.html#thm_rank_one_hessian_reduction">Theorem 3.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.norm_map" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.norm_map</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.adjoint_comp_self" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.adjoint_comp_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.det_sq_eq_one" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.det_sq_eq_one</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.selfOuter_map_eq_conj" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.selfOuter_map_eq_conj</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.isKLineProjection_kLineProj" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.isKLineProjection_kLineProj</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.sub_busemannCovariance_eq_sum_conjugate" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.sub_busemannCovariance_eq_sum_conjugate</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.det_sub_div_ge_det_of_orthogonal_conjugates" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.det_sub_div_ge_det_of_orthogonal_conjugates</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_id_sub_div_ge_det" class="lean_decl">BCG.RankOne.det_id_sub_div_ge_det</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_rankOneHessianOperator_ge" class="lean_decl">BCG.RankOne.det_rankOneHessianOperator_ge</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.associative_rankOne_det_ineq" class="lean_decl">BCG.RankOne.associative_rankOne_det_ineq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.real_rankOne_det_ineq" class="lean_decl">BCG.RankOne.real_rankOne_det_ineq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.id_sub_busemannCovariance_nonneg" class="lean_decl">BCG.RankOne.id_sub_busemannCovariance_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.associative_rankOne_bcg_jacobian_bound" class="lean_decl">BCG.RankOne.associative_rankOne_bcg_jacobian_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For an associative <span class="ttfamily">IsOrthogonalKStructure d J</span> (\(d \in \{ 2, 4\} \)): </p>
+<ol class="enumerate">
+  <li><p>Property \(\mathrm{(P2)}\) holds globally: \(\widehat{H} - H = \sum _{r \ne 0} J_r H J_r^*\), and hence \(\det ((\widehat{H} - H)/(d - 1)) \ge \det H\) (BCG Lemma B.3). </p>
+</li>
+  <li><p>Combining the log-concavity splitting \(W_y = (n+d-2)\bigl(p\frac{I-H}{n-1} + q\frac{\widehat{H}-H}{d-1}\bigr)\) (\(p = \frac{n-1}{n+d-2}\), \(q = \frac{d-1}{n+d-2}\)) with BCG Lemma B.4 yields </p>
+<div class="displaymath" id="a0000000031">
+  \[ \frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})} \le \left(\frac{\sqrt{n}}{n + d - 2}\right)^n \quad \text{and}\quad |\det D_F| \le \left(\frac{s}{n + d - 2}\right)^n. \]
+</div>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000030">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Applies <a href="sect0003.html#thm_bcg_lemma_b2">theorem 3.3</a> to the \(d - 1\) orthogonal conjugates \(J_r H J_r^*\) (each having determinant \(\det H\)) and combines with the spectral AM–GM bound for \((I - H)/(n - 1)\).</p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def_local_cayley_structure">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">3.6</span>
+    <span class="definition_thmtitle">Local Cayley-line orthogonal structure on \(\mathbb {O}\mathbf{H}^2\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#def_local_cayley_structure">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#def_rank_one_invariants">Definition 3.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    Although non-associativity of the octonions \(\mathbb {O}\) prevents a global <span class="ttfamily">IsOrthogonalKStructure 8 J</span> on \(T_x \mathbb {O}\mathbf{H}^2 \cong \mathbb {R}^{16}\), on each individual \(8\)-dimensional Cayley line \(V = \mathcal{C}ay(v_i) \cong \mathbb {R}^8\) there exist line-dependent orthogonal endomorphisms \(J_{0,v_i} = \operatorname {id}_V, J_{1,v_i}, \dots , J_{7,v_i} \in \mathrm{O}(V)\) generated by octonionic right multiplication (Ruan Lemma 3.2 \(\mathrm{(P2')}\)). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_cayley_block_bounds">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.7</span>
+    <span class="theorem_thmtitle">Ruan’s Cayley block trace identity and \(8\times 8\) block AM–GM bounds</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#thm_cayley_block_bounds">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#def_local_cayley_structure">Definition 3.6</a></li>
+          
+          <li><a href="sect0003.html#thm_associative_rank_one">Theorem 3.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_dim_eq" class="lean_decl">BCG.RankOne.octonionic_dim_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_fiberDim_eq" class="lean_decl">BCG.RankOne.octonionic_fiberDim_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_volumeEntropy_eq" class="lean_decl">BCG.RankOne.octonionic_volumeEntropy_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneEntropy_sixteen_eight" class="lean_decl">BCG.RankOne.rankOneEntropy_sixteen_eight</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_critical_ratio_eq" class="lean_decl">BCG.RankOne.octonionic_critical_ratio_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_critical_ratio_twenty_two_eq" class="lean_decl">BCG.RankOne.octonionic_critical_ratio_twenty_two_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure.adjoint_comp_self" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure.adjoint_comp_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure.trace_conj_eq" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure.trace_conj_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure.trace_cayleyLine_eq_eigenvalue" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure.trace_cayleyLine_eq_eigenvalue</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_lambda_sub_cayleyBlock_ge" class="lean_decl">BCG.RankOne.det_lambda_sub_cayleyBlock_ge</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_lambda_sub_cayleyBlock_eight_ge" class="lean_decl">BCG.RankOne.det_lambda_sub_cayleyBlock_eight_ge</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    On the \(16\)-dimensional Cayley hyperbolic plane \(\mathbb {O}\mathbf{H}^2\) (\(n = 16\), \(d = 8\), \(h_0 = 22\), critical ratio \(\sqrt{16}/22 = 2/11\)): </p>
+<ol class="enumerate">
+  <li><p>By Ruan Lemma 3.2 \(\mathrm{(P1')}\)–\(\mathrm{(P2')}\), on any \(8\)-dimensional Cayley line \(V\) where \(\widehat{H}|_V = \lambda \operatorname {id}_V\) and \(\lambda \| x\| ^2 = \sum _{r=0}^7 \langle J_r^* x, A(J_r^* x)\rangle \), polarization and cyclic trace invariance yield \(\operatorname {Tr}(A) = \lambda \) (and \(\operatorname {Tr}(B) = \mu \), \(\lambda + \mu = 1\)). </p>
+</li>
+  <li><p>Rescaling \(A' = \lambda ^{-1} A\) on \(V\) (\(\dim _\mathbb {R}V = 8\)) and applying <span class="ttfamily">det_id_sub_div_ge_det</span> proves Ruan’s Eq.&#160;(28): </p>
+<div class="displaymath" id="a0000000033">
+  \[ \det (\lambda I_8 - A) \ge 7^8 \det A \qquad \text{and}\qquad \det (\mu I_8 - B) \ge 7^8 \det B. \]
+</div>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000032">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Polarizes \(\sum _{r=0}^7 J_r A J_r^* = \lambda \operatorname {id}_V\), takes traces using \(\operatorname {Tr}(J_r A J_r^*) = \operatorname {Tr}(A)\), and applies the \(s = 1\) spectral AM–GM theorem in dimension \(d = 8\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_ruan_cases_1_and_2">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.8</span>
+    <span class="theorem_thmtitle">Ruan’s Case 1 Schur monotonicity and Case 2 reverse AM–GM interpolation</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#thm_ruan_cases_1_and_2">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#thm_cayley_block_bounds">Theorem 3.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_schur_monotone_one_dim" class="lean_decl">BCG.RankOne.cayley_schur_monotone_one_dim</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_schur_monotone_finset_prod" class="lean_decl">BCG.RankOne.cayley_schur_monotone_finset_prod</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_case1_det_bound" class="lean_decl">BCG.RankOne.cayley_case1_det_bound</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.reverse_amgm_eight_dim" class="lean_decl">BCG.RankOne.reverse_amgm_eight_dim</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_alpha_parameter_bounds" class="lean_decl">BCG.RankOne.octonionic_alpha_parameter_bounds</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_case2_step2_endpoint_bound" class="lean_decl">BCG.RankOne.cayley_case2_step2_endpoint_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    In Ruan’s two-case analysis of the \(8 \times 8\) block decomposition \(H = \begin{pmatrix}  A 
+
+&  C 
+
+\\ C^* 
+
+&  B 
+
+\end{pmatrix}\): </p>
+<ol class="enumerate">
+  <li><p><b class="bfseries">Case 1 (\(2\lambda _1 \le \lambda \), \(2\mu _1 \le \mu \), \(\alpha = 0\)):</b> For \(0 \le w_i \le h_{2,i} \le h_{1,i}\), \(\prod _i (h_{2,i} - w_i)\prod _i h_{1,i} \le \prod _i (h_{1,i} - w_i)\prod _i h_{2,i}\) (Ruan Lemma 3.5). Combined with \(\det (\lambda I_8 - A) \ge 7^8 \det A\) and \(\det (\mu I_8 - B) \ge 7^8 \det B\), Schur complement factorization yields \(\det (\widehat{H} - H) \ge 7^{16} \det H\). </p>
+</li>
+  <li><p><b class="bfseries">Case 2 (\(2\mu _1 {\gt} \mu \) or \(2\lambda _1 {\gt} \lambda \), \(\alpha \in [1 - \sqrt{2/3}, 0.266]\)):</b> Every non-negative \(x : \mathrm{Fin}\, 8 \to \mathbb {R}\) satisfies the \(8\)-dimensional reverse AM–GM inequality \(7^7 \prod _{i=0}^7 x_i \le (\sum _{i=0}^7 x_i - x_0)^7 x_0\) (Ruan Lemma 3.6), and \(t = 1 - (1 - \alpha )^2\) satisfies \(t^2(1 - t) \ge 7/64\), yielding the cubic endpoint bound \(\frac{7}{64}\mu (\mu - \mu _1)\mu _1 \le (\mu - t\mu )(t\mu )^2\). </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000034">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Pointwise algebraic monotonicity for Case 1 and \(7\)-variable weighted AM–GM on \(\mathrm{Fin}\, 8 \setminus \{ 0\} \) for Case 2.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_ruan_prop_3_1">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.9</span>
+    <span class="theorem_thmtitle">Ruan’s perturbed log-concavity trick and Proposition 3.1 on \(\mathbb {O}\mathbf{H}^2\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#thm_ruan_prop_3_1">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#thm_ruan_cases_1_and_2">Theorem 3.8</a></li>
+          
+          <li><a href="sect0003.html#thm_bcg_lemma_b2">Theorem 3.3</a></li>
+          
+          <li><a href="sect0003.html#thm_rank_one_hessian_reduction">Theorem 3.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator_eq_perturbed_add" class="lean_decl">BCG.RankOne.rankOneHessianOperator_eq_perturbed_add</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_rankOneHessianOperator_perturbed_ge" class="lean_decl">BCG.RankOne.det_rankOneHessianOperator_perturbed_ge</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.perturbed_rankOne_det_ineq" class="lean_decl">BCG.RankOne.perturbed_rankOne_det_ineq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_rankOne_det_ineq" class="lean_decl">BCG.RankOne.octonionic_rankOne_det_ineq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound" class="lean_decl">BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound_with_defect" class="lean_decl">BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound_with_defect</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For any off-diagonal perturbation operator \(U_\alpha : E \to _l[\mathbb {R}] E\) such that \(I - H - U_\alpha \ge 0\) and \(\widehat{H} - H + U_\alpha \ge 0\), the Hessian operator splits as \(I - 2H + \widehat{H} = (I - H - U_\alpha ) + (\widehat{H} - H + U_\alpha )\) and satisfies Ruan’s perturbed log-concavity bound (Eq.&#160;(22)): </p>
+<div class="displaymath" id="a0000000036">
+  \[ \det (I - 2H + \widehat{H}) \ge 22^{16} \det \left(\frac{I - H - U_\alpha }{15}\right)^{15/22} \det \left(\frac{\widehat{H} - H + U_\alpha }{7}\right)^{7/22}. \]
+</div>
+<p> Combined with Ruan Lemma 3.4 (Eqs.&#160;(21) and&#160;(23)), this proves Proposition 3.1 and Corollary 3.8 on \(\mathbb {O}\mathbf{H}^2\): </p>
+<div class="displaymath" id="a0000000037">
+  \[ \frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})} \le \left(\frac{\sqrt{16}}{22}\right)^{16} = \left(\frac{2}{11}\right)^{16} \quad \text{and}\quad |\det D_F| \le \left(\frac{s}{22}\right)^{16}. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Applies <a href="sect0003.html#thm_bcg_lemma_b2">theorem 3.3</a> with \(p = 15/22, q = 7/22\) to \((I - H - U_\alpha )/15\) and \((\widehat{H} - H + U_\alpha )/7\), then combines exponents \(\frac{4}{15}\cdot \frac{15}{22} + \frac{7}{22} = \frac{11}{22} = \frac{1}{2}\).</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0002.html" title="Hyperboloid Busemann Calculus and the Smooth Natural Map"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0004.html" title="Global Volume-Entropy Inequalities and Master Theorems"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

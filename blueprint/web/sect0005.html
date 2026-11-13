@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Non-Smooth Metric-Measure, Alexandrov, and Non-Collapsed RCD Spaces</title>
+<link rel="prev" href="sect0004.html" title="Global Volume-Entropy Inequalities and Master Theorems" />
+<link rel="up" href="index.html" title="The Besson–Courtois–Gallot Barycenter Method, Ruan’s Octonionic Repair, and Non-Collapsed RCD Entropy-Degree Rigidity in Lean 4" />
+<link rel="stylesheet" href="styles/theme-blue.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">The Besson–Courtois–Gallot Barycenter Method, Ruan’s Octonionic Repair, and Non-Collapsed RCD Entropy-Degree Rigidity in Lean 4</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Spectral Linear Algebra and Volume Entropy</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Hyperboloid Busemann Calculus and the Smooth Natural Map</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">Global Volume-Entropy Inequalities and Master Theorems</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0005.html"><span class="toc_ref">5</span> <span class="toc_entry">Non-Smooth Metric-Measure, Alexandrov, and Non-Collapsed RCD Spaces</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000006">5 Non-Smooth Metric-Measure, Alexandrov, and Non-Collapsed RCD Spaces</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_metric_measure_entropy">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.1</span>
+    <span class="theorem_thmtitle">Metric-measure volume entropy, Bishop–Gromov growth, and scale-invariant entropy-volume product</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_metric_measure_entropy">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000045"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def_critical_exponent">Definition 1.5</a></li>
+          
+          <li><a href="sect0001.html#thm_critical_exponent_invariance">Theorem 1.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.ballVolumeLogRate" class="lean_decl">BCG.MetricMeasure.ballVolumeLogRate</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.ball_subset_ball_add_dist" class="lean_decl">BCG.MetricMeasure.ball_subset_ball_add_dist</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.measure_ball_le_measure_ball_add_dist" class="lean_decl">BCG.MetricMeasure.measure_ball_le_measure_ball_add_dist</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.toReal_measure_ball_le_add_dist" class="lean_decl">BCG.MetricMeasure.toReal_measure_ball_le_add_dist</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.HasExponentialVolumeGrowth" class="lean_decl">BCG.MetricMeasure.HasExponentialVolumeGrowth</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.HasExponentialVolumeGrowth.of_basepoint" class="lean_decl">BCG.MetricMeasure.HasExponentialVolumeGrowth.of_basepoint</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.HasExponentialVolumeGrowth.ballVolumeLogRate_le" class="lean_decl">BCG.MetricMeasure.HasExponentialVolumeGrowth.ballVolumeLogRate_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.hyperbolicSn_le_mul_exp" class="lean_decl">BCG.MetricMeasure.hyperbolicSn_le_mul_exp</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.hyperbolicDensity_le_pow_mul_exp" class="lean_decl">BCG.MetricMeasure.hyperbolicDensity_le_pow_mul_exp</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.exponentialWeight_isometry" class="lean_decl">BCG.MetricMeasure.exponentialWeight_isometry</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.normalizedExponentialWeight" class="lean_decl">BCG.MetricMeasure.normalizedExponentialWeight</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.normalizedExponentialWeight_pos" class="lean_decl">BCG.MetricMeasure.normalizedExponentialWeight_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.normalizedExponentialWeight_nonneg" class="lean_decl">BCG.MetricMeasure.normalizedExponentialWeight_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sum_normalizedExponentialWeight_eq_one" class="lean_decl">BCG.MetricMeasure.sum_normalizedExponentialWeight_eq_one</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.normalizedExponentialWeight_equivariant" class="lean_decl">BCG.MetricMeasure.normalizedExponentialWeight_equivariant</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.entropyVolumeProduct" class="lean_decl">BCG.MetricMeasure.entropyVolumeProduct</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.exp_rescaled_dist_eq" class="lean_decl">BCG.MetricMeasure.exp_rescaled_dist_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.logRate_homothetic_scaling" class="lean_decl">BCG.MetricMeasure.logRate_homothetic_scaling</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.entropyVolumeProduct_homothetic_invariance" class="lean_decl">BCG.MetricMeasure.entropyVolumeProduct_homothetic_invariance</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.homothetic_normalization" class="lean_decl">BCG.MetricMeasure.homothetic_normalization</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.finite_cover_entropy_degree_reduction" class="lean_decl">BCG.MetricMeasure.finite_cover_entropy_degree_reduction</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    On a metric-measure universal cover \((\widetilde{X}, \mathsf{d}, \mu )\), the logarithmic ball-volume rate \(\frac{1}{R}\log \mu (B(x_0, R))\) is basepoint-independent, bounded under \(\mathsf{RCD}(-(N-1)\kappa ^2, N)\) Bishop–Gromov comparison by the hyperbolic growth rate \((N-1)\kappa \), and yields \(\pi _1(X)\)-equivariant normalized exponential weights \(w_s(x, z)\). Moreover, the entropy-volume product \(h(\widetilde{X})^N \mathcal{H}^N(X)\) is strictly invariant under homothetic metric rescaling \((\mathsf{d}, \mathcal{H}^N) \mapsto (\lambda \mathsf{d}, \lambda ^N \mathcal{H}^N)\), and the entropy-degree inequality reduces across any \(k\)-sheeted orientation cover \(\widehat{X} \to X\) via \(|\deg (\hat{f})| = k|\deg (f)|\) and \(\mathcal{H}^N(\widehat{X}) = k\mathcal{H}^N(X)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000045">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Triangle-inequality ball inclusion \(B(x_1, R) \subseteq B(x_0, R + \mathsf{d}(x_0, x_1))\), direct hyperbolic density estimate \(\sinh (\kappa r)^{N-1} \le (2\kappa )^{-(N-1)} e^{(N-1)\kappa r}\), and scaling laws \(h_\lambda = \lambda ^{-1}h\), \(V_\lambda = \lambda ^N V\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_sturm_barycenter">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.2</span>
+    <span class="theorem_thmtitle">Sturm barycenter functional, \(\mathrm{CAT}(0)\) variance inequality, and natural map equivariance</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_sturm_barycenter">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000046"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#thm_metric_measure_entropy">Theorem 5.1</a></li>
+          
+          <li><a href="sect0002.html#thm_hyperboloid_barycenter_props">Theorem 2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmSummand" class="lean_decl">BCG.MetricMeasure.sturmSummand</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmSummand_basepoint_self" class="lean_decl">BCG.MetricMeasure.sturmSummand_basepoint_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmSummand_sub_sturmSummand" class="lean_decl">BCG.MetricMeasure.sturmSummand_sub_sturmSummand</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.abs_sturmSummand_le" class="lean_decl">BCG.MetricMeasure.abs_sturmSummand_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional" class="lean_decl">BCG.MetricMeasure.sturmFunctional</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_basepoint_self" class="lean_decl">BCG.MetricMeasure.sturmFunctional_basepoint_self</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_eq_two_mul_metricEnergy_sub" class="lean_decl">BCG.MetricMeasure.sturmFunctional_eq_two_mul_metricEnergy_sub</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_sub_basepoint" class="lean_decl">BCG.MetricMeasure.sturmFunctional_sub_basepoint</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_min_iff_basepoint" class="lean_decl">BCG.MetricMeasure.sturmFunctional_min_iff_basepoint</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_min_iff_metricEnergy" class="lean_decl">BCG.MetricMeasure.sturmFunctional_min_iff_metricEnergy</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.continuous_sturmFunctional" class="lean_decl">BCG.MetricMeasure.continuous_sturmFunctional</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.abs_sturmFunctional_le" class="lean_decl">BCG.MetricMeasure.abs_sturmFunctional_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.IsCATZeroMidpoint" class="lean_decl">BCG.MetricMeasure.IsCATZeroMidpoint</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.IsCATZeroMidpoint.strictMidJensenOn_halfSqDist" class="lean_decl">BCG.MetricMeasure.IsCATZeroMidpoint.strictMidJensenOn_halfSqDist</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_midpoint_le" class="lean_decl">BCG.MetricMeasure.sturmFunctional_midpoint_le</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturm_variance_inequality" class="lean_decl">BCG.MetricMeasure.sturm_variance_inequality</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_unique_min" class="lean_decl">BCG.MetricMeasure.sturmFunctional_unique_min</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmFunctional_isometry" class="lean_decl">BCG.MetricMeasure.sturmFunctional_isometry</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmBarycenter_equivariant" class="lean_decl">BCG.MetricMeasure.sturmBarycenter_equivariant</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.sturmNaturalMap_equivariant" class="lean_decl">BCG.MetricMeasure.sturmNaturalMap_equivariant</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyLift" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyLift</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyLift_zero" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyLift_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyLift_one" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyLift_one</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyLift_equivariant" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyLift_equivariant</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyQuotient" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyQuotient</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyQuotient_zero" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyQuotient_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.MetricMeasure.geodesicHomotopyQuotient_one" class="lean_decl">BCG.MetricMeasure.geodesicHomotopyQuotient_one</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For a probability weight \(w\) on a metric space \((Y, \mathsf{d}_Y)\), Sturm’s renormalization functional \(\mathcal{B}_w^{y_0}(y) = \sum _i w_i (\mathsf{d}_Y^2(y, z_i) - \mathsf{d}_Y^2(y_0, z_i))\) satisfies the \(1\)-Lipschitz summand bound \(|\mathsf{d}_Y^2(y, z) - \mathsf{d}_Y^2(y_0, z)| \le \mathsf{d}_Y(y, y_0)(\mathsf{d}_Y(y, z) + \mathsf{d}_Y(y_0, z))\) and basepoint shift \(\mathcal{B}_w^{y_1}(y) - \mathcal{B}_w^{y_0}(y) = -\mathcal{B}_w^{y_0}(y_1)\). On a \(\mathrm{CAT}(0)\) space, \(\mathcal{B}_w^{y_0}\) satisfies the midpoint deficit bound \(\mathcal{B}_w^{y_0}(m) \le \frac{1}{2}\mathcal{B}_w^{y_0}(y_1) + \frac{1}{2}\mathcal{B}_w^{y_0}(y_2) - \frac{1}{4}\mathsf{d}_Y(y_1, y_2)^2\), Sturm’s variance inequality \(\mathsf{d}_Y(y, \bar{y})^2 \le \mathcal{B}_w^{y_0}(y) - \mathcal{B}_w^{y_0}(\bar{y})\), unique minimization, \(\rho \)-equivariance of \(\widetilde{F}_s = \mathrm{bar}\circ \nu _x^s\), and descent of the geodesic homotopy \(H_s(x, t)\) to \(X \times [0, 1] \to Y\) (Suárez-Serrato (2026), Lemma 3.1). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000046">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Summand linearity of \(\mathrm{CAT}(0)\) midpoint convexity and uniqueness of minimizers yields isometry and \(\pi _1(X)\)-equivariance.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_ncrcd_structure">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.3</span>
+    <span class="theorem_thmtitle">De Philippis–Gigli non-collapsed \(\mathsf{RCD}(K, N)\) structure and codimension-two singular strata</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_ncrcd_structure">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000047"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.singularSet" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.singularSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.isClosed_singularSet" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.isClosed_singularSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.singularSet_subset_compl_regularSet" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.singularSet_subset_compl_regularSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.singularSet_subset_singularStratum_sub_one" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.singularSet_subset_singularStratum_sub_one</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.hausdorffMeasure_singularSet_eq_zero" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.hausdorffMeasure_singularSet_eq_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.hausdorffMeasure_regularSet_eq_univ" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.hausdorffMeasure_regularSet_eq_univ</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.hausdorffMeasure_manifoldSet_eq_univ" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.hausdorffMeasure_manifoldSet_eq_univ</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.NonCollapsedRCDStructure.density_lt_one_of_not_mem_regularSet" class="lean_decl">BCG.RCD.NonCollapsedRCDStructure.density_lt_one_of_not_mem_regularSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ClosedNonCollapsedRCD" class="lean_decl">BCG.RCD.ClosedNonCollapsedRCD</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ClosedNonCollapsedRCD.totalVolume" class="lean_decl">BCG.RCD.ClosedNonCollapsedRCD.totalVolume</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ClosedNonCollapsedRCD.totalVolume_pos" class="lean_decl">BCG.RCD.ClosedNonCollapsedRCD.totalVolume_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ClosedNonCollapsedRCD.singularSet_subset_singularStratum_sub_two" class="lean_decl">BCG.RCD.ClosedNonCollapsedRCD.singularSet_subset_singularStratum_sub_two</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ClosedNonCollapsedRCD.hausdorffMeasureCodimOne_compl_regularSet_eq_zero" class="lean_decl">BCG.RCD.ClosedNonCollapsedRCD.hausdorffMeasureCodimOne_compl_regularSet_eq_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ClosedNonCollapsedRCD.hausdorffMeasureCodimOne_singularSet_eq_zero" class="lean_decl">BCG.RCD.ClosedNonCollapsedRCD.hausdorffMeasureCodimOne_singularSet_eq_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.AlexandrovSpaceWithoutBoundary" class="lean_decl">BCG.RCD.AlexandrovSpaceWithoutBoundary</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.AlexandrovSpaceWithoutBoundary.hausdorffMeasureCodimOne_singularSet_eq_zero" class="lean_decl">BCG.RCD.AlexandrovSpaceWithoutBoundary.hausdorffMeasureCodimOne_singularSet_eq_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \((X, \mathsf{d}, \mathcal{H}^N)\) be a closed non-collapsed \(\mathsf{RCD}(K, N)\) space (or a closed \(N\)-dimensional Alexandrov space of curvature \(\ge \kappa \) without boundary, which is \(\mathsf{RCD}((N-1)\kappa , N)\)). The regular set \(\mathcal{R}_N(X)\) and open topological manifold stratum \(U_X \subseteq X\) have full \(\mathcal{H}^N\)-measure, the singular set \(\Sigma (X) = X \setminus U_X \subseteq \mathcal{S}^{N-2}(X)\) is closed with \(\mathcal{H}^{N-1}(\Sigma (X)) = \mathcal{H}^{N-1}(X \setminus \mathcal{R}_N(X)) = 0\), and every non-regular point \(x \notin \mathcal{R}_N(X)\) satisfies the strict Bishop–Gromov density gap \(\Theta ^N(\mathcal{H}^N, x) {\lt} 1\) (Suárez-Serrato (2026), Lemma 2.1 &amp; Remark 4.3). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000047">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Outer-measure monotonicity along \(\Sigma (X) \subseteq X \setminus \mathcal{R}_N(X) \subseteq \mathcal{S}^{N-2}(X)\) and subadditivity \(\mathcal{H}^N(\mathrm{univ}) \le \mathcal{H}^N(A) + \mathcal{H}^N(A^c)\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_cmmp_orientation_current">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.4</span>
+    <span class="theorem_thmtitle">Cavallucci–Marti–Mondino–Perales orientation current \(T \in \mathbf{I}_N(X)\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_cmmp_orientation_current">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000048"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#thm_ncrcd_structure">Theorem 5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.MetricCurrentOps" class="lean_decl">BCG.RCD.MetricCurrentOps</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.FundamentalManifoldCurrent" class="lean_decl">BCG.RCD.FundamentalManifoldCurrent</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.FundamentalManifoldCurrent.manifoldVolume" class="lean_decl">BCG.RCD.FundamentalManifoldCurrent.manifoldVolume</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.FundamentalManifoldCurrent.manifoldVolume_pos" class="lean_decl">BCG.RCD.FundamentalManifoldCurrent.manifoldVolume_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.FundamentalManifoldCurrent.totalMass_zsmul_eq" class="lean_decl">BCG.RCD.FundamentalManifoldCurrent.totalMass_zsmul_eq</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.FundamentalManifoldCurrent.totalMass_fundamentalClass" class="lean_decl">BCG.RCD.FundamentalManifoldCurrent.totalMass_fundamentalClass</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.FundamentalManifoldCurrent.zsmul_fundamentalClass_inj" class="lean_decl">BCG.RCD.FundamentalManifoldCurrent.zsmul_fundamentalClass_inj</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.CMMPOrientationCurrent" class="lean_decl">BCG.RCD.CMMPOrientationCurrent</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.CMMPOrientationCurrent.totalMass_orientationCurrent" class="lean_decl">BCG.RCD.CMMPOrientationCurrent.totalMass_orientationCurrent</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.CMMPOrientationCurrent.totalMass_orientationCurrent_pos" class="lean_decl">BCG.RCD.CMMPOrientationCurrent.totalMass_orientationCurrent_pos</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.CMMPOrientationCurrent.massMeasure_compl_regularSet_eq_zero" class="lean_decl">BCG.RCD.CMMPOrientationCurrent.massMeasure_compl_regularSet_eq_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.CMMPOrientationCurrent.massMeasure_singularSet_eq_zero" class="lean_decl">BCG.RCD.CMMPOrientationCurrent.massMeasure_singularSet_eq_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    On a closed orientable non-collapsed \(\mathsf{RCD}(K, N)\) space \(X\), the Cavallucci–Marti–Mondino–Perales orientation theorem (2026) (Suárez-Serrato (2026), Theorem 2.2) provides an Ambrosio–Kirchheim integer rectifiable current \(T \in \mathbf{I}_N(X)\) with \(\partial T = 0\), \(\| T\|  = \mathcal{H}^N\), total mass \(\mathbf{M}(T) = \mathcal{H}^N(X) {\gt} 0\), and \(\| T\| (\Sigma (X)) = \| T\| (X \setminus \mathcal{R}_N(X)) = 0\). On the smooth closed oriented Riemannian target \(Y\), the fundamental current \([\! [Y ]\! ]\in \mathbf{I}_N(Y)\) has total mass \(\mathbf{M}([\! [Y ]\! ]) = \mathcal{H}^N(Y) {\gt} 0\), making \(d \mapsto d[\! [Y ]\! ]\) injective on \(\mathbb {Z}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000048">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Identification \(\| T\|  = \mathcal{H}^N\) combined with <a href="sect0005.html#thm_ncrcd_structure">theorem 5.3</a> and integer-multiplicity mass homogeneity \(\mathbf{M}(d[\! [Y ]\! ]) = |d|\mathcal{H}^N(Y)\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_rcd_lipschitz_degree">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.5</span>
+    <span class="theorem_thmtitle">Regular values, Lipschitz degree \(f_\#  T = \deg (f)[\! [Y ]\! ]\), and Wenger homotopy invariance</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_rcd_lipschitz_degree">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000049"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#thm_cmmp_orientation_current">Theorem 5.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.singularValueImage" class="lean_decl">BCG.RCD.singularValueImage</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.regularValueSet" class="lean_decl">BCG.RCD.regularValueSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.regularDomainSet" class="lean_decl">BCG.RCD.regularDomainSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.regularDomainSet_subset_manifoldSet" class="lean_decl">BCG.RCD.regularDomainSet_subset_manifoldSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.isCompact_singularValueImage" class="lean_decl">BCG.RCD.isCompact_singularValueImage</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.isClosed_singularValueImage" class="lean_decl">BCG.RCD.isClosed_singularValueImage</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.isOpen_regularValueSet" class="lean_decl">BCG.RCD.isOpen_regularValueSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.isOpen_regularDomainSet" class="lean_decl">BCG.RCD.isOpen_regularDomainSet</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.hausdorffMeasureCodimOne_singularValueImage_eq_zero" class="lean_decl">BCG.RCD.hausdorffMeasureCodimOne_singularValueImage_eq_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.volumeMeasure_regularValueSet_eq_univ" class="lean_decl">BCG.RCD.volumeMeasure_regularValueSet_eq_univ</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.LipschitzDegreePushforward" class="lean_decl">BCG.RCD.LipschitzDegreePushforward</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.LipschitzDegreePushforward.totalMass_pushforward_eq_abs_degree_mul_volume" class="lean_decl">BCG.RCD.LipschitzDegreePushforward.totalMass_pushforward_eq_abs_degree_mul_volume</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.LipschitzDegreePushforward.degree_eq_inv_volume_mul_integral" class="lean_decl">BCG.RCD.LipschitzDegreePushforward.degree_eq_inv_volume_mul_integral</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.LipschitzDegreePushforward.abs_degree_mul_volume_le_lip_pow_mul_volume" class="lean_decl">BCG.RCD.LipschitzDegreePushforward.abs_degree_mul_volume_le_lip_pow_mul_volume</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.LipschitzDegreePushforward.manifoldVolume_le_totalVolume_of_one_lipschitz" class="lean_decl">BCG.RCD.LipschitzDegreePushforward.manifoldVolume_le_totalVolume_of_one_lipschitz</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.wenger_homotopy_invariance" class="lean_decl">BCG.RCD.wenger_homotopy_invariance</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.surjective_of_degree_ne_zero" class="lean_decl">BCG.RCD.surjective_of_degree_ne_zero</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.degree_comp_of_pushforward" class="lean_decl">BCG.RCD.degree_comp_of_pushforward</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.homologicalIndex_dvd_natAbs_degree" class="lean_decl">BCG.RCD.homologicalIndex_dvd_natAbs_degree</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.homologicalIndex_le_natAbs_degree" class="lean_decl">BCG.RCD.homologicalIndex_le_natAbs_degree</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For a Lipschitz map \(f : X \to Y\), the regular-value set \(V_Y = Y \setminus f(\Sigma (X))\) is open and has full \(\mathcal{H}^N\)-measure in \(Y\) with \(\mathcal{H}^{N-1}(f(\Sigma (X))) = 0\) (Lemma 2.3). The pushforward \(f_\#  T = \deg (f)[\! [Y ]\! ]\) defines a unique integer degree \(\deg (f) \in \mathbb {Z}\) satisfying \(\mathbf{M}(f_\#  T) = |\deg (f)|\mathcal{H}^N(Y)\), the local degree formula \(\deg (f) = \mathcal{H}^N(Y)^{-1}\int _Y \deg (f; U_X, y)\, d\mathcal{H}^N(y)\) (Proposition 2.5), Wenger cone homotopy invariance \(\deg (f_0) = \deg (f_1)\) via \(\partial H_\# ([\! [0, 1]\! ]\times T) = f_{1\# }T - f_{0\# }T = 0\) (Lemma 2.6), surjectivity when \(\deg (f) \ne 0\) (Corollary 2.8), and Mitsuishi’s homological-index bound \(\mathrm{ind}_H(f) \le |\deg (f)|\) (Remark 4.2). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000049">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Compactness of \(\Sigma (X)\) implies \(f(\Sigma (X))\) is compact and closed; Flat Norm zero \(\mathbf{F}((f_1)_\#  T - (f_0)_\#  T) = 0\) forces \(\deg (f_0) = \deg (f_1)\) by injectivity of \(d \mapsto d[\! [Y ]\! ]\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_rcd_mass_jacobian">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.6</span>
+    <span class="theorem_thmtitle">Approximate differential, pushforward mass-Jacobian inequality, and pointwise entropy-Jacobian bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_rcd_mass_jacobian">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000050"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#thm_rcd_lipschitz_degree">Theorem 5.5</a></li>
+          
+          <li><a href="sect0003.html#thm_rank_one_hessian_reduction">Theorem 3.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.metricJacobian" class="lean_decl">BCG.RCD.metricJacobian</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.metricJacobian_nonneg" class="lean_decl">BCG.RCD.metricJacobian_nonneg</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.abs_sum_orientationSign_le_card" class="lean_decl">BCG.RCD.abs_sum_orientationSign_le_card</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.pushforward_totalMass_le_integral_jacobian" class="lean_decl">BCG.RCD.pushforward_totalMass_le_integral_jacobian</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.degree_mul_volume_le_integral_jacobian" class="lean_decl">BCG.RCD.degree_mul_volume_le_integral_jacobian</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.rcd_approximate_jacobian_bound" class="lean_decl">BCG.RCD.rcd_approximate_jacobian_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    On the full-measure regular set \(\mathcal{R}_N(X)\) where \(\mathrm{Tan}(X, x) \cong \mathbb {R}^N\), the approximate linear differential \(d_x F_s : \mathbb {R}^N \to \mathbb {R}^N\) has metric Jacobian \(\mathrm{Jac}_x F_s = |\det (d_x F_s)|\) (Lemma 3.2). Since the orientation-sign sum on each regular fiber satisfies \(|\sum _{x \in F_s^{-1}(y) \cap \mathcal{R}_N(X)} \mathrm{sign}(\det d_x F_s)| \le \mathrm{mult}_{F_s}(y)\), the rectifiable area formula yields </p>
+<div class="displaymath" id="a0000000051">
+  \[ |\deg (f)| \,  \mathcal{H}^N(Y) = \mathbf{M}(F_{s\# } T) \le \int _Y \mathrm{mult}_{F_s}(y)\, d\mathcal{H}^N(y) = \int _X \mathrm{Jac}_x F_s \,  d\mathcal{H}^N(x) \]
+</div>
+<p> (Lemma 3.3), and the rank-one Busemann Hessian estimate gives \(\mathrm{Jac}_x F_s \le (s / h(\widetilde{Y}))^N\) \(\mathcal{H}^N\)-almost everywhere on \(X\) (Proposition 3.4). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000050">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Finite-fiber triangle inequality \(|\sum \sigma (x)| \le \#  S\), Bochner integral monotonicity on \((Y, \mathcal{H}^N)\), and <a href="sect0003.html#thm_rank_one_hessian_reduction">theorem 3.2</a> on \(\mathrm{Tan}(X, x) \cong \mathbb {R}^N\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_rcd_entropy_degree_rigidity">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.7</span>
+    <span class="theorem_thmtitle">Master Non-Collapsed \(\mathsf{RCD}(K, N)\) and Alexandrov Entropy-Degree Rigidity Theorem</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm_rcd_entropy_degree_rigidity">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000052"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#thm_sturm_barycenter">Theorem 5.2</a></li>
+          
+          <li><a href="sect0005.html#thm_rcd_mass_jacobian">Theorem 5.6</a></li>
+          
+          <li><a href="sect0004.html#thm_bcg_global_integration">Theorem 4.1</a></li>
+          
+          <li><a href="sect0004.html#thm_master_rank_one_bcg">Theorem 4.3</a></li>
+          
+          <li><a href="sect0002.html#thm_hyperbolic_rigidity">Theorem 2.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.rcd_entropy_degree_inequality" class="lean_decl">BCG.RCD.rcd_entropy_degree_inequality</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.rcd_rankOne_entropy_degree_theorem" class="lean_decl">BCG.RCD.rcd_rankOne_entropy_degree_theorem</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.rcd_homological_index_entropy_inequality" class="lean_decl">BCG.RCD.rcd_homological_index_entropy_inequality</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.alexandrov_entropy_degree_inequality" class="lean_decl">BCG.RCD.alexandrov_entropy_degree_inequality</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.ae_jacobian_eq_one_of_normalized_equality" class="lean_decl">BCG.RCD.ae_jacobian_eq_one_of_normalized_equality</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/BCG-formal/find/#doc/BCG.RCD.rcd_entropy_degree_equality_rigidity" class="lean_decl">BCG.RCD.rcd_entropy_degree_equality_rigidity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Let \((X, \mathsf{d}, \mathcal{H}^N)\) be a closed orientable non-collapsed \(\mathsf{RCD}(K, N)\) space (or a closed orientable \(N\)-dimensional Alexandrov space without boundary, Remark 4.3) and \(f : X \to Y\) a continuous map to a closed oriented negatively curved locally symmetric \(N\)-manifold \((Y, g_Y)\). Then: </p>
+<div class="displaymath" id="a0000000053">
+  \[ |\deg (f)| \,  h(\widetilde{Y})^N \,  \mathcal{H}^N(Y) \le h(\overline{X})^N \,  \mathcal{H}^N(X). \]
+</div>
+<p> Furthermore, if \(\deg (f) \ne 0\) and equality holds, then after homothetic normalization \(h(\overline{X}) = h(\widetilde{Y})\) and passing to the \(|\deg (f)|\)-sheeted cover \(\widehat{Y} \to Y\) where \(|\deg (\hat{F}_\infty )| = 1\) and \(\mathcal{H}^N(X) = \mathcal{H}^N(\widehat{Y})\), the \(1\)-Lipschitz limit map \(\hat{F}_\infty : X \to \widehat{Y}\) satisfies \(\mathrm{Jac}_x \hat{F}_\infty = 1\) and \(d_x \hat{F}_\infty \in O(N)\) \(\mathcal{H}^N\)-a.e., promotes to an isometric homeomorphism \(X \to \widehat{Y}\), and forces every point of \(X\) to be regular (\(\Sigma (X) = X \setminus \mathcal{R}_N(X) = \emptyset \)), so \(X\) is a smooth Riemannian manifold isometric to \(\widehat{Y}\) and \(f\) is homotopic to a Riemannian covering of degree \(|\deg (f)|\) (Suárez-Serrato (2026), Theorem 1.1). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000052">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Combines <a href="sect0005.html#thm_rcd_mass_jacobian">theorem 5.6</a> and <a href="sect0004.html#thm_bcg_global_integration">theorem 4.1</a> for the inequality; for equality, applies the mass-Jacobian sandwich \(\mathcal{H}^N(\widehat{Y}) = \mathbf{M}(\hat{F}_{\infty \# }T) \le \int _X \mathrm{Jac}_x \hat{F}_\infty \, d\mathcal{H}^N \le \mathcal{H}^N(X) = \mathcal{H}^N(\widehat{Y})\) to obtain \(\mathrm{Jac}_x \hat{F}_\infty = 1\) a.e., upgrades \(\hat{F}_\infty \) to an isometry onto \(\widehat{Y}\), and uses the Bishop–Gromov density gap \(\Theta ^N(\mathcal{H}^N, x) {\lt} 1\) on \(X \setminus \mathcal{R}_N(X)\) (<a href="sect0005.html#thm_ncrcd_structure">theorem 5.3</a>) to deduce \(\Sigma (X) = \emptyset \).</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0004.html" title="Global Volume-Entropy Inequalities and Master Theorems"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="The Besson–Courtois–Gallot Barycenter Method, Ruan’s Octonionic Repair, and Non-Collapsed RCD Entropy-Degree Rigidity in Lean 4"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

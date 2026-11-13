@@ -1,0 +1,294 @@
+% Blueprint for the Besson--Courtois--Gallot (1995) / Souto (2008) Barycenter Method
+% and Ruan's (2024) Octonionic Repair in Lean 4 (state of 10 November 2026).
+
+% =========================================================================
+\chapter{Spectral Linear Algebra and Volume Entropy}
+
+\begin{theorem}[Spectral trace and determinant formulas]
+\label{thm_spectral_trace_det}
+\lean{BCG.LinearAlgebra.prod_le_arith_mean_pow, BCG.LinearAlgebra.trace_eq_sum_eigenvalues, BCG.LinearAlgebra.det_one_sub_eq_prod_eigenvalues, BCG.LinearAlgebra.eigenvalues_nonneg_of_inner_nonneg, BCG.LinearAlgebra.eigenvalues_pos_of_inner_pos, BCG.LinearAlgebra.det_nonneg_of_inner_nonneg}
+\leanok
+Let $T : E \to_l[\R] E$ be a symmetric linear endomorphism on an $n$-dimensional real inner product space $E$. Then
+$$\Tr(T) = \sum_{i=1}^n \lambda_i(T), \qquad \det(I - T) = \prod_{i=1}^n (1 - \lambda_i(T)),$$
+and if $T$ is positive-semidefinite ($\langle v, T v\rangle \ge 0$ for all $v \in E$), then $\lambda_i(T) \ge 0$ and $\det(T) \ge 0$.
+\end{theorem}
+\begin{proof}\leanok Spectral diagonalization in an orthonormal eigenbasis together with weighted AM--GM on $\mathrm{Fin}\,n$.\end{proof}
+
+\begin{theorem}[Sharp AM--GM trace-determinant inequality]
+\label{thm_trace_det_amgm}
+\lean{BCG.LinearAlgebra.det_le_trace_div_dim_pow, BCG.LinearAlgebra.det_le_one_div_dim_pow_of_trace_le_one, BCG.LinearAlgebra.mul_sqrt_det_le_of_trace_le_one}
+\leanok
+\uses{thm_spectral_trace_det}
+For any symmetric positive-semidefinite endomorphism $T : E \to_l[\R] E$ on an $n$-dimensional real inner product space ($n \ge 1$),
+$$\det(T) \le \left(\frac{\Tr(T)}{n}\right)^n.$$
+When $\Tr(H_1) \le 1$ and $\Tr(H_2) \le 1$, any $c \ge 0$ satisfies $c^n \sqrt{\det H_1}\sqrt{\det H_2} \le (c/n)^n$.
+\end{theorem}
+\begin{proof}\leanok Applies product-power AM--GM to the non-negative eigenvalues $\lambda_i(T)$.\end{proof}
+
+\begin{theorem}[Adjoint-Gram determinant bound]
+\label{thm_gram_det}
+\lean{BCG.LinearAlgebra.det_adjoint, BCG.LinearAlgebra.det_adjoint_mul_self, BCG.LinearAlgebra.trace_eq_sum_orthonormalBasis, BCG.LinearAlgebra.trace_adjoint_mul_self_eq_sum_norm_sq, BCG.LinearAlgebra.abs_det_le_pow_of_norm_le, BCG.LinearAlgebra.exists_ne_zero_inner_eq_zero_of_det_eq_zero, BCG.LinearAlgebra.exists_inv_sqrt_of_det_pos}
+\leanok
+\uses{thm_trace_det_amgm}
+For any linear operator $A : E \to_l[\R] E$ with $\|A v\| \le c \|v\|$, the Gram operator $A^* A$ satisfies $\det(A^* A) = (\det A)^2$, $\Tr(A^* A) = \sum_i \|A e_i\|^2 \le n c^2$, and $|\det A| \le c^n$. Moreover, any symmetric positive-definite $H$ ($\det H > 0$) admits a symmetric inverse square root $D = H^{-1/2}$ satisfying $D^2 H = \id_E$ and $\det D = (\sqrt{\det H})^{-1}$.
+\end{theorem}
+\begin{proof}\leanok Spectral calculus on the orthonormal eigenbasis of $A^* A$ and $H$.\end{proof}
+
+\begin{theorem}[Souto's bilinear Cauchy--Schwarz determinant bound]
+\label{thm_bilinear_cs_det}
+\lean{BCG.LinearAlgebra.abs_det_le_of_abs_inner_le, BCG.LinearAlgebra.abs_det_le_div_dim_pow_of_abs_inner_le}
+\leanok
+\uses{thm_gram_det}
+Let $L, H_1, H_2 : E \to_l[\R] E$ on an $n$-dimensional real inner product space ($n \ge 1$) with $H_1, H_2$ symmetric positive-semidefinite and $c \ge 0$. If $|\langle L u, w\rangle| \le c \sqrt{\langle u, H_1 u\rangle}\sqrt{\langle w, H_2 w\rangle}$ for all $u, w \in E$, then
+$$|\det L| \le c^n \sqrt{\det H_1}\sqrt{\det H_2}.$$
+If furthermore $\Tr(H_1) \le 1$ and $\Tr(H_2) \le 1$, then $|\det L| \le (c/n)^n$.
+\end{theorem}
+\begin{proof}\leanok Normalizes $L$ on the right and left by $H_1^{-1/2}$ and $H_2^{-1/2}$ when $\det H_i > 0$, reducing to $\|A\| \le c$, and handles the degenerate case $\det H_i = 0$ via kernel vectors.\end{proof}
+
+\begin{definition}[Exponential distance weights and critical exponent]
+\label{def_critical_exponent}
+\lean{BCG.Entropy.exponentialWeight, BCG.Entropy.criticalExponent, BCG.Entropy.exponentialMeasure}
+\leanok
+For a metric-measure space $(X, d, \mu)$, scale $s \in \R$, and basepoint $x \in X$, the exponential weight is $w_s(x, z) = e^{-s d(x, z)}$, the critical exponent (volume entropy) is
+$$h(X, \mu, x_0) = \inf\left\{s \in \R \;\middle|\; \int_X e^{-s d(x_0, z)}\,d\mu(z) < \infty\right\},$$
+and the exponentially weighted measure is $\mu_x^s = e^{-s d(x, \cdot)}\mu$.
+\end{definition}
+
+\begin{theorem}[Basepoint invariance of volume entropy]
+\label{thm_critical_exponent_invariance}
+\lean{BCG.Entropy.continuous_exponentialWeight, BCG.Entropy.exponentialWeight_pos, BCG.Entropy.exponentialWeight_nonneg, BCG.Entropy.exponentialWeight_self, BCG.Entropy.exponentialWeight_mul_le, BCG.Entropy.exponentialWeight_le_mul_exp_dist, BCG.Entropy.integrable_exponentialWeight_of_integrable, BCG.Entropy.integrable_exponentialWeight_iff, BCG.Entropy.criticalExponent_eq}
+\leanok
+\uses{def_critical_exponent}
+For any $s \ge 0$ and $x, y, z \in X$, the triangle inequality gives $e^{-s d(x,z)} \le e^{s d(x,y)} e^{-s d(y,z)}$. Consequently, $z \mapsto e^{-s d(x,z)}$ is $\mu$-integrable if and only if $z \mapsto e^{-s d(y,z)}$ is $\mu$-integrable, and $h(X, \mu, x) = h(X, \mu, y)$ is independent of the basepoint.
+\end{theorem}
+\begin{proof}\leanok Mutual domination of the integrands by the constant factor $e^{s d(x,y)}$.\end{proof}
+
+% =========================================================================
+\chapter{Hyperboloid Busemann Calculus and the Smooth Natural Map}
+
+\begin{definition}[Hyperboloid Busemann function and differential]
+\label{def_hyperboloid_busemann}
+\lean{BCG.Hyperbolic.hyperboloidBusemann, BCG.Hyperbolic.hyperboloidBusemannDiff, BCG.Hyperbolic.expHyperboloidBusemann}
+\leanok
+For a boundary direction $\xi \in S(E)$ and $y = (t, x) \in \Hyp^n = \mathrm{Hyperboloid}(E)$, the Busemann function is $B_\xi(y) = -\log(t - \langle x, \xi\rangle)$ with exponential $e^{B_\xi(y)} = (t - \langle x, \xi\rangle)^{-1} > 0$ and fiberwise differential $dB_\xi(y)$.
+\end{definition}
+
+\begin{theorem}[Exact Busemann Hessian identity on the hyperboloid]
+\label{thm_hyperboloid_busemann_hessian}
+\lean{BCG.Hyperbolic.contMDiff_hyperboloidBusemann, BCG.Hyperbolic.hyperboloidBusemann_hessian, BCG.Hyperbolic.hyperboloidBusemann_diff_sq_le, BCG.Hyperbolic.hyperboloidBusemann_hessian_nonneg}
+\leanok
+\uses{def_hyperboloid_busemann}
+On the Lorentzian hyperboloid model $\Hyp^n = \mathrm{Hyperboloid}(E)$ equipped with its Levi-Civita connection, $B_\xi$ is $C^\infty$ and its Riemannian Hessian satisfies the exact identity
+$$(\Hess B_\xi)_y(X, Y) = g_y(X, Y) - dB_\xi(y)(X)\,dB_\xi(y)(Y).$$
+In particular, $(dB_\xi(y)(X))^2 \le g_y(X, X)$ and $(\Hess B_\xi)_y(X, X) \ge 0$.
+\end{theorem}
+\begin{proof}\leanok Bridges with \texttt{busemann\_hessian\_eq} on the hyperboloid model.\end{proof}
+
+\begin{definition}[Busemann covariance and cross-operators]
+\label{def_busemann_operators}
+\lean{BCG.Hyperbolic.selfOuter, BCG.Hyperbolic.crossOuter, BCG.Hyperbolic.busemannCovariance, BCG.Hyperbolic.busemannCrossOperator}
+\leanok
+For vectors $u, u_1, u_2 \in E$, define the rank-one operators $(u \otimes u^*)(v) = \langle u, v\rangle u$ and $(u_1 \otimes u_2^*)(v) = \langle u_1, v\rangle u_2$. Given finite weights $w_a$ and vector families $u_a, u_{1,a}, u_{2,a} \in E$, define the Busemann covariance operator and scaled cross-operator:
+$$H(w, u) = \sum_{a \in s} w_a (u_a \otimes u_a^*), \qquad L_c(w, u_1, u_2) = c \sum_{a \in s} w_a (u_{1,a} \otimes u_{2,a}^*).$$
+\end{definition}
+
+\begin{theorem}[Busemann cross-operator determinant bound]
+\label{thm_busemann_cross_det}
+\lean{BCG.Hyperbolic.selfOuter_apply, BCG.Hyperbolic.isSymmetric_selfOuter, BCG.Hyperbolic.inner_selfOuter_eq_sq, BCG.Hyperbolic.inner_selfOuter_nonneg, BCG.Hyperbolic.trace_selfOuter, BCG.Hyperbolic.crossOuter_apply, BCG.Hyperbolic.inner_crossOuter_apply, BCG.Hyperbolic.isSymmetric_busemannCovariance, BCG.Hyperbolic.inner_busemannCovariance_eq_sum, BCG.Hyperbolic.inner_busemannCovariance_nonneg, BCG.Hyperbolic.trace_busemannCovariance_le_one, BCG.Hyperbolic.abs_inner_busemannCrossOperator_le, BCG.Hyperbolic.abs_det_busemannCrossOperator_le}
+\leanok
+\uses{def_busemann_operators, thm_bilinear_cs_det}
+For non-negative weights $w_a \ge 0$ with $\sum_{a \in s} w_a \le 1$ and unit-bounded vectors $\|u_{1,a}\| \le 1$, $\|u_{2,a}\| \le 1$, the covariance operators $H(w, u_i)$ are symmetric positive-semidefinite with $\Tr(H(w, u_i)) \le 1$, the cross-operator satisfies $|\langle L_c(w, u_1, u_2) v, z\rangle| \le c \sqrt{\langle v, H_1 v\rangle}\sqrt{\langle z, H_2 z\rangle}$, and
+$$|\det L_c(w, u_1, u_2)| \le \left(\frac{c}{n}\right)^n.$$
+\end{theorem}
+\begin{proof}\leanok Discrete Cauchy--Schwarz on $\sum_a (\sqrt{w_a}\langle u_{1,a}, v\rangle)(\sqrt{w_a}\langle u_{2,a}, z\rangle)$ combined with \cref{thm_bilinear_cs_det}.\end{proof}
+
+\begin{definition}[Lorentzian Busemann barycenter functional and explicit minimizer]
+\label{def_hyperboloid_barycenter}
+\lean{BCG.Hyperbolic.busemannCocycleFactor, BCG.Hyperbolic.lorentzNorm, BCG.Hyperbolic.normalizeFuture, BCG.Hyperbolic.busemannFunctional, BCG.Hyperbolic.busemannLorentzVector, BCG.Hyperbolic.hyperboloidBarycenter, BCG.Hyperbolic.barycenterProbWeight, BCG.Hyperbolic.equivariantQuotientMap}
+\leanok
+\uses{def_hyperboloid_busemann}
+For weights $w : \iota \to \R$ and boundary directions $\xi : \iota \to S(E)$, the Busemann barycenter functional on $\mathrm{Hyperboloid}(E)$ is $\mathcal{B}_w(y) = \sum_{i \in \iota} w_i e^{B_{\xi_i}(y)} = -\langle y, Z(w)\rangle_{\mathcal{L}}$, where $Z(w) = (\sum_i w_i, \sum_i w_i \xi_i) \in \R \times E$ is the resultant Lorentz vector. When $\|\sum_i w_i \xi_i\| < \sum_i w_i$, the future-timelike normalization $\mathrm{hyperboloidBarycenter}(w, \xi) = Z(w)/\|Z(w)\|_{\mathcal{L}} \in \mathrm{Hyperboloid}(E)$ defines the explicit barycenter, with normalized probability weights $p_i(w) = w_i e^{B_{\xi_i}(p)} / \mathcal{B}_w(p)$.
+\end{definition}
+
+\begin{theorem}[Closed-form uniqueness, $C^\infty$ regularity, and $\Gamma$-equivariance of the barycenter]
+\label{thm_hyperboloid_barycenter_props}
+\lean{BCG.Hyperbolic.expHyperboloidBusemann_eq, BCG.Hyperbolic.expHyperboloidBusemann_pos, BCG.Hyperbolic.expHyperboloidBusemann_eq_neg_lorentzForm, BCG.Hyperbolic.busemannCocycleFactor_pos, BCG.Hyperbolic.expHyperboloidBusemann_isometry, BCG.Hyperbolic.hyperboloidBusemann_isometry, BCG.Hyperbolic.lorentzNorm_sq_pos, BCG.Hyperbolic.lorentzNorm_pos, BCG.Hyperbolic.lorentzNorm_sq, BCG.Hyperbolic.normalizeFuture_time, BCG.Hyperbolic.normalizeFuture_space, BCG.Hyperbolic.normalizeFuture_eq_ofSpace, BCG.Hyperbolic.lorentzPairing_eq_lorentzNorm_mul_cosh_dist, BCG.Hyperbolic.lorentzPairing_normalizeFuture_self, BCG.Hyperbolic.lorentzNorm_le_lorentzPairing, BCG.Hyperbolic.eq_normalizeFuture_iff_lorentzPairing_eq, BCG.Hyperbolic.busemannLorentzVector_fst, BCG.Hyperbolic.busemannLorentzVector_snd, BCG.Hyperbolic.norm_add_smul_sphere_lt, BCG.Hyperbolic.norm_busemannVector_lt_sum_of_ne, BCG.Hyperbolic.busemannFunctional_eq_lorentzPairing, BCG.Hyperbolic.contMDiff_busemannFunctional, BCG.Hyperbolic.busemannFunctional_eq_lorentzNorm_mul_cosh_dist, BCG.Hyperbolic.busemannFunctional_hyperboloidBarycenter, BCG.Hyperbolic.barycenterProbWeight_nonneg, BCG.Hyperbolic.sum_barycenterProbWeight_eq_one, BCG.Hyperbolic.busemannFunctional_min, BCG.Hyperbolic.busemannFunctional_unique_min, BCG.Hyperbolic.gradientFun_busemannFunctional_eq_zero, BCG.Hyperbolic.mvfderiv_busemannFunctional_eq_zero, BCG.Hyperbolic.contMDiff_hyperboloidBarycenterMap, BCG.Hyperbolic.busemannFunctional_isometry, BCG.Hyperbolic.hyperboloidBarycenter_isometry, BCG.Hyperbolic.equivariantQuotientMap_mk, BCG.Hyperbolic.continuous_equivariantQuotientMap}
+\leanok
+\uses{def_hyperboloid_barycenter}
+For any weight vector $w$ with $\|\sum_i w_i \xi_i\| < \sum_i w_i$:
+\begin{enumerate}
+\item $\mathcal{B}_w(y) = \|Z(w)\|_{\mathcal{L}} \cosh d_{\Hyp}(y, \mathrm{bar}(w))$, so $p = \mathrm{hyperboloidBarycenter}(w, \xi)$ is the \emph{unique} global minimizer of $\mathcal{B}_w$ on $\Hyp^n$ and satisfies $\nabla \mathcal{B}_w(p) = 0$ and $d\mathcal{B}_w(p) = 0$.
+\item The barycenter map $w \mapsto \mathrm{hyperboloidBarycenter}(w, \xi)$ is $C^\infty$ on the open future-timelike cone, is $\mathrm{Isom}(\Hyp^n)$-equivariant under boundary cocycle rescaling, and descends to a continuous map on quotient manifolds $X/\Gamma_1 \to Y/\Gamma_2$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}\leanok Hyperbolic cosine law in Minkowski space together with the implicit/explicit differentiation of $Z(w)/\|Z(w)\|_{\mathcal{L}}$.\end{proof}
+
+\begin{definition}[Metric gauge isometry and Riemannian barycenter differential]
+\label{def_riemannian_barycenter_diff}
+\lean{BCG.Hyperbolic.busemannGradientCoord, BCG.Hyperbolic.metricGauge, BCG.Hyperbolic.metricGaugeInv, BCG.Hyperbolic.metricGaugeEquiv, BCG.Hyperbolic.euclideanBusemannGrad, BCG.Hyperbolic.riemannianBarycenterDifferential}
+\leanok
+\uses{def_hyperboloid_barycenter, def_busemann_operators}
+At $p = (t, x) \in \mathrm{Hyperboloid}(E)$, the metric gauge operator $\Phi_p = I - (1 - t^{-1}) P_x : E \simeq_l[\R] E$ with inverse $\Phi_p^{-1} = I + (t - 1) P_x$ is an exact linear isometry between the Riemannian tangent metric $g_p$ and the Euclidean inner product on $E$. The orthonormalized Euclidean Busemann gradient is $u_2(\xi, p) = \Phi_p(\nabla B_\xi(p))$ ($\|u_2(\xi, p)\| = 1$), and the Riemannian differential of the natural map at scale $s$ is $D^{\mathrm{Riem}} F_s(p)$.
+\end{definition}
+
+\begin{theorem}[Implicit differentiation and hyperbolic Jacobian bound]
+\label{thm_hyperbolic_jacobian_bound}
+\lean{BCG.Hyperbolic.riemannianMetric_inner_spaceVectorField_eq, BCG.Hyperbolic.hyperboloidBusemannDiff_spaceVectorField, BCG.Hyperbolic.expHyperboloidBusemann_mul_diff_spaceVectorField, BCG.Hyperbolic.riemannianMetric_inner_busemannGradientCoord, BCG.Hyperbolic.riemannianMetric_inner_busemannGradientCoord_self, BCG.Hyperbolic.metricGauge_apply, BCG.Hyperbolic.metricGaugeInv_apply, BCG.Hyperbolic.metricGauge_metricGaugeInv, BCG.Hyperbolic.metricGaugeInv_metricGauge, BCG.Hyperbolic.isSymmetric_metricGauge, BCG.Hyperbolic.isSymmetric_metricGaugeInv, BCG.Hyperbolic.inner_metricGauge_eq_riemannianMetric, BCG.Hyperbolic.riemannianMetric_inner_metricGaugeInv, BCG.Hyperbolic.inner_euclideanBusemannGrad_eq_diff, BCG.Hyperbolic.norm_euclideanBusemannGrad, BCG.Hyperbolic.norm_euclideanBusemannGrad_le_one, BCG.Hyperbolic.riemannianMetric_inner_lorentzNormalization_deriv, BCG.Hyperbolic.riemannianMetric_inner_busemannSum_deriv, BCG.Hyperbolic.riemannianMetric_inner_barycenter_expWeight_deriv, BCG.Hyperbolic.hasFDerivAt_barycenter_space, BCG.Hyperbolic.inner_riemannianBarycenterDifferential_eq, BCG.Hyperbolic.riemannianBarycenterDifferential_eq_busemannCrossOperator, BCG.Hyperbolic.abs_det_riemannianBarycenterDifferential_le}
+\leanok
+\uses{def_riemannian_barycenter_diff, thm_hyperboloid_barycenter_props, thm_busemann_cross_det}
+In the orthonormal gauge $\Phi_p$, the Fr\'echet derivative of the hyperboloid barycenter map satisfies
+$$D^{\mathrm{Riem}} F_s(p) = L_s\bigl(p(w), u_1, u_2(\cdot, p)\bigr),$$
+and for any $s \ge 0$ and unit-bounded source gradients $\|u_{1,i}\| \le 1$,
+$$\bigl|\det D^{\mathrm{Riem}} F_s(p)\bigr| \le \left(\frac{s}{n}\right)^n.$$
+\end{theorem}
+\begin{proof}\leanok Differentiates $Z(w)/\|Z(w)\|_{\mathcal{L}}$ in spatial chart coordinates, pulls back by $\Phi_p$, and applies \cref{thm_busemann_cross_det}.\end{proof}
+
+\begin{theorem}[Spectral AM--GM equality and hyperbolic rigidity]
+\label{thm_hyperbolic_rigidity}
+\lean{BCG.LinearAlgebra.eq_one_of_prod_eq_one_of_sum_le, BCG.LinearAlgebra.eq_one_div_dim_of_prod_eq_of_sum_le, BCG.LinearAlgebra.eq_one_div_dim_smul_id_of_det_eq, BCG.LinearAlgebra.isotropic_and_norm_eq_of_abs_det_eq_div_dim_pow, BCG.Rigidity.measureReal_image_eq_integral_abs_det_fderiv, BCG.Rigidity.ae_eq_of_bcg_volume_equality, BCG.Rigidity.riemannianBarycenterDifferential_rigidity}
+\leanok
+\uses{thm_hyperbolic_jacobian_bound, thm_trace_det_amgm}
+If $z_i \ge 0$ on $\mathrm{Fin}\,n$ satisfy $\sum_{i=1}^n z_i \le 1$ and $\prod_{i=1}^n z_i = (1/n)^n$, then $z_i = 1/n$ for all $i$. Consequently, if $|\det D^{\mathrm{Riem}} F_s(p)| = (s/n)^n$ with $s > 0$, then:
+\begin{enumerate}
+\item Both source and target Busemann covariance tensors are isotropic: $H_1 = H_2 = \frac{1}{n} \id_E$.
+\item $(D^{\mathrm{Riem}} F_s(p))^* D^{\mathrm{Riem}} F_s(p) = (s/n)^2 \id_E$, so $D^{\mathrm{Riem}} F_s(p)$ is a scaled linear isometry with scale factor $s/n$ (and an exact Riemannian linear isometry when $s = n$).
+\end{enumerate}
+\end{theorem}
+\begin{proof}\leanok Strict concavity of $\log t \le t - 1$ forces all eigenvalues of $H_1, H_2$ and $A^* A$ to be equal, and $L^1$ saturation of $\int_X (f - g)\,d\mu_X = 0$ with $f \le g$ upgrades global volume equality to $\mu_X$-a.e.\ pointwise equality.\end{proof}
+
+% =========================================================================
+\chapter{General Rank-One Symmetric Spaces and Ruan's Octonionic Repair}
+
+\begin{definition}[Rank-one symmetric space invariants and $\Kfield$-line projections]
+\label{def_rank_one_invariants}
+\lean{BCG.RankOne.DivisionAlgebraType, BCG.RankOne.DivisionAlgebraType.fiberDim, BCG.RankOne.DivisionAlgebraType.manifoldDim, BCG.RankOne.DivisionAlgebraType.volumeEntropy, BCG.RankOne.rankOneEntropy, BCG.RankOne.IsKLineProjection, BCG.RankOne.rankOneJacobiOperator, BCG.RankOne.rankOneSingleHessian, BCG.RankOne.rankOneLineCovariance, BCG.RankOne.rankOneHessianOperator}
+\leanok
+\uses{def_busemann_operators}
+For a rank-one symmetric space $\widetilde{M} = \Kfield\Hyp^m$ ($\Kfield \in \{\R, \C, \Quat, \Oct\}$, $d = \dim_\R \Kfield \in \{1, 2, 4, 8\}$, real dimension $n = d m$, curvature $K \in [-4, -1]$), the volume entropy is $h(\Kfield\Hyp^m) = n + d - 2$. For a unit Busemann gradient $u \in E$ and orthogonal projection $\pi_u$ onto the $d$-dimensional $\Kfield$-line $\Kfield u$, the single-direction Busemann Hessian is $W(u, \pi_u) = I - (u \otimes u^*) - (\pi_u - u \otimes u^*) = I - 2(u \otimes u^*) + \pi_u$, and the integrated Hessian operator is
+$$W_y = I - 2H + \widehat{H} = (I - H) + (\widehat{H} - H), \qquad \widehat{H} = \sum_{a \in s} w_a \pi_{u_a}.$$
+\end{definition}
+
+\begin{theorem}[Riccati square identity and implicit differentiation reduction]
+\label{thm_rank_one_hessian_reduction}
+\lean{BCG.RankOne.DivisionAlgebraType.fiberDim_pos, BCG.RankOne.DivisionAlgebraType.one_le_fiberDim, BCG.RankOne.DivisionAlgebraType.volumeEntropy_real, BCG.RankOne.DivisionAlgebraType.volumeEntropy_complex, BCG.RankOne.DivisionAlgebraType.volumeEntropy_quaternionic, BCG.RankOne.DivisionAlgebraType.volumeEntropy_octonionic_two, BCG.RankOne.IsKLineProjection.inner_eq_norm_sq, BCG.RankOne.IsKLineProjection.inner_nonneg, BCG.RankOne.IsKLineProjection.comp_selfOuter, BCG.RankOne.IsKLineProjection.selfOuter_comp, BCG.RankOne.IsKLineProjection.inner_sub_selfOuter_eq_norm_sq, BCG.RankOne.IsKLineProjection.sub_selfOuter_nonneg, BCG.RankOne.IsKLineProjection.inner_id_sub_eq_norm_sq, BCG.RankOne.IsKLineProjection.id_sub_nonneg, BCG.RankOne.rankOneSingleHessian_eq_two_smul_sub_add_id_sub, BCG.RankOne.sq_rankOneSingleHessian_eq_jacobi, BCG.RankOne.isSymmetric_rankOneSingleHessian, BCG.RankOne.inner_rankOneSingleHessian_nonneg, BCG.RankOne.trace_rankOneSingleHessian, BCG.RankOne.rankOneHessianOperator_eq_add_sub, BCG.RankOne.rankOneHessianOperator_self, BCG.RankOne.sum_rankOneSingleHessian_eq_rankOneHessianOperator, BCG.RankOne.isSymmetric_rankOneLineCovariance, BCG.RankOne.trace_rankOneLineCovariance, BCG.RankOne.sub_busemannCovariance_nonneg, BCG.RankOne.abs_det_cross_le_inv_sqrt_dim_pow_mul_sqrt_det, BCG.RankOne.abs_det_of_hessian_comp_eq_smul, BCG.RankOne.abs_det_le_div_entropy_pow_of_rankOne_det_ineq, BCG.RankOne.abs_det_le_div_entropy_pow_mul_defect, BCG.RankOne.isotropic_of_abs_det_eq_div_entropy_pow}
+\leanok
+\uses{def_rank_one_invariants, thm_bilinear_cs_det}
+Every $\Kfield$-line Busemann Hessian satisfies the Riccati equation $W(u, \pi_u)^2 = -R(\cdot, u)u = 4(\pi_u - u \otimes u^*) + (I - \pi_u)$ and $\Tr(W(u, \pi_u)) = n + d - 2$. Moreover, $\widehat{H} - H \ge 0$ with $\Tr(\widehat{H}) = d$, and whenever $W_y \circ D_F = s H_y$,
+$$|\det D_F| \le \left(\frac{s}{\sqrt{n}}\right)^n \frac{\sqrt{\det H}}{\det(I - 2H + \widehat{H})}.$$
+Consequently, the rank-one determinant inequality $\frac{\sqrt{\det H}}{\det(I - 2H + \widehat{H})} \le \left(\frac{\sqrt{n}}{h_0}\right)^n$ implies $|\det D_F| \le (s/h_0)^n$, and the quantitative eigenvalue-defect version implies isotropy $H = \frac{1}{n}\id_E$ upon equality.
+\end{theorem}
+\begin{proof}\leanok Orthogonal decomposition into $\R u \oplus (\Kfield u \ominus \R u) \oplus (\Kfield u)^\perp$ with eigenvalues $(0, 2, 1)$, combined with H\"older/Cauchy--Schwarz on $H_y$.\end{proof}
+
+\begin{theorem}[Minkowski--Ky Fan log-concavity of the determinant (BCG Lemma B.2)]
+\label{thm_bcg_lemma_b2}
+\lean{BCG.RankOne.finset_prod_le_prod_of_nonneg, BCG.RankOne.eq_id_of_isSymmetric_of_inner_eq_norm_sq, BCG.RankOne.comp_conj_eq_id_of_quad_eq_norm_sq, BCG.RankOne.det_rpow_le_det_smul_id_add_smul, BCG.RankOne.det_weighted_add_ge_rpow_mul_rpow, BCG.RankOne.det_add_smul_ge_of_det_ge, BCG.RankOne.det_sum_smul_ge_of_forall_det_ge}
+\leanok
+\uses{thm_gram_det}
+For any symmetric positive-semidefinite operators $A, B : E \to_l[\R] E$ on an $n$-dimensional real inner product space and weights $p, q \ge 0$ with $p + q = 1$,
+$$\det(p \bullet A + q \bullet B) \ge (\det A)^p (\det B)^q.$$
+By induction, if $A_0, \dots, A_{m-1}$ are symmetric positive-semidefinite with $\det A_r \ge d_0 \ge 0$, then $\det\left(\frac{1}{m}\sum_{r=0}^{m-1} A_r\right) \ge d_0$.
+\end{theorem}
+\begin{proof}\leanok Simultaneous diagonalization via $A^{-1/2}$ ($D A D = \id_E$), reducing to $\prod_{i=1}^n (p + q \mu_i) \ge \prod_{i=1}^n \mu_i^q$ for the eigenvalues $\mu_i \ge 0$ of $D B D$.\end{proof}
+
+\begin{definition}[Global orthogonal $\Kfield$-structure for associative division algebras]
+\label{def_orthogonal_k_structure}
+\lean{BCG.RankOne.IsOrthogonalKStructure, BCG.RankOne.IsOrthogonalKStructure.kLineProj}
+\leanok
+\uses{def_rank_one_invariants}
+For the associative division algebras $\Kfield \in \{\R, \C, \Quat\}$ ($d \in \{1, 2, 4\}$), an orthogonal $\Kfield$-structure on $E \cong T_x \Kfield\Hyp^m$ is a family $J_0 = \id_E, J_1, \dots, J_{d-1} \in \mathrm{O}(E)$ with $\langle J_r u, J_s u\rangle = 0$ for $r \ne s$, inducing the $\Kfield$-line projection $\pi_u = \sum_{r=0}^{d-1} (J_r u) \otimes (J_r u)^*$.
+\end{definition}
+
+\begin{theorem}[Associative rank-one determinant inequality and BCG Jacobian bound]
+\label{thm_associative_rank_one}
+\lean{BCG.RankOne.IsOrthogonalKStructure.norm_map, BCG.RankOne.IsOrthogonalKStructure.adjoint_comp_self, BCG.RankOne.IsOrthogonalKStructure.det_sq_eq_one, BCG.RankOne.IsOrthogonalKStructure.selfOuter_map_eq_conj, BCG.RankOne.IsOrthogonalKStructure.isKLineProjection_kLineProj, BCG.RankOne.IsOrthogonalKStructure.sub_busemannCovariance_eq_sum_conjugate, BCG.RankOne.IsOrthogonalKStructure.det_sub_div_ge_det_of_orthogonal_conjugates, BCG.RankOne.det_id_sub_div_ge_det, BCG.RankOne.det_rankOneHessianOperator_ge, BCG.RankOne.associative_rankOne_det_ineq, BCG.RankOne.real_rankOne_det_ineq, BCG.RankOne.id_sub_busemannCovariance_nonneg, BCG.RankOne.associative_rankOne_bcg_jacobian_bound}
+\leanok
+\uses{def_orthogonal_k_structure, thm_bcg_lemma_b2, thm_rank_one_hessian_reduction}
+For an associative \texttt{IsOrthogonalKStructure d J} ($d \in \{2, 4\}$):
+\begin{enumerate}
+\item Property $\mathrm{(P2)}$ holds globally: $\widehat{H} - H = \sum_{r \ne 0} J_r H J_r^*$, and hence $\det((\widehat{H} - H)/(d - 1)) \ge \det H$ (BCG Lemma B.3).
+\item Combining the log-concavity splitting $W_y = (n+d-2)\bigl(p\frac{I-H}{n-1} + q\frac{\widehat{H}-H}{d-1}\bigr)$ ($p = \frac{n-1}{n+d-2}$, $q = \frac{d-1}{n+d-2}$) with BCG Lemma B.4 yields
+$$\frac{\sqrt{\det H}}{\det(I - 2H + \widehat{H})} \le \left(\frac{\sqrt{n}}{n + d - 2}\right)^n \quad\text{and}\quad |\det D_F| \le \left(\frac{s}{n + d - 2}\right)^n.$$
+\end{enumerate}
+\end{theorem}
+\begin{proof}\leanok Applies \cref{thm_bcg_lemma_b2} to the $d - 1$ orthogonal conjugates $J_r H J_r^*$ (each having determinant $\det H$) and combines with the spectral AM--GM bound for $(I - H)/(n - 1)$.\end{proof}
+
+\begin{definition}[Local Cayley-line orthogonal structure on $\Oct\Hyp^2$]
+\label{def_local_cayley_structure}
+\lean{BCG.RankOne.IsLocalCayleyLineStructure}
+\leanok
+\uses{def_rank_one_invariants}
+Although non-associativity of the octonions $\Oct$ prevents a global \texttt{IsOrthogonalKStructure 8 J} on $T_x \Oct\Hyp^2 \cong \R^{16}$, on each individual $8$-dimensional Cayley line $V = \mathcal{C}ay(v_i) \cong \R^8$ there exist line-dependent orthogonal endomorphisms $J_{0,v_i} = \id_V, J_{1,v_i}, \dots, J_{7,v_i} \in \mathrm{O}(V)$ generated by octonionic right multiplication (Ruan Lemma 3.2 $\mathrm{(P2')}$).
+\end{definition}
+
+\begin{theorem}[Ruan's Cayley block trace identity and $8\times 8$ block AM--GM bounds]
+\label{thm_cayley_block_bounds}
+\lean{BCG.RankOne.octonionic_dim_eq, BCG.RankOne.octonionic_fiberDim_eq, BCG.RankOne.octonionic_volumeEntropy_eq, BCG.RankOne.rankOneEntropy_sixteen_eight, BCG.RankOne.octonionic_critical_ratio_eq, BCG.RankOne.octonionic_critical_ratio_twenty_two_eq, BCG.RankOne.IsLocalCayleyLineStructure.adjoint_comp_self, BCG.RankOne.IsLocalCayleyLineStructure.trace_conj_eq, BCG.RankOne.IsLocalCayleyLineStructure.trace_cayleyLine_eq_eigenvalue, BCG.RankOne.det_lambda_sub_cayleyBlock_ge, BCG.RankOne.det_lambda_sub_cayleyBlock_eight_ge}
+\leanok
+\uses{def_local_cayley_structure, thm_associative_rank_one}
+On the $16$-dimensional Cayley hyperbolic plane $\Oct\Hyp^2$ ($n = 16$, $d = 8$, $h_0 = 22$, critical ratio $\sqrt{16}/22 = 2/11$):
+\begin{enumerate}
+\item By Ruan Lemma 3.2 $\mathrm{(P1')}$--$\mathrm{(P2')}$, on any $8$-dimensional Cayley line $V$ where $\widehat{H}|_V = \lambda \id_V$ and $\lambda \|x\|^2 = \sum_{r=0}^7 \langle J_r^* x, A(J_r^* x)\rangle$, polarization and cyclic trace invariance yield $\Tr(A) = \lambda$ (and $\Tr(B) = \mu$, $\lambda + \mu = 1$).
+\item Rescaling $A' = \lambda^{-1} A$ on $V$ ($\dim_\R V = 8$) and applying \texttt{det\_id\_sub\_div\_ge\_det} proves Ruan's Eq.~(28):
+$$\det(\lambda I_8 - A) \ge 7^8 \det A \qquad\text{and}\qquad \det(\mu I_8 - B) \ge 7^8 \det B.$$
+\end{enumerate}
+\end{theorem}
+\begin{proof}\leanok Polarizes $\sum_{r=0}^7 J_r A J_r^* = \lambda \id_V$, takes traces using $\Tr(J_r A J_r^*) = \Tr(A)$, and applies the $s = 1$ spectral AM--GM theorem in dimension $d = 8$.\end{proof}
+
+\begin{theorem}[Ruan's Case 1 Schur monotonicity and Case 2 reverse AM--GM interpolation]
+\label{thm_ruan_cases_1_and_2}
+\lean{BCG.RankOne.cayley_schur_monotone_one_dim, BCG.RankOne.cayley_schur_monotone_finset_prod, BCG.RankOne.cayley_case1_det_bound, BCG.RankOne.reverse_amgm_eight_dim, BCG.RankOne.octonionic_alpha_parameter_bounds, BCG.RankOne.cayley_case2_step2_endpoint_bound}
+\leanok
+\uses{thm_cayley_block_bounds}
+In Ruan's two-case analysis of the $8 \times 8$ block decomposition $H = \begin{pmatrix} A & C \\ C^* & B \end{pmatrix}$:
+\begin{enumerate}
+\item \textbf{Case 1 ($2\lambda_1 \le \lambda$, $2\mu_1 \le \mu$, $\alpha = 0$):} For $0 \le w_i \le h_{2,i} \le h_{1,i}$, $\prod_i (h_{2,i} - w_i)\prod_i h_{1,i} \le \prod_i (h_{1,i} - w_i)\prod_i h_{2,i}$ (Ruan Lemma 3.5). Combined with $\det(\lambda I_8 - A) \ge 7^8 \det A$ and $\det(\mu I_8 - B) \ge 7^8 \det B$, Schur complement factorization yields $\det(\widehat{H} - H) \ge 7^{16} \det H$.
+\item \textbf{Case 2 ($2\mu_1 > \mu$ or $2\lambda_1 > \lambda$, $\alpha \in [1 - \sqrt{2/3}, 0.266]$):} Every non-negative $x : \mathrm{Fin}\,8 \to \R$ satisfies the $8$-dimensional reverse AM--GM inequality $7^7 \prod_{i=0}^7 x_i \le (\sum_{i=0}^7 x_i - x_0)^7 x_0$ (Ruan Lemma 3.6), and $t = 1 - (1 - \alpha)^2$ satisfies $t^2(1 - t) \ge 7/64$, yielding the cubic endpoint bound $\frac{7}{64}\mu(\mu - \mu_1)\mu_1 \le (\mu - t\mu)(t\mu)^2$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}\leanok Pointwise algebraic monotonicity for Case 1 and $7$-variable weighted AM--GM on $\mathrm{Fin}\,8 \setminus \{0\}$ for Case 2.\end{proof}
+
+\begin{theorem}[Ruan's perturbed log-concavity trick and Proposition 3.1 on $\Oct\Hyp^2$]
+\label{thm_ruan_prop_3_1}
+\lean{BCG.RankOne.rankOneHessianOperator_eq_perturbed_add, BCG.RankOne.det_rankOneHessianOperator_perturbed_ge, BCG.RankOne.perturbed_rankOne_det_ineq, BCG.RankOne.octonionic_rankOne_det_ineq, BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound, BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound_with_defect}
+\leanok
+\uses{thm_ruan_cases_1_and_2, thm_bcg_lemma_b2, thm_rank_one_hessian_reduction}
+For any off-diagonal perturbation operator $U_\alpha : E \to_l[\R] E$ such that $I - H - U_\alpha \ge 0$ and $\widehat{H} - H + U_\alpha \ge 0$, the Hessian operator splits as $I - 2H + \widehat{H} = (I - H - U_\alpha) + (\widehat{H} - H + U_\alpha)$ and satisfies Ruan's perturbed log-concavity bound (Eq.~(22)):
+$$\det(I - 2H + \widehat{H}) \ge 22^{16} \det\left(\frac{I - H - U_\alpha}{15}\right)^{15/22} \det\left(\frac{\widehat{H} - H + U_\alpha}{7}\right)^{7/22}.$$
+Combined with Ruan Lemma 3.4 (Eqs.~(21) and~(23)), this proves Proposition 3.1 and Corollary 3.8 on $\Oct\Hyp^2$:
+$$\frac{\sqrt{\det H}}{\det(I - 2H + \widehat{H})} \le \left(\frac{\sqrt{16}}{22}\right)^{16} = \left(\frac{2}{11}\right)^{16} \quad\text{and}\quad |\det D_F| \le \left(\frac{s}{22}\right)^{16}.$$
+\end{theorem}
+\begin{proof}\leanok Applies \cref{thm_bcg_lemma_b2} with $p = 15/22, q = 7/22$ to $(I - H - U_\alpha)/15$ and $(\widehat{H} - H + U_\alpha)/7$, then combines exponents $\frac{4}{15}\cdot\frac{15}{22} + \frac{7}{22} = \frac{11}{22} = \frac{1}{2}$.\end{proof}
+
+% =========================================================================
+\chapter{Global Volume-Entropy Inequalities and Master Theorems}
+
+\begin{theorem}[Global BCG volume-entropy integration and scale limit $s \searrow h(X)$]
+\label{thm_bcg_global_integration}
+\lean{BCG.bcg_volume_inequality_at_scale, BCG.bcg_volume_entropy_inequality}
+\leanok
+\uses{thm_critical_exponent_invariance}
+Let $(X, \mu_X)$ be a finite-measure space. If at every scale $s > h_X$, the Jacobian $J_s(x) = |\det d_x F_s|$ is integrable, bounded $\mu_X$-almost everywhere by $(s/h_Y)^n$, and satisfies the degree-area inequality $|\deg(f)|\cdot\Vol(Y) \le \int_X J_s(x)\,d\mu_X(x)$, then
+$$|\deg(f)| \cdot h_Y^n \cdot \Vol(Y) \le s^n \cdot \Vol(X) \quad (\forall s > h_X) \qquad\Longrightarrow\qquad |\deg(f)| \cdot h_Y^n \cdot \Vol(Y) \le h_X^n \cdot \Vol(X).$$
+\end{theorem}
+\begin{proof}\leanok Monotonicity of Bochner integration on $(X, \mu_X)$ followed by right-continuity of $s \mapsto s^n \Vol(X)$ along the punctured neighborhood filter $\mathcal{N}_{>}(h_X)$.\end{proof}
+
+\begin{theorem}[Master Smooth Real Hyperbolic BCG Volume-Entropy and Rigidity Theorems]
+\label{thm_master_hyperbolic_bcg}
+\lean{BCG.hyperbolic_bcg_main_theorem, BCG.hyperbolic_bcg_busemann_main_theorem, BCG.hyperbolic_bcg_natural_map_main_theorem, BCG.hyperbolic_bcg_natural_map_rigidity}
+\leanok
+\uses{thm_bcg_global_integration, thm_hyperbolic_jacobian_bound, thm_hyperbolic_rigidity}
+For the explicit smooth natural map $F_s(x) = \mathrm{hyperboloidBarycenter}(w(s, x), \xi)$ on an $n$-dimensional hyperbolic target ($n \ge 1$), integrating $|\det D^{\mathrm{Riem}} F_s(x)| \le (s/n)^n$ and passing to $s \searrow c_X$ yields
+$$|\deg(f)| \cdot n^n \cdot \Vol(Y) \le c_X^n \cdot \Vol(X).$$
+Moreover, if equality holds at scale $s > 0$, then for $\mu_X$-almost every $x \in X$, $|\det D^{\mathrm{Riem}} F_s(x)| = (s/n)^n$, both Busemann covariance tensors are isotropic ($\frac{1}{n}\id_E$), and $D^{\mathrm{Riem}} F_s(x)$ is a $(s/n)$-scaled linear isometry.
+\end{theorem}
+\begin{proof}\leanok Synthesizes \cref{thm_hyperbolic_jacobian_bound}, \cref{thm_hyperbolic_rigidity}, and \cref{thm_bcg_global_integration}.\end{proof}
+
+\begin{theorem}[Master General Rank-One and Cayley Hyperbolic Plane BCG Theorems]
+\label{thm_master_rank_one_bcg}
+\lean{BCG.rankOne_bcg_main_theorem, BCG.octonionic_bcg_main_theorem}
+\leanok
+\uses{thm_bcg_global_integration, thm_associative_rank_one, thm_ruan_prop_3_1}
+For any rank-one locally symmetric target $(Y, g_0)$ modeled on $\Kfield\Hyp^m$ ($\Kfield \in \{\R, \C, \Quat, \Oct\}$, $n = \dim_\R Y$, $d = \dim_\R \Kfield$, $h_0 = n + d - 2$), and in particular for the $16$-dimensional Cayley hyperbolic plane $\Oct\Hyp^2$ ($n = 16$, $d = 8$, $h_0 = 22$) via Ruan's perturbed log-concavity repair, the global Besson--Courtois--Gallot volume-entropy inequality holds:
+$$|\deg(f)| \cdot h_0^n \cdot \Vol(Y) \le c_X^n \cdot \Vol(X), \qquad |\deg(f)| \cdot 22^{16} \cdot \Vol(Y) \le c_X^{16} \cdot \Vol(X).$$
+\end{theorem}
+\begin{proof}\leanok Combines \cref{thm_rank_one_hessian_reduction}, \cref{thm_associative_rank_one}, and \cref{thm_ruan_prop_3_1} with \cref{thm_bcg_global_integration}.\end{proof}

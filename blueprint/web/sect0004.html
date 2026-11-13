@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Global Volume-Entropy Inequalities and Master Theorems</title>
+<link rel="prev" href="sect0003.html" title="General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair" />
+<link rel="up" href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4" />
+<link rel="stylesheet" href="styles/theme-blue.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Spectral Linear Algebra and Volume Entropy</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Hyperboloid Busemann Calculus and the Smooth Natural Map</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">Global Volume-Entropy Inequalities and Master Theorems</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000005">4 Global Volume-Entropy Inequalities and Master Theorems</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_bcg_global_integration">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">4.1</span>
+    <span class="theorem_thmtitle">Global BCG volume-entropy integration and scale limit \(s \searrow h(X)\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#thm_bcg_global_integration">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#thm_critical_exponent_invariance">Theorem 1.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.bcg_volume_inequality_at_scale" class="lean_decl">BCG.bcg_volume_inequality_at_scale</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.bcg_volume_entropy_inequality" class="lean_decl">BCG.bcg_volume_entropy_inequality</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Let \((X, \mu _X)\) be a finite-measure space. If at every scale \(s {\gt} h_X\), the Jacobian \(J_s(x) = |\det d_x F_s|\) is integrable, bounded \(\mu _X\)-almost everywhere by \((s/h_Y)^n\), and satisfies the degree-area inequality \(|\deg (f)|\cdot \operatorname {Vol}(Y) \le \int _X J_s(x)\, d\mu _X(x)\), then </p>
+<div class="displaymath" id="a0000000039">
+  \[ |\deg (f)| \cdot h_Y^n \cdot \operatorname {Vol}(Y) \le s^n \cdot \operatorname {Vol}(X) \quad (\forall s {\gt} h_X) \qquad \Longrightarrow \qquad |\deg (f)| \cdot h_Y^n \cdot \operatorname {Vol}(Y) \le h_X^n \cdot \operatorname {Vol}(X). \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Monotonicity of Bochner integration on \((X, \mu _X)\) followed by right-continuity of \(s \mapsto s^n \operatorname {Vol}(X)\) along the punctured neighborhood filter \(\mathcal{N}_{{\gt}}(h_X)\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_master_hyperbolic_bcg">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">4.2</span>
+    <span class="theorem_thmtitle">Master Smooth Real Hyperbolic BCG Volume-Entropy and Rigidity Theorems</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#thm_master_hyperbolic_bcg">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0004.html#thm_bcg_global_integration">Theorem 4.1</a></li>
+          
+          <li><a href="sect0002.html#thm_hyperbolic_jacobian_bound">Theorem 2.8</a></li>
+          
+          <li><a href="sect0002.html#thm_hyperbolic_rigidity">Theorem 2.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_main_theorem" class="lean_decl">BCG.hyperbolic_bcg_main_theorem</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_busemann_main_theorem" class="lean_decl">BCG.hyperbolic_bcg_busemann_main_theorem</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_natural_map_main_theorem" class="lean_decl">BCG.hyperbolic_bcg_natural_map_main_theorem</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_natural_map_rigidity" class="lean_decl">BCG.hyperbolic_bcg_natural_map_rigidity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For the explicit smooth natural map \(F_s(x) = \mathrm{hyperboloidBarycenter}(w(s, x), \xi )\) on an \(n\)-dimensional hyperbolic target (\(n \ge 1\)), integrating \(|\det D^{\mathrm{Riem}} F_s(x)| \le (s/n)^n\) and passing to \(s \searrow c_X\) yields </p>
+<div class="displaymath" id="a0000000041">
+  \[ |\deg (f)| \cdot n^n \cdot \operatorname {Vol}(Y) \le c_X^n \cdot \operatorname {Vol}(X). \]
+</div>
+<p> Moreover, if equality holds at scale \(s {\gt} 0\), then for \(\mu _X\)-almost every \(x \in X\), \(|\det D^{\mathrm{Riem}} F_s(x)| = (s/n)^n\), both Busemann covariance tensors are isotropic (\(\frac{1}{n}\operatorname {id}_E\)), and \(D^{\mathrm{Riem}} F_s(x)\) is a \((s/n)\)-scaled linear isometry. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Synthesizes <a href="sect0002.html#thm_hyperbolic_jacobian_bound">theorem 2.8</a>, <a href="sect0002.html#thm_hyperbolic_rigidity">theorem 2.9</a>, and <a href="sect0004.html#thm_bcg_global_integration">theorem 4.1</a>.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm_master_rank_one_bcg">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">4.3</span>
+    <span class="theorem_thmtitle">Master General Rank-One and Cayley Hyperbolic Plane BCG Theorems</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#thm_master_rank_one_bcg">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000042"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0004.html#thm_bcg_global_integration">Theorem 4.1</a></li>
+          
+          <li><a href="sect0003.html#thm_associative_rank_one">Theorem 3.5</a></li>
+          
+          <li><a href="sect0003.html#thm_ruan_prop_3_1">Theorem 3.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.rankOne_bcg_main_theorem" class="lean_decl">BCG.rankOne_bcg_main_theorem</a></li>
+          
+          <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.octonionic_bcg_main_theorem" class="lean_decl">BCG.octonionic_bcg_main_theorem</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For any rank-one locally symmetric target \((Y, g_0)\) modeled on \(\mathbb {K}\mathbf{H}^m\) (\(\mathbb {K}\in \{ \mathbb {R}, \mathbb {C}, \mathbb {H}, \mathbb {O}\} \), \(n = \dim _\mathbb {R}Y\), \(d = \dim _\mathbb {R}\mathbb {K}\), \(h_0 = n + d - 2\)), and in particular for the \(16\)-dimensional Cayley hyperbolic plane \(\mathbb {O}\mathbf{H}^2\) (\(n = 16\), \(d = 8\), \(h_0 = 22\)) via Ruan’s perturbed log-concavity repair, the global Besson–Courtois–Gallot volume-entropy inequality holds: </p>
+<div class="displaymath" id="a0000000043">
+  \[ |\deg (f)| \cdot h_0^n \cdot \operatorname {Vol}(Y) \le c_X^n \cdot \operatorname {Vol}(X), \qquad |\deg (f)| \cdot 22^{16} \cdot \operatorname {Vol}(Y) \le c_X^{16} \cdot \operatorname {Vol}(X). \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000042">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Combines <a href="sect0003.html#thm_rank_one_hessian_reduction">theorem 3.2</a>, <a href="sect0003.html#thm_associative_rank_one">theorem 3.5</a>, and <a href="sect0003.html#thm_ruan_prop_3_1">theorem 3.9</a> with <a href="sect0004.html#thm_bcg_global_integration">theorem 4.1</a>.</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0003.html" title="General Rank-One Symmetric Spaces and Ruan’s Octonionic Repair"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="The Besson–Courtois–Gallot Barycenter Method and Ruan’s Octonionic Repair in Lean 4"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

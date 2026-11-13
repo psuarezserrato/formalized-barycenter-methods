@@ -1,0 +1,1985 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-blue.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph">
+<svg width="1922pt" height="1115pt"
+ viewBox="0.00 0.00 1922.00 1115.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100%; height: 100%; max-width: 100%; max-height: 88vh; display: block; margin: 0 auto;">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1111)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-1111 1917.56,-1111 1917.56,4 -4,4"/>
+<!-- thm_trace_det_amgm -->
+<g id="node1" class="node">
+<title>thm_trace_det_amgm</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1564.76" cy="-970" rx="126.2" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1564.76" y="-962.25" font-family="Times,serif" font-size="20.00">thm_trace_det_amgm</text>
+</g>
+<!-- thm_gram_det -->
+<g id="node2" class="node">
+<title>thm_gram_det</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1564.76" cy="-851" rx="85.49" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1564.76" y="-843.25" font-family="Times,serif" font-size="20.00">thm_gram_det</text>
+</g>
+<!-- thm_trace_det_amgm&#45;&gt;thm_gram_det -->
+<g id="edge1" class="edge">
+<title>thm_trace_det_amgm&#45;&gt;thm_gram_det</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1564.76,-951.23C1564.76,-932.48 1564.76,-902.65 1564.76,-880.59"/>
+<polygon fill="black" stroke="black" points="1564.76,-870.77 1569.26,-880.77 1564.76,-874.55 1564.76,-880.77 1564.76,-880.77 1564.76,-880.77 1564.76,-874.55 1560.26,-880.77 1564.76,-870.77"/>
+</g>
+<!-- thm_bcg_lemma_b2 -->
+<g id="node3" class="node">
+<title>thm_bcg_lemma_b2</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1794.76" cy="-732" rx="118.8" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1794.76" y="-724.25" font-family="Times,serif" font-size="20.00">thm_bcg_lemma_b2</text>
+</g>
+<!-- thm_gram_det&#45;&gt;thm_bcg_lemma_b2 -->
+<g id="edge2" class="edge">
+<title>thm_gram_det&#45;&gt;thm_bcg_lemma_b2</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1596.74,-833.73C1637.01,-813.24 1706.39,-777.95 1751.41,-755.05"/>
+<polygon fill="black" stroke="black" points="1760.09,-750.63 1753.22,-759.18 1756.72,-752.35 1751.18,-755.17 1751.18,-755.17 1751.18,-755.17 1756.72,-752.35 1749.14,-751.15 1760.09,-750.63"/>
+</g>
+<!-- thm_bilinear_cs_det -->
+<g id="node4" class="node">
+<title>thm_bilinear_cs_det</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1335.76" cy="-732" rx="117.22" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1335.76" y="-724.25" font-family="Times,serif" font-size="20.00">thm_bilinear_cs_det</text>
+</g>
+<!-- thm_gram_det&#45;&gt;thm_bilinear_cs_det -->
+<g id="edge3" class="edge">
+<title>thm_gram_det&#45;&gt;thm_bilinear_cs_det</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1532.43,-833.48C1492.28,-812.97 1423.65,-777.91 1379,-755.1"/>
+<polygon fill="black" stroke="black" points="1370.11,-750.55 1381.07,-751.1 1373.48,-752.28 1379.02,-755.1 1379.02,-755.1 1379.02,-755.1 1373.48,-752.28 1376.97,-759.11 1370.11,-750.55"/>
+</g>
+<!-- thm_associative_rank_one -->
+<g id="node7" class="node">
+<title>thm_associative_rank_one</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1681.76" cy="-494" rx="152.11" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1681.76" y="-486.25" font-family="Times,serif" font-size="20.00">thm_associative_rank_one</text>
+</g>
+<!-- thm_bcg_lemma_b2&#45;&gt;thm_associative_rank_one -->
+<g id="edge5" class="edge">
+<title>thm_bcg_lemma_b2&#45;&gt;thm_associative_rank_one</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1799.4,-713.29C1805.5,-686.37 1813.49,-634.14 1795.76,-595 1780.85,-562.11 1749.2,-535.76 1723.02,-518.38"/>
+<polygon fill="black" stroke="black" points="1714.68,-513.04 1725.53,-514.65 1717.87,-515.08 1723.11,-518.44 1723.11,-518.44 1723.11,-518.44 1717.87,-515.08 1720.68,-522.23 1714.68,-513.04"/>
+</g>
+<!-- thm_rank_one_hessian_reduction -->
+<g id="node8" class="node">
+<title>thm_rank_one_hessian_reduction</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1358.76" cy="-613" rx="191.24" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1358.76" y="-605.25" font-family="Times,serif" font-size="20.00">thm_rank_one_hessian_reduction</text>
+</g>
+<!-- thm_bilinear_cs_det&#45;&gt;thm_rank_one_hessian_reduction -->
+<g id="edge6" class="edge">
+<title>thm_bilinear_cs_det&#45;&gt;thm_rank_one_hessian_reduction</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1339.25,-713.23C1342.95,-694.39 1348.85,-664.38 1353.2,-642.28"/>
+<polygon fill="black" stroke="black" points="1355.07,-632.75 1357.56,-643.43 1354.34,-636.46 1353.14,-642.56 1353.14,-642.56 1353.14,-642.56 1354.34,-636.46 1348.72,-641.69 1355.07,-632.75"/>
+</g>
+<!-- thm_busemann_cross_det -->
+<g id="node9" class="node">
+<title>thm_busemann_cross_det</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1012.76" cy="-613" rx="148.41" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1012.76" y="-605.25" font-family="Times,serif" font-size="20.00">thm_busemann_cross_det</text>
+</g>
+<!-- thm_bilinear_cs_det&#45;&gt;thm_busemann_cross_det -->
+<g id="edge7" class="edge">
+<title>thm_bilinear_cs_det&#45;&gt;thm_busemann_cross_det</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1290.5,-714.61C1232.81,-693.71 1133.02,-657.56 1070.07,-634.76"/>
+<polygon fill="black" stroke="black" points="1060.68,-631.36 1071.61,-630.53 1064.23,-632.65 1070.08,-634.77 1070.08,-634.77 1070.08,-634.77 1064.23,-632.65 1068.55,-639 1060.68,-631.36"/>
+</g>
+<!-- thm_hyperbolic_rigidity -->
+<g id="node5" class="node">
+<title>thm_hyperbolic_rigidity</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="726.76" cy="-375" rx="138.89" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="726.76" y="-367.25" font-family="Times,serif" font-size="20.00">thm_hyperbolic_rigidity</text>
+</g>
+<!-- thm_master_hyperbolic_bcg -->
+<g id="node6" class="node">
+<title>thm_master_hyperbolic_bcg</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="693.76" cy="-256" rx="163.22" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="693.76" y="-248.25" font-family="Times,serif" font-size="20.00">thm_master_hyperbolic_bcg</text>
+</g>
+<!-- thm_hyperbolic_rigidity&#45;&gt;thm_master_hyperbolic_bcg -->
+<g id="edge4" class="edge">
+<title>thm_hyperbolic_rigidity&#45;&gt;thm_master_hyperbolic_bcg</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M721.74,-356.23C716.43,-337.39 707.96,-307.38 701.73,-285.28"/>
+<polygon fill="black" stroke="black" points="699.04,-275.73 706.08,-284.13 700.06,-279.37 701.75,-285.35 701.75,-285.35 701.75,-285.35 700.06,-279.37 697.42,-286.57 699.04,-275.73"/>
+</g>
+<!-- thm_cayley_block_bounds -->
+<g id="node20" class="node">
+<title>thm_cayley_block_bounds</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1413.76" cy="-375" rx="153.17" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1413.76" y="-367.25" font-family="Times,serif" font-size="20.00">thm_cayley_block_bounds</text>
+</g>
+<!-- thm_associative_rank_one&#45;&gt;thm_cayley_block_bounds -->
+<g id="edge23" class="edge">
+<title>thm_associative_rank_one&#45;&gt;thm_cayley_block_bounds</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1642.5,-475.86C1595.03,-455.14 1515.08,-420.23 1463.38,-397.66"/>
+<polygon fill="black" stroke="black" points="1454.23,-393.67 1465.2,-393.55 1457.7,-395.18 1463.4,-397.67 1463.4,-397.67 1463.4,-397.67 1457.7,-395.18 1461.6,-401.8 1454.23,-393.67"/>
+</g>
+<!-- thm_rank_one_hessian_reduction&#45;&gt;thm_associative_rank_one -->
+<g id="edge20" class="edge">
+<title>thm_rank_one_hessian_reduction&#45;&gt;thm_associative_rank_one</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1406.41,-594.74C1464.48,-573.71 1562.48,-538.21 1624.55,-515.72"/>
+<polygon fill="black" stroke="black" points="1633.8,-512.37 1625.93,-520.01 1630.25,-513.66 1624.4,-515.77 1624.4,-515.77 1624.4,-515.77 1630.25,-513.66 1622.87,-511.54 1633.8,-512.37"/>
+</g>
+<!-- thm_hyperbolic_jacobian_bound -->
+<g id="node16" class="node">
+<title>thm_hyperbolic_jacobian_bound</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="726.76" cy="-494" rx="187.01" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="726.76" y="-486.25" font-family="Times,serif" font-size="20.00">thm_hyperbolic_jacobian_bound</text>
+</g>
+<!-- thm_busemann_cross_det&#45;&gt;thm_hyperbolic_jacobian_bound -->
+<g id="edge26" class="edge">
+<title>thm_busemann_cross_det&#45;&gt;thm_hyperbolic_jacobian_bound</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M970.86,-594.86C920.14,-574.11 834.66,-539.14 779.5,-516.58"/>
+<polygon fill="black" stroke="black" points="770.35,-512.84 781.31,-512.46 773.85,-514.27 779.61,-516.62 779.61,-516.62 779.61,-516.62 773.85,-514.27 777.91,-520.79 770.35,-512.84"/>
+</g>
+<!-- thm_critical_exponent_invariance -->
+<g id="node10" class="node">
+<title>thm_critical_exponent_invariance</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="214.76" cy="-494" rx="193.89" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="214.76" y="-486.25" font-family="Times,serif" font-size="20.00">thm_critical_exponent_invariance</text>
+</g>
+<!-- thm_bcg_global_integration -->
+<g id="node11" class="node">
+<title>thm_bcg_global_integration</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="421.76" cy="-375" rx="160.57" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="421.76" y="-367.25" font-family="Times,serif" font-size="20.00">thm_bcg_global_integration</text>
+</g>
+<!-- thm_critical_exponent_invariance&#45;&gt;thm_bcg_global_integration -->
+<g id="edge8" class="edge">
+<title>thm_critical_exponent_invariance&#45;&gt;thm_bcg_global_integration</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M245.74,-475.48C281.82,-455.09 341.53,-421.35 381.25,-398.89"/>
+<polygon fill="black" stroke="black" points="389.83,-394.04 383.34,-402.88 386.54,-395.9 381.13,-398.96 381.13,-398.96 381.13,-398.96 386.54,-395.9 378.91,-395.05 389.83,-394.04"/>
+</g>
+<!-- thm_bcg_global_integration&#45;&gt;thm_master_hyperbolic_bcg -->
+<g id="edge9" class="edge">
+<title>thm_bcg_global_integration&#45;&gt;thm_master_hyperbolic_bcg</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M461.89,-356.74C510.24,-335.94 591.48,-300.99 643.83,-278.47"/>
+<polygon fill="black" stroke="black" points="652.78,-274.63 645.37,-282.71 649.31,-276.12 643.59,-278.58 643.59,-278.58 643.59,-278.58 649.31,-276.12 641.82,-274.44 652.78,-274.63"/>
+</g>
+<!-- thm_master_rank_one_bcg -->
+<g id="node12" class="node">
+<title>thm_master_rank_one_bcg</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="550.76" cy="-18" rx="155.81" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="550.76" y="-10.25" font-family="Times,serif" font-size="20.00">thm_master_rank_one_bcg</text>
+</g>
+<!-- thm_bcg_global_integration&#45;&gt;thm_master_rank_one_bcg -->
+<g id="edge10" class="edge">
+<title>thm_bcg_global_integration&#45;&gt;thm_master_rank_one_bcg</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M428.15,-356.4C449,-299.03 515.1,-117.13 540.59,-46.97"/>
+<polygon fill="black" stroke="black" points="543.9,-37.86 544.72,-48.79 542.61,-41.41 540.49,-47.25 540.49,-47.25 540.49,-47.25 542.61,-41.41 536.26,-45.72 543.9,-37.86"/>
+</g>
+<!-- def_hyperboloid_barycenter -->
+<g id="node13" class="node">
+<title>def_hyperboloid_barycenter</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="517.39,-750 288.13,-750 288.13,-714 517.39,-714 517.39,-750"/>
+<text xml:space="preserve" text-anchor="middle" x="402.76" y="-724.25" font-family="Times,serif" font-size="20.00">def_hyperboloid_barycenter</text>
+</g>
+<!-- thm_hyperboloid_barycenter_props -->
+<g id="node14" class="node">
+<title>thm_hyperboloid_barycenter_props</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="386.76" cy="-613" rx="202.87" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="386.76" y="-605.25" font-family="Times,serif" font-size="20.00">thm_hyperboloid_barycenter_props</text>
+</g>
+<!-- def_hyperboloid_barycenter&#45;&gt;thm_hyperboloid_barycenter_props -->
+<g id="edge11" class="edge">
+<title>def_hyperboloid_barycenter&#45;&gt;thm_hyperboloid_barycenter_props</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M400.32,-713.23C397.76,-694.48 393.68,-664.65 390.66,-642.59"/>
+<polygon fill="black" stroke="black" points="389.32,-632.76 395.13,-642.06 389.83,-636.51 390.68,-642.67 390.68,-642.67 390.68,-642.67 389.83,-636.51 386.22,-643.28 389.32,-632.76"/>
+</g>
+<!-- def_riemannian_barycenter_diff -->
+<g id="node15" class="node">
+<title>def_riemannian_barycenter_diff</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="857.89,-631 595.63,-631 595.63,-595 857.89,-595 857.89,-631"/>
+<text xml:space="preserve" text-anchor="middle" x="726.76" y="-605.25" font-family="Times,serif" font-size="20.00">def_riemannian_barycenter_diff</text>
+</g>
+<!-- def_hyperboloid_barycenter&#45;&gt;def_riemannian_barycenter_diff -->
+<g id="edge12" class="edge">
+<title>def_hyperboloid_barycenter&#45;&gt;def_riemannian_barycenter_diff</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M452.32,-713.1C509.96,-692.29 605.09,-657.93 666.83,-635.64"/>
+<polygon fill="black" stroke="black" points="676.05,-632.31 668.18,-639.94 672.5,-633.59 666.65,-635.71 666.65,-635.71 666.65,-635.71 672.5,-633.59 665.12,-631.47 676.05,-632.31"/>
+</g>
+<!-- thm_hyperboloid_barycenter_props&#45;&gt;thm_hyperbolic_jacobian_bound -->
+<g id="edge13" class="edge">
+<title>thm_hyperboloid_barycenter_props&#45;&gt;thm_hyperbolic_jacobian_bound</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M436.92,-594.74C497.99,-573.72 601.03,-538.26 666.38,-515.77"/>
+<polygon fill="black" stroke="black" points="675.78,-512.54 667.79,-520.05 672.21,-513.77 666.33,-515.79 666.33,-515.79 666.33,-515.79 672.21,-513.77 664.86,-511.54 675.78,-512.54"/>
+</g>
+<!-- def_riemannian_barycenter_diff&#45;&gt;thm_hyperbolic_jacobian_bound -->
+<g id="edge14" class="edge">
+<title>def_riemannian_barycenter_diff&#45;&gt;thm_hyperbolic_jacobian_bound</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M726.76,-594.23C726.76,-575.48 726.76,-545.65 726.76,-523.59"/>
+<polygon fill="black" stroke="black" points="726.76,-513.77 731.26,-523.77 726.76,-517.55 726.76,-523.77 726.76,-523.77 726.76,-523.77 726.76,-517.55 722.26,-523.77 726.76,-513.77"/>
+</g>
+<!-- thm_hyperbolic_jacobian_bound&#45;&gt;thm_hyperbolic_rigidity -->
+<g id="edge15" class="edge">
+<title>thm_hyperbolic_jacobian_bound&#45;&gt;thm_hyperbolic_rigidity</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M726.76,-475.23C726.76,-456.48 726.76,-426.65 726.76,-404.59"/>
+<polygon fill="black" stroke="black" points="726.76,-394.77 731.26,-404.77 726.76,-398.55 726.76,-404.77 726.76,-404.77 726.76,-404.77 726.76,-398.55 722.26,-404.77 726.76,-394.77"/>
+</g>
+<!-- def_rank_one_invariants -->
+<g id="node17" class="node">
+<title>def_rank_one_invariants</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="1660.51,-750 1459,-750 1459,-714 1660.51,-714 1660.51,-750"/>
+<text xml:space="preserve" text-anchor="middle" x="1559.76" y="-724.25" font-family="Times,serif" font-size="20.00">def_rank_one_invariants</text>
+</g>
+<!-- def_rank_one_invariants&#45;&gt;thm_rank_one_hessian_reduction -->
+<g id="edge17" class="edge">
+<title>def_rank_one_invariants&#45;&gt;thm_rank_one_hessian_reduction</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1529.23,-713.23C1494.2,-692.84 1436.65,-659.34 1398.24,-636.98"/>
+<polygon fill="black" stroke="black" points="1389.96,-632.17 1400.87,-633.31 1393.23,-634.07 1398.61,-637.2 1398.61,-637.2 1398.61,-637.2 1393.23,-634.07 1396.34,-641.09 1389.96,-632.17"/>
+</g>
+<!-- def_local_cayley_structure -->
+<g id="node18" class="node">
+<title>def_local_cayley_structure</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="1523.51,-512 1304,-512 1304,-476 1523.51,-476 1523.51,-512"/>
+<text xml:space="preserve" text-anchor="middle" x="1413.76" y="-486.25" font-family="Times,serif" font-size="20.00">def_local_cayley_structure</text>
+</g>
+<!-- def_rank_one_invariants&#45;&gt;def_local_cayley_structure -->
+<g id="edge16" class="edge">
+<title>def_rank_one_invariants&#45;&gt;def_local_cayley_structure</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1563.25,-713.39C1567.7,-686.14 1572.55,-632.96 1551.76,-595 1532.77,-560.35 1496.04,-534.64 1465.24,-517.97"/>
+<polygon fill="black" stroke="black" points="1456.56,-513.44 1467.51,-514.07 1459.91,-515.19 1465.43,-518.06 1465.43,-518.06 1465.43,-518.06 1459.91,-515.19 1463.34,-522.05 1456.56,-513.44"/>
+</g>
+<!-- def_orthogonal_k_structure -->
+<g id="node19" class="node">
+<title>def_orthogonal_k_structure</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="1793.76,-631 1569.75,-631 1569.75,-595 1793.76,-595 1793.76,-631"/>
+<text xml:space="preserve" text-anchor="middle" x="1681.76" y="-605.25" font-family="Times,serif" font-size="20.00">def_orthogonal_k_structure</text>
+</g>
+<!-- def_rank_one_invariants&#45;&gt;def_orthogonal_k_structure -->
+<g id="edge18" class="edge">
+<title>def_rank_one_invariants&#45;&gt;def_orthogonal_k_structure</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1578.28,-713.23C1598.83,-693.53 1632.12,-661.6 1655.38,-639.29"/>
+<polygon fill="black" stroke="black" points="1662.57,-632.4 1658.47,-642.57 1659.84,-635.01 1655.35,-639.32 1655.35,-639.32 1655.35,-639.32 1659.84,-635.01 1652.24,-636.07 1662.57,-632.4"/>
+</g>
+<!-- def_local_cayley_structure&#45;&gt;thm_cayley_block_bounds -->
+<g id="edge19" class="edge">
+<title>def_local_cayley_structure&#45;&gt;thm_cayley_block_bounds</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1413.76,-475.23C1413.76,-456.48 1413.76,-426.65 1413.76,-404.59"/>
+<polygon fill="black" stroke="black" points="1413.76,-394.77 1418.26,-404.77 1413.76,-398.55 1413.76,-404.77 1413.76,-404.77 1413.76,-404.77 1413.76,-398.55 1409.26,-404.77 1413.76,-394.77"/>
+</g>
+<!-- def_orthogonal_k_structure&#45;&gt;thm_associative_rank_one -->
+<g id="edge21" class="edge">
+<title>def_orthogonal_k_structure&#45;&gt;thm_associative_rank_one</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1681.76,-594.23C1681.76,-575.48 1681.76,-545.65 1681.76,-523.59"/>
+<polygon fill="black" stroke="black" points="1681.76,-513.77 1686.26,-523.77 1681.76,-517.55 1681.76,-523.77 1681.76,-523.77 1681.76,-523.77 1681.76,-517.55 1677.26,-523.77 1681.76,-513.77"/>
+</g>
+<!-- thm_ruan_cases_1_and_2 -->
+<g id="node21" class="node">
+<title>thm_ruan_cases_1_and_2</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1212.76" cy="-256" rx="148.41" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1212.76" y="-248.25" font-family="Times,serif" font-size="20.00">thm_ruan_cases_1_and_2</text>
+</g>
+<!-- thm_cayley_block_bounds&#45;&gt;thm_ruan_cases_1_and_2 -->
+<g id="edge22" class="edge">
+<title>thm_cayley_block_bounds&#45;&gt;thm_ruan_cases_1_and_2</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1383.66,-356.48C1348.63,-336.09 1290.66,-302.35 1252.09,-279.89"/>
+<polygon fill="black" stroke="black" points="1243.78,-275.06 1254.68,-276.2 1247.04,-276.96 1252.42,-280.09 1252.42,-280.09 1252.42,-280.09 1247.04,-276.96 1250.16,-283.98 1243.78,-275.06"/>
+</g>
+<!-- thm_ruan_prop_3_1 -->
+<g id="node22" class="node">
+<title>thm_ruan_prop_3_1</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="796.76" cy="-137" rx="117.22" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="796.76" y="-129.25" font-family="Times,serif" font-size="20.00">thm_ruan_prop_3_1</text>
+</g>
+<!-- thm_ruan_cases_1_and_2&#45;&gt;thm_ruan_prop_3_1 -->
+<g id="edge24" class="edge">
+<title>thm_ruan_cases_1_and_2&#45;&gt;thm_ruan_prop_3_1</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1154.47,-238.61C1077.75,-217.03 943.22,-179.19 862.81,-156.58"/>
+<polygon fill="black" stroke="black" points="853.49,-153.96 864.34,-152.33 857.13,-154.98 863.12,-156.66 863.12,-156.66 863.12,-156.66 857.13,-154.98 861.9,-161 853.49,-153.96"/>
+</g>
+<!-- thm_ruan_prop_3_1&#45;&gt;thm_master_rank_one_bcg -->
+<g id="edge25" class="edge">
+<title>thm_ruan_prop_3_1&#45;&gt;thm_master_rank_one_bcg</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M761.25,-119.11C717.98,-98.54 644.78,-63.72 597.11,-41.05"/>
+<polygon fill="black" stroke="black" points="588.15,-36.79 599.12,-37.02 591.57,-38.41 597.18,-41.08 597.18,-41.08 597.18,-41.08 591.57,-38.41 595.25,-45.15 588.15,-36.79"/>
+</g>
+<!-- thm_hyperboloid_busemann_hessian -->
+<g id="node23" class="node">
+<title>thm_hyperboloid_busemann_hessian</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="733.76" cy="-732" rx="210.28" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="733.76" y="-724.25" font-family="Times,serif" font-size="20.00">thm_hyperboloid_busemann_hessian</text>
+</g>
+<!-- def_critical_exponent -->
+<g id="node24" class="node">
+<title>def_critical_exponent</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="177.51,-631 0,-631 0,-595 177.51,-595 177.51,-631"/>
+<text xml:space="preserve" text-anchor="middle" x="88.76" y="-605.25" font-family="Times,serif" font-size="20.00">def_critical_exponent</text>
+</g>
+<!-- def_critical_exponent&#45;&gt;thm_critical_exponent_invariance -->
+<g id="edge27" class="edge">
+<title>def_critical_exponent&#45;&gt;thm_critical_exponent_invariance</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M107.89,-594.23C129.2,-574.44 163.8,-542.32 187.83,-520"/>
+<polygon fill="black" stroke="black" points="194.96,-513.38 190.69,-523.48 192.19,-515.96 187.63,-520.19 187.63,-520.19 187.63,-520.19 192.19,-515.96 184.57,-516.89 194.96,-513.38"/>
+</g>
+<!-- def_hyperboloid_busemann -->
+<g id="node25" class="node">
+<title>def_hyperboloid_busemann</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="681.51,-869 456,-869 456,-833 681.51,-833 681.51,-869"/>
+<text xml:space="preserve" text-anchor="middle" x="568.76" y="-843.25" font-family="Times,serif" font-size="20.00">def_hyperboloid_busemann</text>
+</g>
+<!-- def_hyperboloid_busemann&#45;&gt;def_hyperboloid_barycenter -->
+<g id="edge28" class="edge">
+<title>def_hyperboloid_busemann&#45;&gt;def_hyperboloid_barycenter</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M543.54,-832.23C515.06,-812.16 468.56,-779.38 436.86,-757.04"/>
+<polygon fill="black" stroke="black" points="428.93,-751.45 439.69,-753.53 432.02,-753.63 437.1,-757.21 437.1,-757.21 437.1,-757.21 432.02,-753.63 434.51,-760.89 428.93,-751.45"/>
+</g>
+<!-- def_hyperboloid_busemann&#45;&gt;thm_hyperboloid_busemann_hessian -->
+<g id="edge29" class="edge">
+<title>def_hyperboloid_busemann&#45;&gt;thm_hyperboloid_busemann_hessian</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M593.81,-832.23C622.12,-812.16 668.34,-779.38 699.86,-757.04"/>
+<polygon fill="black" stroke="black" points="707.74,-751.45 702.18,-760.9 704.65,-753.64 699.58,-757.23 699.58,-757.23 699.58,-757.23 704.65,-753.64 696.98,-753.56 707.74,-751.45"/>
+</g>
+<!-- def_busemann_operators -->
+<g id="node26" class="node">
+<title>def_busemann_operators</title>
+<polygon fill="#b0eca3" stroke="green" stroke-width="1.8" points="1115.01,-869 910.5,-869 910.5,-833 1115.01,-833 1115.01,-869"/>
+<text xml:space="preserve" text-anchor="middle" x="1012.76" y="-843.25" font-family="Times,serif" font-size="20.00">def_busemann_operators</text>
+</g>
+<!-- def_busemann_operators&#45;&gt;thm_busemann_cross_det -->
+<g id="edge32" class="edge">
+<title>def_busemann_operators&#45;&gt;thm_busemann_cross_det</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1012.76,-832.26C1012.76,-791.76 1012.76,-692.17 1012.76,-642.76"/>
+<polygon fill="black" stroke="black" points="1012.76,-632.84 1017.26,-642.84 1012.76,-636.62 1012.76,-642.84 1012.76,-642.84 1012.76,-642.84 1012.76,-636.62 1008.26,-642.84 1012.76,-632.84"/>
+</g>
+<!-- def_busemann_operators&#45;&gt;def_riemannian_barycenter_diff -->
+<g id="edge30" class="edge">
+<title>def_busemann_operators&#45;&gt;def_riemannian_barycenter_diff</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1008.36,-832.24C1000.5,-803.83 981.52,-747.9 946.76,-714 907.88,-676.09 852.09,-650.96 806.41,-635.36"/>
+<polygon fill="black" stroke="black" points="797.09,-632.28 808,-631.15 800.68,-633.47 806.59,-635.42 806.59,-635.42 806.59,-635.42 800.68,-633.47 805.17,-639.69 797.09,-632.28"/>
+</g>
+<!-- def_busemann_operators&#45;&gt;def_rank_one_invariants -->
+<g id="edge31" class="edge">
+<title>def_busemann_operators&#45;&gt;def_rank_one_invariants</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1096.43,-832.1C1195.86,-810.83 1361.35,-775.44 1465.29,-753.2"/>
+<polygon fill="black" stroke="black" points="1474.9,-751.15 1466.06,-757.64 1471.2,-751.94 1465.12,-753.24 1465.12,-753.24 1465.12,-753.24 1471.2,-751.94 1464.18,-748.84 1474.9,-751.15"/>
+</g>
+<!-- thm_spectral_trace_det -->
+<g id="node27" class="node">
+<title>thm_spectral_trace_det</title>
+<ellipse fill="#1cac78" stroke="green" stroke-width="1.8" cx="1564.76" cy="-1089" rx="134.14" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="1564.76" y="-1081.25" font-family="Times,serif" font-size="20.00">thm_spectral_trace_det</text>
+</g>
+<!-- thm_spectral_trace_det&#45;&gt;thm_trace_det_amgm -->
+<g id="edge33" class="edge">
+<title>thm_spectral_trace_det&#45;&gt;thm_trace_det_amgm</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1564.76,-1070.23C1564.76,-1051.48 1564.76,-1021.65 1564.76,-999.59"/>
+<polygon fill="black" stroke="black" points="1564.76,-989.77 1569.26,-999.77 1564.76,-993.55 1564.76,-999.77 1564.76,-999.77 1564.76,-999.77 1564.76,-993.55 1560.26,-999.77 1564.76,-989.77"/>
+</g>
+</g>
+</svg>
+</div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="def_busemann_operators_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_busemann_operators" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.3</span><span class="definition_thmtitle">Busemann covariance and cross-operators</span></div>
+    <div class="thm_thmcontent"><p>   For vectors \(u, u_1, u_2 \in E\), define the rank-one operators \((u \otimes u^*)(v) = \langle u, v\rangle u\) and \((u_1 \otimes u_2^*)(v) = \langle u_1, v\rangle u_2\). Given finite weights \(w_a\) and vector families \(u_a, u_{1,a}, u_{2,a} \in E\), define the Busemann covariance operator and scaled cross-operator: </p>
+<div class="displaymath" id="a0000000017">
+  \[ H(w, u) = \sum _{a \in s} w_a (u_a \otimes u_a^*), \qquad L_c(w, u_1, u_2) = c \sum _{a \in s} w_a (u_{1,a} \otimes u_{2,a}^*). \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def_busemann_operators">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.selfOuter" class="lean_decl">BCG.Hyperbolic.selfOuter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.crossOuter" class="lean_decl">BCG.Hyperbolic.crossOuter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannCovariance" class="lean_decl">BCG.Hyperbolic.busemannCovariance</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannCrossOperator" class="lean_decl">BCG.Hyperbolic.busemannCrossOperator</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_critical_exponent_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_critical_exponent" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5</span><span class="definition_thmtitle">Exponential distance weights and critical exponent</span></div>
+    <div class="thm_thmcontent"><p>   For a metric-measure space \((X, d, \mu )\), scale \(s \in \mathbb {R}\), and basepoint \(x \in X\), the exponential weight is \(w_s(x, z) = e^{-s d(x, z)}\), the critical exponent (volume entropy) is </p>
+<div class="displaymath" id="a0000000013">
+  \[ h(X, \mu , x_0) = \inf \left\{ s \in \mathbb {R}\; \middle |\;  \int _X e^{-s d(x_0, z)}\, d\mu (z) {\lt} \infty \right\} , \]
+</div>
+<p> and the exponentially weighted measure is \(\mu _x^s = e^{-s d(x, \cdot )}\mu \). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def_critical_exponent">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight" class="lean_decl">BCG.Entropy.exponentialWeight</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.criticalExponent" class="lean_decl">BCG.Entropy.criticalExponent</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialMeasure" class="lean_decl">BCG.Entropy.exponentialMeasure</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_hyperboloid_barycenter_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_hyperboloid_barycenter" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.5</span><span class="definition_thmtitle">Lorentzian Busemann barycenter functional and explicit minimizer</span></div>
+    <div class="thm_thmcontent"><p>    For weights \(w : \iota \to \mathbb {R}\) and boundary directions \(\xi : \iota \to S(E)\), the Busemann barycenter functional on \(\mathrm{Hyperboloid}(E)\) is \(\mathcal{B}_w(y) = \sum _{i \in \iota } w_i e^{B_{\xi _i}(y)} = -\langle y, Z(w)\rangle _{\mathcal{L}}\), where \(Z(w) = (\sum _i w_i, \sum _i w_i \xi _i) \in \mathbb {R}\times E\) is the resultant Lorentz vector. When \(\| \sum _i w_i \xi _i\|  {\lt} \sum _i w_i\), the future-timelike normalization \(\mathrm{hyperboloidBarycenter}(w, \xi ) = Z(w)/\| Z(w)\| _{\mathcal{L}} \in \mathrm{Hyperboloid}(E)\) defines the explicit barycenter, with normalized probability weights \(p_i(w) = w_i e^{B_{\xi _i}(p)} / \mathcal{B}_w(p)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def_hyperboloid_barycenter">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannCocycleFactor" class="lean_decl">BCG.Hyperbolic.busemannCocycleFactor</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzNorm" class="lean_decl">BCG.Hyperbolic.lorentzNorm</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.normalizeFuture" class="lean_decl">BCG.Hyperbolic.normalizeFuture</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional" class="lean_decl">BCG.Hyperbolic.busemannFunctional</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannLorentzVector" class="lean_decl">BCG.Hyperbolic.busemannLorentzVector</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBarycenter" class="lean_decl">BCG.Hyperbolic.hyperboloidBarycenter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.barycenterProbWeight" class="lean_decl">BCG.Hyperbolic.barycenterProbWeight</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.equivariantQuotientMap" class="lean_decl">BCG.Hyperbolic.equivariantQuotientMap</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_hyperboloid_busemann_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_hyperboloid_busemann" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">Hyperboloid Busemann function and differential</span></div>
+    <div class="thm_thmcontent"><p>   For a boundary direction \(\xi \in S(E)\) and \(y = (t, x) \in \mathbf{H}^n = \mathrm{Hyperboloid}(E)\), the Busemann function is \(B_\xi (y) = -\log (t - \langle x, \xi \rangle )\) with exponential \(e^{B_\xi (y)} = (t - \langle x, \xi \rangle )^{-1} {\gt} 0\) and fiberwise differential \(dB_\xi (y)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def_hyperboloid_busemann">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemann" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemann</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemannDiff" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemannDiff</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.expHyperboloidBusemann" class="lean_decl">BCG.Hyperbolic.expHyperboloidBusemann</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_local_cayley_structure_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_local_cayley_structure" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3.6</span><span class="definition_thmtitle">Local Cayley-line orthogonal structure on \(\mathbb {O}\mathbf{H}^2\)</span></div>
+    <div class="thm_thmcontent"><p>    Although non-associativity of the octonions \(\mathbb {O}\) prevents a global <span class="ttfamily">IsOrthogonalKStructure 8 J</span> on \(T_x \mathbb {O}\mathbf{H}^2 \cong \mathbb {R}^{16}\), on each individual \(8\)-dimensional Cayley line \(V = \mathcal{C}ay(v_i) \cong \mathbb {R}^8\) there exist line-dependent orthogonal endomorphisms \(J_{0,v_i} = \operatorname {id}_V, J_{1,v_i}, \dots , J_{7,v_i} \in \mathrm{O}(V)\) generated by octonionic right multiplication (Ruan Lemma 3.2 \(\mathrm{(P2')}\)). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#def_local_cayley_structure">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_orthogonal_k_structure_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_orthogonal_k_structure" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3.4</span><span class="definition_thmtitle">Global orthogonal \(\mathbb {K}\)-structure for associative division algebras</span></div>
+    <div class="thm_thmcontent"><p>    For the associative division algebras \(\mathbb {K}\in \{ \mathbb {R}, \mathbb {C}, \mathbb {H}\} \) (\(d \in \{ 1, 2, 4\} \)), an orthogonal \(\mathbb {K}\)-structure on \(E \cong T_x \mathbb {K}\mathbf{H}^m\) is a family \(J_0 = \operatorname {id}_E, J_1, \dots , J_{d-1} \in \mathrm{O}(E)\) with \(\langle J_r u, J_s u\rangle = 0\) for \(r \ne s\), inducing the \(\mathbb {K}\)-line projection \(\pi _u = \sum _{r=0}^{d-1} (J_r u) \otimes (J_r u)^*\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#def_orthogonal_k_structure">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.kLineProj" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.kLineProj</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_rank_one_invariants_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_rank_one_invariants" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3.1</span><span class="definition_thmtitle">Rank-one symmetric space invariants and \(\mathbb {K}\)-line projections</span></div>
+    <div class="thm_thmcontent"><p>    For a rank-one symmetric space \(\widetilde{M} = \mathbb {K}\mathbf{H}^m\) (\(\mathbb {K}\in \{ \mathbb {R}, \mathbb {C}, \mathbb {H}, \mathbb {O}\} \), \(d = \dim _\mathbb {R}\mathbb {K}\in \{ 1, 2, 4, 8\} \), real dimension \(n = d m\), curvature \(K \in [-4, -1]\)), the volume entropy is \(h(\mathbb {K}\mathbf{H}^m) = n + d - 2\). For a unit Busemann gradient \(u \in E\) and orthogonal projection \(\pi _u\) onto the \(d\)-dimensional \(\mathbb {K}\)-line \(\mathbb {K}u\), the single-direction Busemann Hessian is \(W(u, \pi _u) = I - (u \otimes u^*) - (\pi _u - u \otimes u^*) = I - 2(u \otimes u^*) + \pi _u\), and the integrated Hessian operator is </p>
+<div class="displaymath" id="a0000000025">
+  \[ W_y = I - 2H + \widehat{H} = (I - H) + (\widehat{H} - H), \qquad \widehat{H} = \sum _{a \in s} w_a \pi _{u_a}. \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#def_rank_one_invariants">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType" class="lean_decl">BCG.RankOne.DivisionAlgebraType</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.fiberDim" class="lean_decl">BCG.RankOne.DivisionAlgebraType.fiberDim</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.manifoldDim" class="lean_decl">BCG.RankOne.DivisionAlgebraType.manifoldDim</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneEntropy" class="lean_decl">BCG.RankOne.rankOneEntropy</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection" class="lean_decl">BCG.RankOne.IsKLineProjection</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneJacobiOperator" class="lean_decl">BCG.RankOne.rankOneJacobiOperator</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneSingleHessian" class="lean_decl">BCG.RankOne.rankOneSingleHessian</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneLineCovariance" class="lean_decl">BCG.RankOne.rankOneLineCovariance</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator" class="lean_decl">BCG.RankOne.rankOneHessianOperator</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def_riemannian_barycenter_diff_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def_riemannian_barycenter_diff" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.7</span><span class="definition_thmtitle">Metric gauge isometry and Riemannian barycenter differential</span></div>
+    <div class="thm_thmcontent"><p>    At \(p = (t, x) \in \mathrm{Hyperboloid}(E)\), the metric gauge operator \(\Phi _p = I - (1 - t^{-1}) P_x : E \simeq _l[\mathbb {R}] E\) with inverse \(\Phi _p^{-1} = I + (t - 1) P_x\) is an exact linear isometry between the Riemannian tangent metric \(g_p\) and the Euclidean inner product on \(E\). The orthonormalized Euclidean Busemann gradient is \(u_2(\xi , p) = \Phi _p(\nabla B_\xi (p))\) (\(\| u_2(\xi , p)\|  = 1\)), and the Riemannian differential of the natural map at scale \(s\) is \(D^{\mathrm{Riem}} F_s(p)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def_riemannian_barycenter_diff">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannGradientCoord" class="lean_decl">BCG.Hyperbolic.busemannGradientCoord</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGauge" class="lean_decl">BCG.Hyperbolic.metricGauge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGaugeInv" class="lean_decl">BCG.Hyperbolic.metricGaugeInv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGaugeEquiv" class="lean_decl">BCG.Hyperbolic.metricGaugeEquiv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.euclideanBusemannGrad" class="lean_decl">BCG.Hyperbolic.euclideanBusemannGrad</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianBarycenterDifferential" class="lean_decl">BCG.Hyperbolic.riemannianBarycenterDifferential</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_associative_rank_one_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_associative_rank_one" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3.5</span><span class="theorem_thmtitle">Associative rank-one determinant inequality and BCG Jacobian bound</span></div>
+    <div class="thm_thmcontent"><p>    For an associative <span class="ttfamily">IsOrthogonalKStructure d J</span> (\(d \in \{ 2, 4\} \)): </p>
+<ol class="enumerate">
+  <li><p>Property \(\mathrm{(P2)}\) holds globally: \(\widehat{H} - H = \sum _{r \ne 0} J_r H J_r^*\), and hence \(\det ((\widehat{H} - H)/(d - 1)) \ge \det H\) (BCG Lemma B.3). </p>
+</li>
+  <li><p>Combining the log-concavity splitting \(W_y = (n+d-2)\bigl(p\frac{I-H}{n-1} + q\frac{\widehat{H}-H}{d-1}\bigr)\) (\(p = \frac{n-1}{n+d-2}\), \(q = \frac{d-1}{n+d-2}\)) with BCG Lemma B.4 yields </p>
+<div class="displaymath" id="a0000000031">
+  \[ \frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})} \le \left(\frac{\sqrt{n}}{n + d - 2}\right)^n \quad \text{and}\quad |\det D_F| \le \left(\frac{s}{n + d - 2}\right)^n. \]
+</div>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0003.html#thm_associative_rank_one">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.norm_map" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.norm_map</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.adjoint_comp_self" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.adjoint_comp_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.det_sq_eq_one" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.det_sq_eq_one</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.selfOuter_map_eq_conj" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.selfOuter_map_eq_conj</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.isKLineProjection_kLineProj" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.isKLineProjection_kLineProj</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.sub_busemannCovariance_eq_sum_conjugate" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.sub_busemannCovariance_eq_sum_conjugate</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsOrthogonalKStructure.det_sub_div_ge_det_of_orthogonal_conjugates" class="lean_decl">BCG.RankOne.IsOrthogonalKStructure.det_sub_div_ge_det_of_orthogonal_conjugates</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_id_sub_div_ge_det" class="lean_decl">BCG.RankOne.det_id_sub_div_ge_det</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_rankOneHessianOperator_ge" class="lean_decl">BCG.RankOne.det_rankOneHessianOperator_ge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.associative_rankOne_det_ineq" class="lean_decl">BCG.RankOne.associative_rankOne_det_ineq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.real_rankOne_det_ineq" class="lean_decl">BCG.RankOne.real_rankOne_det_ineq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.id_sub_busemannCovariance_nonneg" class="lean_decl">BCG.RankOne.id_sub_busemannCovariance_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.associative_rankOne_bcg_jacobian_bound" class="lean_decl">BCG.RankOne.associative_rankOne_bcg_jacobian_bound</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_bcg_global_integration_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_bcg_global_integration" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">4.1</span><span class="theorem_thmtitle">Global BCG volume-entropy integration and scale limit \(s \searrow h(X)\)</span></div>
+    <div class="thm_thmcontent"><p>    Let \((X, \mu _X)\) be a finite-measure space. If at every scale \(s {\gt} h_X\), the Jacobian \(J_s(x) = |\det d_x F_s|\) is integrable, bounded \(\mu _X\)-almost everywhere by \((s/h_Y)^n\), and satisfies the degree-area inequality \(|\deg (f)|\cdot \operatorname {Vol}(Y) \le \int _X J_s(x)\, d\mu _X(x)\), then </p>
+<div class="displaymath" id="a0000000039">
+  \[ |\deg (f)| \cdot h_Y^n \cdot \operatorname {Vol}(Y) \le s^n \cdot \operatorname {Vol}(X) \quad (\forall s {\gt} h_X) \qquad \Longrightarrow \qquad |\deg (f)| \cdot h_Y^n \cdot \operatorname {Vol}(Y) \le h_X^n \cdot \operatorname {Vol}(X). \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#thm_bcg_global_integration">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.bcg_volume_inequality_at_scale" class="lean_decl">BCG.bcg_volume_inequality_at_scale</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.bcg_volume_entropy_inequality" class="lean_decl">BCG.bcg_volume_entropy_inequality</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_bcg_lemma_b2_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_bcg_lemma_b2" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3.3</span><span class="theorem_thmtitle">Minkowski–Ky Fan log-concavity of the determinant (BCG Lemma B.2)</span></div>
+    <div class="thm_thmcontent"><p>    For any symmetric positive-semidefinite operators \(A, B : E \to _l[\mathbb {R}] E\) on an \(n\)-dimensional real inner product space and weights \(p, q \ge 0\) with \(p + q = 1\), </p>
+<div class="displaymath" id="a0000000029">
+  \[ \det (p \bullet A + q \bullet B) \ge (\det A)^p (\det B)^q. \]
+</div>
+<p> By induction, if \(A_0, \dots , A_{m-1}\) are symmetric positive-semidefinite with \(\det A_r \ge d_0 \ge 0\), then \(\det \left(\frac{1}{m}\sum _{r=0}^{m-1} A_r\right) \ge d_0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#thm_bcg_lemma_b2">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.finset_prod_le_prod_of_nonneg" class="lean_decl">BCG.RankOne.finset_prod_le_prod_of_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.eq_id_of_isSymmetric_of_inner_eq_norm_sq" class="lean_decl">BCG.RankOne.eq_id_of_isSymmetric_of_inner_eq_norm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.comp_conj_eq_id_of_quad_eq_norm_sq" class="lean_decl">BCG.RankOne.comp_conj_eq_id_of_quad_eq_norm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_rpow_le_det_smul_id_add_smul" class="lean_decl">BCG.RankOne.det_rpow_le_det_smul_id_add_smul</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_weighted_add_ge_rpow_mul_rpow" class="lean_decl">BCG.RankOne.det_weighted_add_ge_rpow_mul_rpow</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_add_smul_ge_of_det_ge" class="lean_decl">BCG.RankOne.det_add_smul_ge_of_det_ge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_sum_smul_ge_of_forall_det_ge" class="lean_decl">BCG.RankOne.det_sum_smul_ge_of_forall_det_ge</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_bilinear_cs_det_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_bilinear_cs_det" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.4</span><span class="theorem_thmtitle">Souto’s bilinear Cauchy–Schwarz determinant bound</span></div>
+    <div class="thm_thmcontent"><p>    Let \(L, H_1, H_2 : E \to _l[\mathbb {R}] E\) on an \(n\)-dimensional real inner product space (\(n \ge 1\)) with \(H_1, H_2\) symmetric positive-semidefinite and \(c \ge 0\). If \(|\langle L u, w\rangle | \le c \sqrt{\langle u, H_1 u\rangle }\sqrt{\langle w, H_2 w\rangle }\) for all \(u, w \in E\), then </p>
+<div class="displaymath" id="a0000000012">
+  \[ |\det L| \le c^n \sqrt{\det H_1}\sqrt{\det H_2}. \]
+</div>
+<p> If furthermore \(\operatorname {Tr}(H_1) \le 1\) and \(\operatorname {Tr}(H_2) \le 1\), then \(|\det L| \le (c/n)^n\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm_bilinear_cs_det">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.abs_det_le_of_abs_inner_le" class="lean_decl">BCG.LinearAlgebra.abs_det_le_of_abs_inner_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.abs_det_le_div_dim_pow_of_abs_inner_le" class="lean_decl">BCG.LinearAlgebra.abs_det_le_div_dim_pow_of_abs_inner_le</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_busemann_cross_det_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_busemann_cross_det" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.4</span><span class="theorem_thmtitle">Busemann cross-operator determinant bound</span></div>
+    <div class="thm_thmcontent"><p>    For non-negative weights \(w_a \ge 0\) with \(\sum _{a \in s} w_a \le 1\) and unit-bounded vectors \(\| u_{1,a}\|  \le 1\), \(\| u_{2,a}\|  \le 1\), the covariance operators \(H(w, u_i)\) are symmetric positive-semidefinite with \(\operatorname {Tr}(H(w, u_i)) \le 1\), the cross-operator satisfies \(|\langle L_c(w, u_1, u_2) v, z\rangle | \le c \sqrt{\langle v, H_1 v\rangle }\sqrt{\langle z, H_2 z\rangle }\), and </p>
+<div class="displaymath" id="a0000000019">
+  \[ |\det L_c(w, u_1, u_2)| \le \left(\frac{c}{n}\right)^n. \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0002.html#thm_busemann_cross_det">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.selfOuter_apply" class="lean_decl">BCG.Hyperbolic.selfOuter_apply</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.isSymmetric_selfOuter" class="lean_decl">BCG.Hyperbolic.isSymmetric_selfOuter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_selfOuter_eq_sq" class="lean_decl">BCG.Hyperbolic.inner_selfOuter_eq_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_selfOuter_nonneg" class="lean_decl">BCG.Hyperbolic.inner_selfOuter_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.trace_selfOuter" class="lean_decl">BCG.Hyperbolic.trace_selfOuter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.crossOuter_apply" class="lean_decl">BCG.Hyperbolic.crossOuter_apply</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_crossOuter_apply" class="lean_decl">BCG.Hyperbolic.inner_crossOuter_apply</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.isSymmetric_busemannCovariance" class="lean_decl">BCG.Hyperbolic.isSymmetric_busemannCovariance</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_busemannCovariance_eq_sum" class="lean_decl">BCG.Hyperbolic.inner_busemannCovariance_eq_sum</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_busemannCovariance_nonneg" class="lean_decl">BCG.Hyperbolic.inner_busemannCovariance_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.trace_busemannCovariance_le_one" class="lean_decl">BCG.Hyperbolic.trace_busemannCovariance_le_one</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.abs_inner_busemannCrossOperator_le" class="lean_decl">BCG.Hyperbolic.abs_inner_busemannCrossOperator_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.abs_det_busemannCrossOperator_le" class="lean_decl">BCG.Hyperbolic.abs_det_busemannCrossOperator_le</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_cayley_block_bounds_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_cayley_block_bounds" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3.7</span><span class="theorem_thmtitle">Ruan’s Cayley block trace identity and \(8\times 8\) block AM–GM bounds</span></div>
+    <div class="thm_thmcontent"><p>    On the \(16\)-dimensional Cayley hyperbolic plane \(\mathbb {O}\mathbf{H}^2\) (\(n = 16\), \(d = 8\), \(h_0 = 22\), critical ratio \(\sqrt{16}/22 = 2/11\)): </p>
+<ol class="enumerate">
+  <li><p>By Ruan Lemma 3.2 \(\mathrm{(P1')}\)–\(\mathrm{(P2')}\), on any \(8\)-dimensional Cayley line \(V\) where \(\widehat{H}|_V = \lambda \operatorname {id}_V\) and \(\lambda \| x\| ^2 = \sum _{r=0}^7 \langle J_r^* x, A(J_r^* x)\rangle \), polarization and cyclic trace invariance yield \(\operatorname {Tr}(A) = \lambda \) (and \(\operatorname {Tr}(B) = \mu \), \(\lambda + \mu = 1\)). </p>
+</li>
+  <li><p>Rescaling \(A' = \lambda ^{-1} A\) on \(V\) (\(\dim _\mathbb {R}V = 8\)) and applying <span class="ttfamily">det_id_sub_div_ge_det</span> proves Ruan’s Eq.&#160;(28): </p>
+<div class="displaymath" id="a0000000033">
+  \[ \det (\lambda I_8 - A) \ge 7^8 \det A \qquad \text{and}\qquad \det (\mu I_8 - B) \ge 7^8 \det B. \]
+</div>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0003.html#thm_cayley_block_bounds">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_dim_eq" class="lean_decl">BCG.RankOne.octonionic_dim_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_fiberDim_eq" class="lean_decl">BCG.RankOne.octonionic_fiberDim_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_volumeEntropy_eq" class="lean_decl">BCG.RankOne.octonionic_volumeEntropy_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneEntropy_sixteen_eight" class="lean_decl">BCG.RankOne.rankOneEntropy_sixteen_eight</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_critical_ratio_eq" class="lean_decl">BCG.RankOne.octonionic_critical_ratio_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_critical_ratio_twenty_two_eq" class="lean_decl">BCG.RankOne.octonionic_critical_ratio_twenty_two_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure.adjoint_comp_self" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure.adjoint_comp_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure.trace_conj_eq" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure.trace_conj_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsLocalCayleyLineStructure.trace_cayleyLine_eq_eigenvalue" class="lean_decl">BCG.RankOne.IsLocalCayleyLineStructure.trace_cayleyLine_eq_eigenvalue</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_lambda_sub_cayleyBlock_ge" class="lean_decl">BCG.RankOne.det_lambda_sub_cayleyBlock_ge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_lambda_sub_cayleyBlock_eight_ge" class="lean_decl">BCG.RankOne.det_lambda_sub_cayleyBlock_eight_ge</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_critical_exponent_invariance_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_critical_exponent_invariance" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.6</span><span class="theorem_thmtitle">Basepoint invariance of volume entropy</span></div>
+    <div class="thm_thmcontent"><p>    For any \(s \ge 0\) and \(x, y, z \in X\), the triangle inequality gives \(e^{-s d(x,z)} \le e^{s d(x,y)} e^{-s d(y,z)}\). Consequently, \(z \mapsto e^{-s d(x,z)}\) is \(\mu \)-integrable if and only if \(z \mapsto e^{-s d(y,z)}\) is \(\mu \)-integrable, and \(h(X, \mu , x) = h(X, \mu , y)\) is independent of the basepoint. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm_critical_exponent_invariance">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.continuous_exponentialWeight" class="lean_decl">BCG.Entropy.continuous_exponentialWeight</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_pos" class="lean_decl">BCG.Entropy.exponentialWeight_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_nonneg" class="lean_decl">BCG.Entropy.exponentialWeight_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_self" class="lean_decl">BCG.Entropy.exponentialWeight_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_mul_le" class="lean_decl">BCG.Entropy.exponentialWeight_mul_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.exponentialWeight_le_mul_exp_dist" class="lean_decl">BCG.Entropy.exponentialWeight_le_mul_exp_dist</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.integrable_exponentialWeight_of_integrable" class="lean_decl">BCG.Entropy.integrable_exponentialWeight_of_integrable</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.integrable_exponentialWeight_iff" class="lean_decl">BCG.Entropy.integrable_exponentialWeight_iff</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Entropy.criticalExponent_eq" class="lean_decl">BCG.Entropy.criticalExponent_eq</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_gram_det_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_gram_det" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.3</span><span class="theorem_thmtitle">Adjoint-Gram determinant bound</span></div>
+    <div class="thm_thmcontent"><p>    For any linear operator \(A : E \to _l[\mathbb {R}] E\) with \(\| A v\|  \le c \| v\| \), the Gram operator \(A^* A\) satisfies \(\det (A^* A) = (\det A)^2\), \(\operatorname {Tr}(A^* A) = \sum _i \| A e_i\| ^2 \le n c^2\), and \(|\det A| \le c^n\). Moreover, any symmetric positive-definite \(H\) (\(\det H {\gt} 0\)) admits a symmetric inverse square root \(D = H^{-1/2}\) satisfying \(D^2 H = \operatorname {id}_E\) and \(\det D = (\sqrt{\det H})^{-1}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm_gram_det">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_adjoint" class="lean_decl">BCG.LinearAlgebra.det_adjoint</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_adjoint_mul_self" class="lean_decl">BCG.LinearAlgebra.det_adjoint_mul_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.trace_eq_sum_orthonormalBasis" class="lean_decl">BCG.LinearAlgebra.trace_eq_sum_orthonormalBasis</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.trace_adjoint_mul_self_eq_sum_norm_sq" class="lean_decl">BCG.LinearAlgebra.trace_adjoint_mul_self_eq_sum_norm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.abs_det_le_pow_of_norm_le" class="lean_decl">BCG.LinearAlgebra.abs_det_le_pow_of_norm_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.exists_ne_zero_inner_eq_zero_of_det_eq_zero" class="lean_decl">BCG.LinearAlgebra.exists_ne_zero_inner_eq_zero_of_det_eq_zero</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.exists_inv_sqrt_of_det_pos" class="lean_decl">BCG.LinearAlgebra.exists_inv_sqrt_of_det_pos</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_hyperbolic_jacobian_bound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_hyperbolic_jacobian_bound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.8</span><span class="theorem_thmtitle">Implicit differentiation and hyperbolic Jacobian bound</span></div>
+    <div class="thm_thmcontent"><p>    In the orthonormal gauge \(\Phi _p\), the Fréchet derivative of the hyperboloid barycenter map satisfies </p>
+<div class="displaymath" id="a0000000022">
+  \[ D^{\mathrm{Riem}} F_s(p) = L_s\bigl(p(w), u_1, u_2(\cdot , p)\bigr), \]
+</div>
+<p> and for any \(s \ge 0\) and unit-bounded source gradients \(\| u_{1,i}\|  \le 1\), </p>
+<div class="displaymath" id="a0000000023">
+  \[ \bigl|\det D^{\mathrm{Riem}} F_s(p)\bigr| \le \left(\frac{s}{n}\right)^n. \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0002.html#thm_hyperbolic_jacobian_bound">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_spaceVectorField_eq" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_spaceVectorField_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemannDiff_spaceVectorField" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemannDiff_spaceVectorField</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.expHyperboloidBusemann_mul_diff_spaceVectorField" class="lean_decl">BCG.Hyperbolic.expHyperboloidBusemann_mul_diff_spaceVectorField</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_busemannGradientCoord" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_busemannGradientCoord</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_busemannGradientCoord_self" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_busemannGradientCoord_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGauge_apply" class="lean_decl">BCG.Hyperbolic.metricGauge_apply</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGaugeInv_apply" class="lean_decl">BCG.Hyperbolic.metricGaugeInv_apply</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGauge_metricGaugeInv" class="lean_decl">BCG.Hyperbolic.metricGauge_metricGaugeInv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.metricGaugeInv_metricGauge" class="lean_decl">BCG.Hyperbolic.metricGaugeInv_metricGauge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.isSymmetric_metricGauge" class="lean_decl">BCG.Hyperbolic.isSymmetric_metricGauge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.isSymmetric_metricGaugeInv" class="lean_decl">BCG.Hyperbolic.isSymmetric_metricGaugeInv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_metricGauge_eq_riemannianMetric" class="lean_decl">BCG.Hyperbolic.inner_metricGauge_eq_riemannianMetric</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_metricGaugeInv" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_metricGaugeInv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_euclideanBusemannGrad_eq_diff" class="lean_decl">BCG.Hyperbolic.inner_euclideanBusemannGrad_eq_diff</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.norm_euclideanBusemannGrad" class="lean_decl">BCG.Hyperbolic.norm_euclideanBusemannGrad</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.norm_euclideanBusemannGrad_le_one" class="lean_decl">BCG.Hyperbolic.norm_euclideanBusemannGrad_le_one</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_lorentzNormalization_deriv" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_lorentzNormalization_deriv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_busemannSum_deriv" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_busemannSum_deriv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianMetric_inner_barycenter_expWeight_deriv" class="lean_decl">BCG.Hyperbolic.riemannianMetric_inner_barycenter_expWeight_deriv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hasFDerivAt_barycenter_space" class="lean_decl">BCG.Hyperbolic.hasFDerivAt_barycenter_space</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.inner_riemannianBarycenterDifferential_eq" class="lean_decl">BCG.Hyperbolic.inner_riemannianBarycenterDifferential_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.riemannianBarycenterDifferential_eq_busemannCrossOperator" class="lean_decl">BCG.Hyperbolic.riemannianBarycenterDifferential_eq_busemannCrossOperator</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.abs_det_riemannianBarycenterDifferential_le" class="lean_decl">BCG.Hyperbolic.abs_det_riemannianBarycenterDifferential_le</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_hyperbolic_rigidity_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_hyperbolic_rigidity" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.9</span><span class="theorem_thmtitle">Spectral AM–GM equality and hyperbolic rigidity</span></div>
+    <div class="thm_thmcontent"><p>    If \(z_i \ge 0\) on \(\mathrm{Fin}\, n\) satisfy \(\sum _{i=1}^n z_i \le 1\) and \(\prod _{i=1}^n z_i = (1/n)^n\), then \(z_i = 1/n\) for all \(i\). Consequently, if \(|\det D^{\mathrm{Riem}} F_s(p)| = (s/n)^n\) with \(s {\gt} 0\), then: </p>
+<ol class="enumerate">
+  <li><p>Both source and target Busemann covariance tensors are isotropic: \(H_1 = H_2 = \frac{1}{n} \operatorname {id}_E\). </p>
+</li>
+  <li><p>\((D^{\mathrm{Riem}} F_s(p))^* D^{\mathrm{Riem}} F_s(p) = (s/n)^2 \operatorname {id}_E\), so \(D^{\mathrm{Riem}} F_s(p)\) is a scaled linear isometry with scale factor \(s/n\) (and an exact Riemannian linear isometry when \(s = n\)). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0002.html#thm_hyperbolic_rigidity">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eq_one_of_prod_eq_one_of_sum_le" class="lean_decl">BCG.LinearAlgebra.eq_one_of_prod_eq_one_of_sum_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eq_one_div_dim_of_prod_eq_of_sum_le" class="lean_decl">BCG.LinearAlgebra.eq_one_div_dim_of_prod_eq_of_sum_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eq_one_div_dim_smul_id_of_det_eq" class="lean_decl">BCG.LinearAlgebra.eq_one_div_dim_smul_id_of_det_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.isotropic_and_norm_eq_of_abs_det_eq_div_dim_pow" class="lean_decl">BCG.LinearAlgebra.isotropic_and_norm_eq_of_abs_det_eq_div_dim_pow</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Rigidity.measureReal_image_eq_integral_abs_det_fderiv" class="lean_decl">BCG.Rigidity.measureReal_image_eq_integral_abs_det_fderiv</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Rigidity.ae_eq_of_bcg_volume_equality" class="lean_decl">BCG.Rigidity.ae_eq_of_bcg_volume_equality</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Rigidity.riemannianBarycenterDifferential_rigidity" class="lean_decl">BCG.Rigidity.riemannianBarycenterDifferential_rigidity</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_hyperboloid_barycenter_props_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_hyperboloid_barycenter_props" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.6</span><span class="theorem_thmtitle">Closed-form uniqueness, \(C^\infty \) regularity, and \(\Gamma \)-equivariance of the barycenter</span></div>
+    <div class="thm_thmcontent"><p>    For any weight vector \(w\) with \(\| \sum _i w_i \xi _i\|  {\lt} \sum _i w_i\): </p>
+<ol class="enumerate">
+  <li><p>\(\mathcal{B}_w(y) = \| Z(w)\| _{\mathcal{L}} \cosh d_{\mathbf{H}}(y, \mathrm{bar}(w))\), so \(p = \mathrm{hyperboloidBarycenter}(w, \xi )\) is the <em>unique</em> global minimizer of \(\mathcal{B}_w\) on \(\mathbf{H}^n\) and satisfies \(\nabla \mathcal{B}_w(p) = 0\) and \(d\mathcal{B}_w(p) = 0\). </p>
+</li>
+  <li><p>The barycenter map \(w \mapsto \mathrm{hyperboloidBarycenter}(w, \xi )\) is \(C^\infty \) on the open future-timelike cone, is \(\mathrm{Isom}(\mathbf{H}^n)\)-equivariant under boundary cocycle rescaling, and descends to a continuous map on quotient manifolds \(X/\Gamma _1 \to Y/\Gamma _2\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0002.html#thm_hyperboloid_barycenter_props">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.expHyperboloidBusemann_eq" class="lean_decl">BCG.Hyperbolic.expHyperboloidBusemann_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.expHyperboloidBusemann_pos" class="lean_decl">BCG.Hyperbolic.expHyperboloidBusemann_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.expHyperboloidBusemann_eq_neg_lorentzForm" class="lean_decl">BCG.Hyperbolic.expHyperboloidBusemann_eq_neg_lorentzForm</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannCocycleFactor_pos" class="lean_decl">BCG.Hyperbolic.busemannCocycleFactor_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.expHyperboloidBusemann_isometry" class="lean_decl">BCG.Hyperbolic.expHyperboloidBusemann_isometry</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemann_isometry" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemann_isometry</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzNorm_sq_pos" class="lean_decl">BCG.Hyperbolic.lorentzNorm_sq_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzNorm_pos" class="lean_decl">BCG.Hyperbolic.lorentzNorm_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzNorm_sq" class="lean_decl">BCG.Hyperbolic.lorentzNorm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.normalizeFuture_time" class="lean_decl">BCG.Hyperbolic.normalizeFuture_time</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.normalizeFuture_space" class="lean_decl">BCG.Hyperbolic.normalizeFuture_space</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.normalizeFuture_eq_ofSpace" class="lean_decl">BCG.Hyperbolic.normalizeFuture_eq_ofSpace</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzPairing_eq_lorentzNorm_mul_cosh_dist" class="lean_decl">BCG.Hyperbolic.lorentzPairing_eq_lorentzNorm_mul_cosh_dist</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzPairing_normalizeFuture_self" class="lean_decl">BCG.Hyperbolic.lorentzPairing_normalizeFuture_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.lorentzNorm_le_lorentzPairing" class="lean_decl">BCG.Hyperbolic.lorentzNorm_le_lorentzPairing</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.eq_normalizeFuture_iff_lorentzPairing_eq" class="lean_decl">BCG.Hyperbolic.eq_normalizeFuture_iff_lorentzPairing_eq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannLorentzVector_fst" class="lean_decl">BCG.Hyperbolic.busemannLorentzVector_fst</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannLorentzVector_snd" class="lean_decl">BCG.Hyperbolic.busemannLorentzVector_snd</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.norm_add_smul_sphere_lt" class="lean_decl">BCG.Hyperbolic.norm_add_smul_sphere_lt</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.norm_busemannVector_lt_sum_of_ne" class="lean_decl">BCG.Hyperbolic.norm_busemannVector_lt_sum_of_ne</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional_eq_lorentzPairing" class="lean_decl">BCG.Hyperbolic.busemannFunctional_eq_lorentzPairing</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.contMDiff_busemannFunctional" class="lean_decl">BCG.Hyperbolic.contMDiff_busemannFunctional</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional_eq_lorentzNorm_mul_cosh_dist" class="lean_decl">BCG.Hyperbolic.busemannFunctional_eq_lorentzNorm_mul_cosh_dist</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional_hyperboloidBarycenter" class="lean_decl">BCG.Hyperbolic.busemannFunctional_hyperboloidBarycenter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.barycenterProbWeight_nonneg" class="lean_decl">BCG.Hyperbolic.barycenterProbWeight_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.sum_barycenterProbWeight_eq_one" class="lean_decl">BCG.Hyperbolic.sum_barycenterProbWeight_eq_one</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional_min" class="lean_decl">BCG.Hyperbolic.busemannFunctional_min</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional_unique_min" class="lean_decl">BCG.Hyperbolic.busemannFunctional_unique_min</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.gradientFun_busemannFunctional_eq_zero" class="lean_decl">BCG.Hyperbolic.gradientFun_busemannFunctional_eq_zero</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.mvfderiv_busemannFunctional_eq_zero" class="lean_decl">BCG.Hyperbolic.mvfderiv_busemannFunctional_eq_zero</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.contMDiff_hyperboloidBarycenterMap" class="lean_decl">BCG.Hyperbolic.contMDiff_hyperboloidBarycenterMap</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.busemannFunctional_isometry" class="lean_decl">BCG.Hyperbolic.busemannFunctional_isometry</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBarycenter_isometry" class="lean_decl">BCG.Hyperbolic.hyperboloidBarycenter_isometry</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.equivariantQuotientMap_mk" class="lean_decl">BCG.Hyperbolic.equivariantQuotientMap_mk</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.continuous_equivariantQuotientMap" class="lean_decl">BCG.Hyperbolic.continuous_equivariantQuotientMap</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_hyperboloid_busemann_hessian_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_hyperboloid_busemann_hessian" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.2</span><span class="theorem_thmtitle">Exact Busemann Hessian identity on the hyperboloid</span></div>
+    <div class="thm_thmcontent"><p>    On the Lorentzian hyperboloid model \(\mathbf{H}^n = \mathrm{Hyperboloid}(E)\) equipped with its Levi-Civita connection, \(B_\xi \) is \(C^\infty \) and its Riemannian Hessian satisfies the exact identity </p>
+<div class="displaymath" id="a0000000016">
+  \[ (\operatorname {Hess}B_\xi )_y(X, Y) = g_y(X, Y) - dB_\xi (y)(X)\, dB_\xi (y)(Y). \]
+</div>
+<p> In particular, \((dB_\xi (y)(X))^2 \le g_y(X, X)\) and \((\operatorname {Hess}B_\xi )_y(X, X) \ge 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#thm_hyperboloid_busemann_hessian">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.contMDiff_hyperboloidBusemann" class="lean_decl">BCG.Hyperbolic.contMDiff_hyperboloidBusemann</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemann_hessian" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemann_hessian</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemann_diff_sq_le" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemann_diff_sq_le</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.Hyperbolic.hyperboloidBusemann_hessian_nonneg" class="lean_decl">BCG.Hyperbolic.hyperboloidBusemann_hessian_nonneg</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_master_hyperbolic_bcg_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_master_hyperbolic_bcg" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">4.2</span><span class="theorem_thmtitle">Master Smooth Real Hyperbolic BCG Volume-Entropy and Rigidity Theorems</span></div>
+    <div class="thm_thmcontent"><p>    For the explicit smooth natural map \(F_s(x) = \mathrm{hyperboloidBarycenter}(w(s, x), \xi )\) on an \(n\)-dimensional hyperbolic target (\(n \ge 1\)), integrating \(|\det D^{\mathrm{Riem}} F_s(x)| \le (s/n)^n\) and passing to \(s \searrow c_X\) yields </p>
+<div class="displaymath" id="a0000000041">
+  \[ |\deg (f)| \cdot n^n \cdot \operatorname {Vol}(Y) \le c_X^n \cdot \operatorname {Vol}(X). \]
+</div>
+<p> Moreover, if equality holds at scale \(s {\gt} 0\), then for \(\mu _X\)-almost every \(x \in X\), \(|\det D^{\mathrm{Riem}} F_s(x)| = (s/n)^n\), both Busemann covariance tensors are isotropic (\(\frac{1}{n}\operatorname {id}_E\)), and \(D^{\mathrm{Riem}} F_s(x)\) is a \((s/n)\)-scaled linear isometry. </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#thm_master_hyperbolic_bcg">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_main_theorem" class="lean_decl">BCG.hyperbolic_bcg_main_theorem</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_busemann_main_theorem" class="lean_decl">BCG.hyperbolic_bcg_busemann_main_theorem</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_natural_map_main_theorem" class="lean_decl">BCG.hyperbolic_bcg_natural_map_main_theorem</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.hyperbolic_bcg_natural_map_rigidity" class="lean_decl">BCG.hyperbolic_bcg_natural_map_rigidity</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_master_rank_one_bcg_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_master_rank_one_bcg" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">4.3</span><span class="theorem_thmtitle">Master General Rank-One and Cayley Hyperbolic Plane BCG Theorems</span></div>
+    <div class="thm_thmcontent"><p>    For any rank-one locally symmetric target \((Y, g_0)\) modeled on \(\mathbb {K}\mathbf{H}^m\) (\(\mathbb {K}\in \{ \mathbb {R}, \mathbb {C}, \mathbb {H}, \mathbb {O}\} \), \(n = \dim _\mathbb {R}Y\), \(d = \dim _\mathbb {R}\mathbb {K}\), \(h_0 = n + d - 2\)), and in particular for the \(16\)-dimensional Cayley hyperbolic plane \(\mathbb {O}\mathbf{H}^2\) (\(n = 16\), \(d = 8\), \(h_0 = 22\)) via Ruan’s perturbed log-concavity repair, the global Besson–Courtois–Gallot volume-entropy inequality holds: </p>
+<div class="displaymath" id="a0000000043">
+  \[ |\deg (f)| \cdot h_0^n \cdot \operatorname {Vol}(Y) \le c_X^n \cdot \operatorname {Vol}(X), \qquad |\deg (f)| \cdot 22^{16} \cdot \operatorname {Vol}(Y) \le c_X^{16} \cdot \operatorname {Vol}(X). \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#thm_master_rank_one_bcg">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.rankOne_bcg_main_theorem" class="lean_decl">BCG.rankOne_bcg_main_theorem</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.octonionic_bcg_main_theorem" class="lean_decl">BCG.octonionic_bcg_main_theorem</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_rank_one_hessian_reduction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_rank_one_hessian_reduction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3.2</span><span class="theorem_thmtitle">Riccati square identity and implicit differentiation reduction</span></div>
+    <div class="thm_thmcontent"><p>    Every \(\mathbb {K}\)-line Busemann Hessian satisfies the Riccati equation \(W(u, \pi _u)^2 = -R(\cdot , u)u = 4(\pi _u - u \otimes u^*) + (I - \pi _u)\) and \(\operatorname {Tr}(W(u, \pi _u)) = n + d - 2\). Moreover, \(\widehat{H} - H \ge 0\) with \(\operatorname {Tr}(\widehat{H}) = d\), and whenever \(W_y \circ D_F = s H_y\), </p>
+<div class="displaymath" id="a0000000027">
+  \[ |\det D_F| \le \left(\frac{s}{\sqrt{n}}\right)^n \frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})}. \]
+</div>
+<p> Consequently, the rank-one determinant inequality \(\frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})} \le \left(\frac{\sqrt{n}}{h_0}\right)^n\) implies \(|\det D_F| \le (s/h_0)^n\), and the quantitative eigenvalue-defect version implies isotropy \(H = \frac{1}{n}\operatorname {id}_E\) upon equality. </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#thm_rank_one_hessian_reduction">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.fiberDim_pos" class="lean_decl">BCG.RankOne.DivisionAlgebraType.fiberDim_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.one_le_fiberDim" class="lean_decl">BCG.RankOne.DivisionAlgebraType.one_le_fiberDim</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_real" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_real</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_complex" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_complex</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_quaternionic" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_quaternionic</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.DivisionAlgebraType.volumeEntropy_octonionic_two" class="lean_decl">BCG.RankOne.DivisionAlgebraType.volumeEntropy_octonionic_two</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_eq_norm_sq" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_eq_norm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_nonneg" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.comp_selfOuter" class="lean_decl">BCG.RankOne.IsKLineProjection.comp_selfOuter</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.selfOuter_comp" class="lean_decl">BCG.RankOne.IsKLineProjection.selfOuter_comp</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_sub_selfOuter_eq_norm_sq" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_sub_selfOuter_eq_norm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.sub_selfOuter_nonneg" class="lean_decl">BCG.RankOne.IsKLineProjection.sub_selfOuter_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.inner_id_sub_eq_norm_sq" class="lean_decl">BCG.RankOne.IsKLineProjection.inner_id_sub_eq_norm_sq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.IsKLineProjection.id_sub_nonneg" class="lean_decl">BCG.RankOne.IsKLineProjection.id_sub_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneSingleHessian_eq_two_smul_sub_add_id_sub" class="lean_decl">BCG.RankOne.rankOneSingleHessian_eq_two_smul_sub_add_id_sub</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.sq_rankOneSingleHessian_eq_jacobi" class="lean_decl">BCG.RankOne.sq_rankOneSingleHessian_eq_jacobi</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.isSymmetric_rankOneSingleHessian" class="lean_decl">BCG.RankOne.isSymmetric_rankOneSingleHessian</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.inner_rankOneSingleHessian_nonneg" class="lean_decl">BCG.RankOne.inner_rankOneSingleHessian_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.trace_rankOneSingleHessian" class="lean_decl">BCG.RankOne.trace_rankOneSingleHessian</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator_eq_add_sub" class="lean_decl">BCG.RankOne.rankOneHessianOperator_eq_add_sub</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator_self" class="lean_decl">BCG.RankOne.rankOneHessianOperator_self</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.sum_rankOneSingleHessian_eq_rankOneHessianOperator" class="lean_decl">BCG.RankOne.sum_rankOneSingleHessian_eq_rankOneHessianOperator</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.isSymmetric_rankOneLineCovariance" class="lean_decl">BCG.RankOne.isSymmetric_rankOneLineCovariance</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.trace_rankOneLineCovariance" class="lean_decl">BCG.RankOne.trace_rankOneLineCovariance</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.sub_busemannCovariance_nonneg" class="lean_decl">BCG.RankOne.sub_busemannCovariance_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_cross_le_inv_sqrt_dim_pow_mul_sqrt_det" class="lean_decl">BCG.RankOne.abs_det_cross_le_inv_sqrt_dim_pow_mul_sqrt_det</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_of_hessian_comp_eq_smul" class="lean_decl">BCG.RankOne.abs_det_of_hessian_comp_eq_smul</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_le_div_entropy_pow_of_rankOne_det_ineq" class="lean_decl">BCG.RankOne.abs_det_le_div_entropy_pow_of_rankOne_det_ineq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.abs_det_le_div_entropy_pow_mul_defect" class="lean_decl">BCG.RankOne.abs_det_le_div_entropy_pow_mul_defect</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.isotropic_of_abs_det_eq_div_entropy_pow" class="lean_decl">BCG.RankOne.isotropic_of_abs_det_eq_div_entropy_pow</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_ruan_cases_1_and_2_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_ruan_cases_1_and_2" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3.8</span><span class="theorem_thmtitle">Ruan’s Case 1 Schur monotonicity and Case 2 reverse AM–GM interpolation</span></div>
+    <div class="thm_thmcontent"><p>    In Ruan’s two-case analysis of the \(8 \times 8\) block decomposition \(H = \begin{pmatrix}  A 
+
+&  C 
+
+\\ C^* 
+
+&  B 
+
+\end{pmatrix}\): </p>
+<ol class="enumerate">
+  <li><p><b class="bfseries">Case 1 (\(2\lambda _1 \le \lambda \), \(2\mu _1 \le \mu \), \(\alpha = 0\)):</b> For \(0 \le w_i \le h_{2,i} \le h_{1,i}\), \(\prod _i (h_{2,i} - w_i)\prod _i h_{1,i} \le \prod _i (h_{1,i} - w_i)\prod _i h_{2,i}\) (Ruan Lemma 3.5). Combined with \(\det (\lambda I_8 - A) \ge 7^8 \det A\) and \(\det (\mu I_8 - B) \ge 7^8 \det B\), Schur complement factorization yields \(\det (\widehat{H} - H) \ge 7^{16} \det H\). </p>
+</li>
+  <li><p><b class="bfseries">Case 2 (\(2\mu _1 {\gt} \mu \) or \(2\lambda _1 {\gt} \lambda \), \(\alpha \in [1 - \sqrt{2/3}, 0.266]\)):</b> Every non-negative \(x : \mathrm{Fin}\, 8 \to \mathbb {R}\) satisfies the \(8\)-dimensional reverse AM–GM inequality \(7^7 \prod _{i=0}^7 x_i \le (\sum _{i=0}^7 x_i - x_0)^7 x_0\) (Ruan Lemma 3.6), and \(t = 1 - (1 - \alpha )^2\) satisfies \(t^2(1 - t) \ge 7/64\), yielding the cubic endpoint bound \(\frac{7}{64}\mu (\mu - \mu _1)\mu _1 \le (\mu - t\mu )(t\mu )^2\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0003.html#thm_ruan_cases_1_and_2">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_schur_monotone_one_dim" class="lean_decl">BCG.RankOne.cayley_schur_monotone_one_dim</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_schur_monotone_finset_prod" class="lean_decl">BCG.RankOne.cayley_schur_monotone_finset_prod</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_case1_det_bound" class="lean_decl">BCG.RankOne.cayley_case1_det_bound</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.reverse_amgm_eight_dim" class="lean_decl">BCG.RankOne.reverse_amgm_eight_dim</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_alpha_parameter_bounds" class="lean_decl">BCG.RankOne.octonionic_alpha_parameter_bounds</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.cayley_case2_step2_endpoint_bound" class="lean_decl">BCG.RankOne.cayley_case2_step2_endpoint_bound</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_ruan_prop_3_1_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_ruan_prop_3_1" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3.9</span><span class="theorem_thmtitle">Ruan’s perturbed log-concavity trick and Proposition 3.1 on \(\mathbb {O}\mathbf{H}^2\)</span></div>
+    <div class="thm_thmcontent"><p>    For any off-diagonal perturbation operator \(U_\alpha : E \to _l[\mathbb {R}] E\) such that \(I - H - U_\alpha \ge 0\) and \(\widehat{H} - H + U_\alpha \ge 0\), the Hessian operator splits as \(I - 2H + \widehat{H} = (I - H - U_\alpha ) + (\widehat{H} - H + U_\alpha )\) and satisfies Ruan’s perturbed log-concavity bound (Eq.&#160;(22)): </p>
+<div class="displaymath" id="a0000000036">
+  \[ \det (I - 2H + \widehat{H}) \ge 22^{16} \det \left(\frac{I - H - U_\alpha }{15}\right)^{15/22} \det \left(\frac{\widehat{H} - H + U_\alpha }{7}\right)^{7/22}. \]
+</div>
+<p> Combined with Ruan Lemma 3.4 (Eqs.&#160;(21) and&#160;(23)), this proves Proposition 3.1 and Corollary 3.8 on \(\mathbb {O}\mathbf{H}^2\): </p>
+<div class="displaymath" id="a0000000037">
+  \[ \frac{\sqrt{\det H}}{\det (I - 2H + \widehat{H})} \le \left(\frac{\sqrt{16}}{22}\right)^{16} = \left(\frac{2}{11}\right)^{16} \quad \text{and}\quad |\det D_F| \le \left(\frac{s}{22}\right)^{16}. \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#thm_ruan_prop_3_1">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.rankOneHessianOperator_eq_perturbed_add" class="lean_decl">BCG.RankOne.rankOneHessianOperator_eq_perturbed_add</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.det_rankOneHessianOperator_perturbed_ge" class="lean_decl">BCG.RankOne.det_rankOneHessianOperator_perturbed_ge</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.perturbed_rankOne_det_ineq" class="lean_decl">BCG.RankOne.perturbed_rankOne_det_ineq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_rankOne_det_ineq" class="lean_decl">BCG.RankOne.octonionic_rankOne_det_ineq</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound" class="lean_decl">BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound_with_defect" class="lean_decl">BCG.RankOne.octonionic_rankOne_bcg_jacobian_bound_with_defect</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_spectral_trace_det_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_spectral_trace_det" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.1</span><span class="theorem_thmtitle">Spectral trace and determinant formulas</span></div>
+    <div class="thm_thmcontent"><p>   Let \(T : E \to _l[\mathbb {R}] E\) be a symmetric linear endomorphism on an \(n\)-dimensional real inner product space \(E\). Then </p>
+<div class="displaymath" id="a0000000007">
+  \[ \operatorname {Tr}(T) = \sum _{i=1}^n \lambda _i(T), \qquad \det (I - T) = \prod _{i=1}^n (1 - \lambda _i(T)), \]
+</div>
+<p> and if \(T\) is positive-semidefinite (\(\langle v, T v\rangle \ge 0\) for all \(v \in E\)), then \(\lambda _i(T) \ge 0\) and \(\det (T) \ge 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm_spectral_trace_det">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.prod_le_arith_mean_pow" class="lean_decl">BCG.LinearAlgebra.prod_le_arith_mean_pow</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.trace_eq_sum_eigenvalues" class="lean_decl">BCG.LinearAlgebra.trace_eq_sum_eigenvalues</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_one_sub_eq_prod_eigenvalues" class="lean_decl">BCG.LinearAlgebra.det_one_sub_eq_prod_eigenvalues</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eigenvalues_nonneg_of_inner_nonneg" class="lean_decl">BCG.LinearAlgebra.eigenvalues_nonneg_of_inner_nonneg</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.eigenvalues_pos_of_inner_pos" class="lean_decl">BCG.LinearAlgebra.eigenvalues_pos_of_inner_pos</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_nonneg_of_inner_nonneg" class="lean_decl">BCG.LinearAlgebra.det_nonneg_of_inner_nonneg</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm_trace_det_amgm_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm_trace_det_amgm" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.2</span><span class="theorem_thmtitle">Sharp AM–GM trace-determinant inequality</span></div>
+    <div class="thm_thmcontent"><p>    For any symmetric positive-semidefinite endomorphism \(T : E \to _l[\mathbb {R}] E\) on an \(n\)-dimensional real inner product space (\(n \ge 1\)), </p>
+<div class="displaymath" id="a0000000009">
+  \[ \det (T) \le \left(\frac{\operatorname {Tr}(T)}{n}\right)^n. \]
+</div>
+<p> When \(\operatorname {Tr}(H_1) \le 1\) and \(\operatorname {Tr}(H_2) \le 1\), any \(c \ge 0\) satisfies \(c^n \sqrt{\det H_1}\sqrt{\det H_2} \le (c/n)^n\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm_trace_det_amgm">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_le_trace_div_dim_pow" class="lean_decl">BCG.LinearAlgebra.det_le_trace_div_dim_pow</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.det_le_one_div_dim_pow_of_trace_le_one" class="lean_decl">BCG.LinearAlgebra.det_le_one_div_dim_pow_of_trace_le_one</a></li>
+        
+           <li><a href="https://github.com/psuarezserrato/formalized-barycenter-methods/find/#doc/BCG.LinearAlgebra.mul_sqrt_det_le_of_trace_le_one" class="lean_decl">BCG.LinearAlgebra.mul_sqrt_det_le_of_trace_le_one</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+if (window.location.protocol !== "file:") graphContainer.graphviz({useWorker: false})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	thm_trace_det_amgm	[color=green,		fillcolor="#1CAC78",		label=thm_trace_det_amgm,		shape=ellipse,		style=filled];	thm_gram_det	[color=green,		fillcolor="#1CAC78",		label=thm_gram_det,		shape=ellipse,		style=filled];	thm_trace_det_amgm -> thm_gram_det	[style=dashed];	thm_bcg_lemma_b2	[color=green,		fillcolor="#1CAC78",		label=thm_bcg_lemma_b2,		shape=ellipse,		style=filled];	thm_gram_det -> thm_bcg_lemma_b2	[style=dashed];	thm_bilinear_cs_det	[color=green,		fillcolor="#1CAC78",		label=thm_bilinear_cs_det,		shape=ellipse,		style=filled];	thm_gram_det -> thm_bilinear_cs_det	[style=dashed];	thm_hyperbolic_rigidity	[color=green,		fillcolor="#1CAC78",		label=thm_hyperbolic_rigidity,		shape=ellipse,		style=filled];	thm_master_hyperbolic_bcg	[color=green,		fillcolor="#1CAC78",		label=thm_master_hyperbolic_bcg,		shape=ellipse,		style=filled];	thm_hyperbolic_rigidity -> thm_master_hyperbolic_bcg	[style=dashed];	thm_associative_rank_one	[color=green,		fillcolor="#1CAC78",		label=thm_associative_rank_one,		shape=ellipse,		style=filled];	thm_bcg_lemma_b2 -> thm_associative_rank_one	[style=dashed];	thm_rank_one_hessian_reduction	[color=green,		fillcolor="#1CAC78",		label=thm_rank_one_hessian_reduction,		shape=ellipse,		style=filled];	thm_bilinear_cs_det -> thm_rank_one_hessian_reduction	[style=dashed];	thm_busemann_cross_det	[color=green,		fillcolor="#1CAC78",		label=thm_busemann_cross_det,		shape=ellipse,		style=filled];	thm_bilinear_cs_det -> thm_busemann_cross_det	[style=dashed];	thm_critical_exponent_invariance	[color=green,		fillcolor="#1CAC78",		label=thm_critical_exponent_invariance,		shape=ellipse,		style=filled];	thm_bcg_global_integration	[color=green,		fillcolor="#1CAC78",		label=thm_bcg_global_integration,		shape=ellipse,		style=filled];	thm_critical_exponent_invariance -> thm_bcg_global_integration	[style=dashed];	thm_bcg_global_integration -> thm_master_hyperbolic_bcg	[style=dashed];	thm_master_rank_one_bcg	[color=green,		fillcolor="#1CAC78",		label=thm_master_rank_one_bcg,		shape=ellipse,		style=filled];	thm_bcg_global_integration -> thm_master_rank_one_bcg	[style=dashed];	def_hyperboloid_barycenter	[color=green,		fillcolor="#B0ECA3",		label=def_hyperboloid_barycenter,		shape=box,		style=filled];	thm_hyperboloid_barycenter_props	[color=green,		fillcolor="#1CAC78",		label=thm_hyperboloid_barycenter_props,		shape=ellipse,		style=filled];	def_hyperboloid_barycenter -> thm_hyperboloid_barycenter_props	[style=dashed];	def_riemannian_barycenter_diff	[color=green,		fillcolor="#B0ECA3",		label=def_riemannian_barycenter_diff,		shape=box,		style=filled];	def_hyperboloid_barycenter -> def_riemannian_barycenter_diff	[style=dashed];	thm_hyperbolic_jacobian_bound	[color=green,		fillcolor="#1CAC78",		label=thm_hyperbolic_jacobian_bound,		shape=ellipse,		style=filled];	thm_hyperboloid_barycenter_props -> thm_hyperbolic_jacobian_bound	[style=dashed];	def_riemannian_barycenter_diff -> thm_hyperbolic_jacobian_bound	[style=dashed];	thm_hyperbolic_jacobian_bound -> thm_hyperbolic_rigidity	[style=dashed];	def_rank_one_invariants	[color=green,		fillcolor="#B0ECA3",		label=def_rank_one_invariants,		shape=box,		style=filled];	def_local_cayley_structure	[color=green,		fillcolor="#B0ECA3",		label=def_local_cayley_structure,		shape=box,		style=filled];	def_rank_one_invariants -> def_local_cayley_structure	[style=dashed];	def_rank_one_invariants -> thm_rank_one_hessian_reduction	[style=dashed];	def_orthogonal_k_structure	[color=green,		fillcolor="#B0ECA3",		label=def_orthogonal_k_structure,		shape=box,		style=filled];	def_rank_one_invariants -> def_orthogonal_k_structure	[style=dashed];	thm_cayley_block_bounds	[color=green,		fillcolor="#1CAC78",		label=thm_cayley_block_bounds,		shape=ellipse,		style=filled];	def_local_cayley_structure -> thm_cayley_block_bounds	[style=dashed];	thm_rank_one_hessian_reduction -> thm_associative_rank_one	[style=dashed];	def_orthogonal_k_structure -> thm_associative_rank_one	[style=dashed];	thm_ruan_cases_1_and_2	[color=green,		fillcolor="#1CAC78",		label=thm_ruan_cases_1_and_2,		shape=ellipse,		style=filled];	thm_cayley_block_bounds -> thm_ruan_cases_1_and_2	[style=dashed];	thm_associative_rank_one -> thm_cayley_block_bounds	[style=dashed];	thm_ruan_prop_3_1	[color=green,		fillcolor="#1CAC78",		label=thm_ruan_prop_3_1,		shape=ellipse,		style=filled];	thm_ruan_cases_1_and_2 -> thm_ruan_prop_3_1	[style=dashed];	thm_ruan_prop_3_1 -> thm_master_rank_one_bcg	[style=dashed];	thm_hyperboloid_busemann_hessian	[color=green,		fillcolor="#1CAC78",		label=thm_hyperboloid_busemann_hessian,		shape=ellipse,		style=filled];	thm_busemann_cross_det -> thm_hyperbolic_jacobian_bound	[style=dashed];	def_critical_exponent	[color=green,		fillcolor="#B0ECA3",		label=def_critical_exponent,		shape=box,		style=filled];	def_critical_exponent -> thm_critical_exponent_invariance	[style=dashed];	def_hyperboloid_busemann	[color=green,		fillcolor="#B0ECA3",		label=def_hyperboloid_busemann,		shape=box,		style=filled];	def_hyperboloid_busemann -> def_hyperboloid_barycenter	[style=dashed];	def_hyperboloid_busemann -> thm_hyperboloid_busemann_hessian	[style=dashed];	def_busemann_operators	[color=green,		fillcolor="#B0ECA3",		label=def_busemann_operators,		shape=box,		style=filled];	def_busemann_operators -> def_riemannian_barycenter_diff	[style=dashed];	def_busemann_operators -> def_rank_one_invariants	[style=dashed];	def_busemann_operators -> thm_busemann_cross_det	[style=dashed];	thm_spectral_trace_det	[color=green,		fillcolor="#1CAC78",		label=thm_spectral_trace_det,		shape=ellipse,		style=filled];	thm_spectral_trace_det -> thm_trace_det_amgm	[style=dashed];}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+document.addEventListener("DOMContentLoaded", function() { try { interactive(); } catch (e) {} });
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>
