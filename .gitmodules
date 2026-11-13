@@ -1,0 +1,6 @@
+[submodule "rcd-entropy-degree-rigidity"]
+	path = rcd-entropy-degree-rigidity
+	url = https://github.com/psuarezserrato/rcd-entropy-degree-rigidity.git
+[submodule "alexandrov-entropy-degree-applications"]
+	path = alexandrov-entropy-degree-applications
+	url = https://github.com/psuarezserrato/alexandrov-entropy-degree-applications.git
