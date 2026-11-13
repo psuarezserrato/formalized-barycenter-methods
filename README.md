@@ -40,4 +40,4 @@ To rebuild the core blueprint website and PDF dependency graph (requires `leanbl
 
 ## License
 
-Apache License, Version 2.0 (see [`LICENSE`](LICENSE) and [`DifferentialGeometry/LICENSE`](DifferentialGeometry/LICENSE)).
+GNU Affero General Public License v3.0 (AGPLv3) with non-commercial use notice (see [`LICENSE.md`](LICENSE.md); vendored `DifferentialGeometry/` remains under [`DifferentialGeometry/LICENSE`](DifferentialGeometry/LICENSE)).
