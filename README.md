@@ -9,8 +9,8 @@ This umbrella repository houses the core smooth & rank-one `BCG` library and mou
 | Component | Path / Subrepository | Scope & Target Audience |
 | :--- | :--- | :--- |
 | **Core Barycenter Engine** | [`BCG.lean`](BCG.lean), [`BCG/`](BCG/), [`DifferentialGeometry/`](DifferentialGeometry/) | Smooth $\mathbb{R}\mathbf{H}^n$, associative $\mathbb{K}\mathbf{H}^m$ ($\mathbb{R}, \mathbb{C}, \mathbb{H}$), and Ruan's $\mathbb{O}\mathbf{H}^2$ repair (`12` modules, `5,247` LOC, `27` green blueprint nodes, `227` declarations, `0 sorryAx`). |
-| **RCD & Alexandrov Rigidity** | [`rcd-entropy-degree-rigidity/`](rcd-entropy-degree-rigidity/) | *Entropy-degree rigidity for non-collapsed $\mathsf{RCD}$ spaces* (Sturm $\mathsf{CAT}(0)$ barycenter + CMMP orientation currents + Theorem 1.1 inequality & smoothness rigidity). |
-| **Alexandrov Applications** | [`alexandrov-entropy-degree-applications/`](alexandrov-entropy-degree-applications/) | *The entropy-degree theorem for Alexandrov spaces* (`arXiv:2606.30403`: §5 degree bridge, Theorem 1.1, Remark 1.15, and all 14 downstream corollaries & theorems). |
+| **RCD & Alexandrov Rigidity** | [`rcd-entropy-degree-rigidity`](https://github.com/psuarezserrato/rcd-entropy-degree-rigidity) | *Entropy-degree rigidity for non-collapsed $\mathsf{RCD}$ spaces* (Sturm $\mathsf{CAT}(0)$ barycenter + CMMP orientation currents + Theorem 1.1 inequality & smoothness rigidity). |
+| **Alexandrov Applications** | [`alexandrov-entropy-degree-applications`](https://github.com/psuarezserrato/alexandrov-entropy-degree-applications) | *The entropy-degree theorem for Alexandrov spaces* (`arXiv:2606.30403`: §5 degree bridge, Theorem 1.1, Remark 1.15, and all 14 downstream corollaries & theorems). |
 
 ## Verification Metrics (Core `BCG` Library)
 
